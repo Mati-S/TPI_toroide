@@ -9,6 +9,9 @@ TEST(evolucionDePosicionTEST, toroideDiagonalTresPorTres){
 }
 
 TEST(evolucionDePosicionTEST, NoRevivePorCincoVecinosVivos){
-    toroide t = { {false, true, true}, {false, true, false}, {false, true, true}};
+    toroide t = {
+            {false, true, true},
+            {false, true, false},
+            {false, true, true}};
     EXPECT_FALSE(evolucionDePosicion(t, make_pair(1,0)));
 }

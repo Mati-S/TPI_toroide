@@ -6,22 +6,52 @@ using namespace std;
 pair<int,int> mp(int a, int b) {
     return make_pair(a, b);
 }
-//No pueden usar esta función para resolver el TPI.
-//Tampoco pueden usar iteradores, como usa esta función.
-vector<posicion> ordenar(vector<posicion> &v) {
-    sort(v.begin(), v.end());
-    return v;
+
+int mod (int a, int b){
+    if(b < 0) //you can check for b == 0 separately and do what you want
+        return -mod(-a, -b);
+    int ret = a % b;
+    if(ret < 0)
+        ret+=b;
+    return ret;
 }
 
-bool esMatriz(vector<vector<bool>> const &t){
-    bool resp = (t.size() == t[0].size());
+int filas(const rectangulo& t){
+    return t.size();
+}
+
+int columnas(rectangulo t) {
+    int f = 0;
+    if (filas(t) > 0) {
+        f = t[0].size();
+    }
+    return f;
+}
+
+bool esRectangulo(rectangulo r){
+    bool iguales = true;
+    if(filas(r)>0 && columnas(r) > 0){
+        for(int i = 0; i<r.size(); i++){
+            if(r[i].size() != r[0].size()){
+                iguales=false;
+            }
+        }
+    }
+    return iguales;
+}
+
+bool esToroide(const toroide& t){
+    bool resp = false;
+    if(filas(t) >= 3 && columnas(t) >= 3 && esRectangulo(t)){
+        resp = true;
+    }
     return resp;
 }
 
-int cantVivas(vector<vector<bool>> const &t){
-    int vivas = 0;
-    for (int i = 0; i < t.size(); i++){
-        for (int j = 0; j < t[0].size(); j++){
+float cantidadVivas(toroide t){
+    float vivas = 0 ;
+    for(int i = 0; i<t.size(); i++){
+        for(int j = 0; j<t[0].size(); j++){
             if(t[i][j]){
                 vivas++;
             }
@@ -30,32 +60,92 @@ int cantVivas(vector<vector<bool>> const &t){
     return vivas;
 }
 
-bool mismoPatron(vector<vector<bool>> const &t, vector<vector<bool>> const &tEvo) {
-    bool resp = true;
-    vector<posicion> vivos;
-    vector<posicion> vivosEvo;
-    if(vivos.size() == vivosEvo.size()){
-        for(int i = 0; i < vivos.size() -1 && resp; i++) {
-            posicion diferenciaPosiciones = make_pair(vivos[i].first - vivos[i + 1].first,
-                                                      vivos[i].second - vivos[i + 1].second);
-            posicion diferenciaPosicionesEvo = make_pair(vivosEvo[i].first - vivosEvo[i + 1].first,
-                                                         vivosEvo[i].second - vivosEvo[i + 1].second);
-            resp = mirarPosiciones(diferenciaPosiciones, diferenciaPosicionesEvo);
+float superficieTotal(const toroide& t){
+    return (filas(t) * columnas(t));
+}
+
+int filaToroide(int f, toroide t){
+    return mod(f, filas(t));
+}
+
+int columnaToroide(int c, toroide t){
+    return mod(c, columnas(t));
+}
+
+int vecinosVivos(const toroide& t, int f, int c){
+    int vivos = 0;
+
+    for(int i = f-1; i<=f+1; i++){
+        for(int j = c-1; j<= c+1; j++){
+            if((i != f) || (j != c)){
+                int x = filaToroide(i, t);
+                int y = columnaToroide(j, t);
+                if(t[x][y]){
+                    vivos++;
+                }
+            }
         }
     }
-    return resp;
+
+    return vivos;
 }
 
-bool mirarPosiciones(posicion pos1, posicion pos2){
-    bool resp;
-    resp = pos1.first == pos2.first;
-    resp = resp && pos1.first == pos2.first;
-    return resp;
-}
-
-int seMuereEnK (toroide const &t){
-    bool muerto = false;
-    if (not(muerto)){
-
+bool debeVivir(toroide t, int x, int y){
+    bool resp = false;
+    int cantVivos = vecinosVivos(t, x, y);
+    if(t[x][y] && cantVivos >= 2 && cantVivos <= 3){
+        resp = true;
+    }else if(!t[x][y] && cantVivos == 3){
+        resp = true;
     }
+    return resp;
+}
+
+toroide trasladarToroide(toroide t, int x, int y){
+    toroide tTraslado(t.size(), vector<bool>(t[0].size(), false));
+    for(int i = 0; i < t.size(); i++){
+        for(int j = 0; j < t[i].size(); j++){
+            if(t[i][j]){
+                tTraslado[mod(i+x, t.size())][mod(j+y, t[i].size())] = t[i][j];
+            }
+        }
+    }
+    return tTraslado;
+}
+
+int superficieVivas(toroide t){
+    int lejosX = 0;
+    int lejosY = 0;
+    int cercaX = t.size();
+    int cercaY = t[0].size();
+
+    for(int i = 0; i<t.size(); i++){
+        for(int j = 0; j<t[i].size(); j++){
+            if(t[i][j]){
+                if(cercaX > i){
+                    cercaX = i;
+                }
+                if(cercaY > j){
+                    cercaY = j;
+                }
+                if(i > lejosX){
+                    lejosX = i;
+                }
+                if(j > lejosY){
+                    lejosY = j;
+                }
+            }
+        }
+    }
+    int superficieX = lejosX - cercaX + 1;
+    int superficieY = lejosY - cercaY + 1;
+    return (superficieX*superficieY);
+
+}
+
+//No pueden usar esta función para resolver el TPI.
+//Tampoco pueden usar iteradores, como usa esta función.
+vector<posicion> ordenar(vector<posicion> &v) {
+    sort(v.begin(), v.end());
+    return v;
 }

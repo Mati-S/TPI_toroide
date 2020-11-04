@@ -13,3 +13,17 @@ TEST(menorSuperficieVivaTEST, enunciado){
     int res = menorSuperficieViva(t);
     EXPECT_EQ(res, 6);
 }
+
+TEST(menorSuperficieVivaTEST, casoPrueba){
+    toroide t = {
+            {false, false, false, false, false, false, false, false},
+            {false, true, true, true, true, true, true, false},
+            {false, false, false, false, false, false, false, false},
+            {false, false, false, false, true, false, false, false},
+            {false, false, false, false, true, false, false, false},
+            {false, false, false, false, false, false, false, false},
+    };  // 4
+
+    int res = menorSuperficieViva(t);
+    EXPECT_EQ(res, 24);
+}

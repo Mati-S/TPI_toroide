@@ -1,0 +1,103 @@
+The system is: CYGWIN - 3.1.7(0.340/5/3) - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_e7576/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_e7576.dir/build.make CMakeFiles/cmTC_e7576.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7576.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e7576.dir/testCCompiler.c.o   -c "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_e7576.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_e7576.dir/link.txt --verbose=1
+/usr/bin/cc    -Wl,--enable-auto-import  CMakeFiles/cmTC_e7576.dir/testCCompiler.c.o  -o cmTC_e7576.exe -Wl,--out-implib,libcmTC_e7576.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_42741/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_42741.dir/build.make CMakeFiles/cmTC_42741.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_42741.dir/testCXXCompiler.cxx.o
+/usr/bin/c++.exe     -o CMakeFiles/cmTC_42741.dir/testCXXCompiler.cxx.o -c "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_42741.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_42741.dir/link.txt --verbose=1
+/usr/bin/c++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_42741.dir/testCXXCompiler.cxx.o  -o cmTC_42741.exe -Wl,--out-implib,libcmTC_42741.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_cd287/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_cd287.dir/build.make CMakeFiles/cmTC_cd287.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd287.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cd287.dir/CheckIncludeFile.c.o   -c "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_cd287.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_cd287.dir/link.txt --verbose=1
+/usr/bin/cc    -Wl,--enable-auto-import  CMakeFiles/cmTC_cd287.dir/CheckIncludeFile.c.o  -o cmTC_cd287.exe -Wl,--out-implib,libcmTC_cd287.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_06617/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_06617.dir/build.make CMakeFiles/cmTC_06617.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06617.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_06617.dir/src.c.o   -c "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_06617.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_06617.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-auto-import  CMakeFiles/cmTC_06617.dir/src.c.o  -o cmTC_06617.exe -Wl,--out-implib,libcmTC_06617.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

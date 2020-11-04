@@ -1,0 +1,24 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_6d347/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_6d347.dir/build.make CMakeFiles/cmTC_6d347.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake[1]: *** No rule to make target '/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/share/cmake-3.17.3/Modules/CMakeCCompilerABI.c', needed by 'CMakeFiles/cmTC_6d347.dir/CMakeCCompilerABI.c.o'.  Stop.
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:141: cmTC_6d347/fast] Error 2
+
+
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_ec176/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_ec176.dir/build.make CMakeFiles/cmTC_ec176.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake[1]: *** No rule to make target '/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/share/cmake-3.17.3/Modules/CMakeCXXCompilerABI.cpp', needed by 'CMakeFiles/cmTC_ec176.dir/CMakeCXXCompilerABI.cpp.o'.  Stop.
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:141: cmTC_ec176/fast] Error 2
+
+
+
+

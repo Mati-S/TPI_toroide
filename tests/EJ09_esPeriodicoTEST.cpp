@@ -16,3 +16,13 @@ TEST(esPeriodicoTEST, toroideHorizontalPeriodico2){
     EXPECT_TRUE(res);
     EXPECT_EQ(p, 2);
 }
+
+TEST(esPeriodicoTEST, toroideDiagonalPeriodico){
+    toroide t = {
+            {true, false, false},
+            {false, true, false},
+            {false, false, true}};
+    int p;
+    bool res = esPeriodico(t, p);
+    EXPECT_FALSE(res);
+}
