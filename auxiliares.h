@@ -10,10 +10,12 @@ using namespace std;
 // definir aqui las funciones
 pair<int,int> mp(int a, int b);
 vector<posicion> ordenar(vector<posicion> &v);
+int mod (int a, int b);
 bool esMatriz(vector<vector<bool>> const &t);
-int cantVivas(vector<vector<bool>> const &t);
-bool mismoPatron(vector<vector<bool>> const &t, vector<vector<bool>> const &tEvo);
-bool mirarPosiciones(posicion pos1, posicion pos2);
-int seMuereEnK (toroide const &t);
+bool sonIguales(toroide t, toroide tEvo);
+toroide trasladoVertical(toroide t);
+toroide trasladoHorizontal(toroide t);
+int menorSuperficie(vector<posicion> pos);
+int menor (vector<int> superficies);
 
 #endif //REUNIONESREMOTAS_AUXILIARES_H
