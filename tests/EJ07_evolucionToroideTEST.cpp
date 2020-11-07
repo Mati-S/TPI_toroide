@@ -1,6 +1,8 @@
 #include "../ejercicios.h"
 #include "gtest/gtest.h"
 #include <algorithm>
+#include "../toroidesparaTest.h"
+
 
 using namespace std;
 
@@ -15,6 +17,24 @@ TEST(evolucionToroideTEST, toroideDiagonalTresPorTresUnPaso){
     //  1 1 1
     //  1 1 1
     //  1 1 1
+    evolucionToroide(t);
+    EXPECT_EQ(t, evo_t);
+}
+
+TEST(evolucionToroideTEST, toroideMuertoYVivo){
+    toroide t = tVivo;
+
+    toroide evo_t = tMuerto;
+
+    evolucionToroide(t);
+    EXPECT_EQ(t, evo_t);
+}
+
+TEST(evolucionToroideTEST, toroidePorRevivirYVivo){
+    toroide t = tPorRevivir;
+
+    toroide evo_t = tVivo;
+
     evolucionToroide(t);
     EXPECT_EQ(t, evo_t);
 }

@@ -1,6 +1,8 @@
 #include "../ejercicios.h"
 #include "gtest/gtest.h"
 #include <algorithm>
+#include "../toroidesparaTest.h"
+
 
 using namespace std;
 
@@ -21,4 +23,31 @@ TEST(primosLejanosTEST, toroideHorizontalPeriodico2){
     EXPECT_TRUE(res);
     res = primosLejanos(t2, t1);
     EXPECT_TRUE(res);
+}
+
+TEST(primosLejanosTEST, toroidesMuertos){
+    toroide t1 = tMuerto;
+    toroide t2 = tMuerto;
+    bool res = primosLejanos(t1, t2);
+    EXPECT_TRUE(res);
+    res = primosLejanos(t2, t1);
+    EXPECT_TRUE(res);
+}
+
+TEST(primosLejanosTEST, toroidePeriodicoMuerto){
+    toroide t1 = tPeriodico;
+    toroide t2 = tMuerto;
+    bool res = primosLejanos(t1, t2);
+    EXPECT_FALSE(res);
+    res = primosLejanos(t2, t1);
+    EXPECT_FALSE(res);
+}
+
+TEST(primosLejanosTEST, toroidesNoPrimos){
+    toroide t1 = tPeriodico;
+    toroide t2 = tMuereEnKMenos1;
+    bool res = primosLejanos(t1, t2);
+    EXPECT_FALSE(res);
+    res = primosLejanos(t2, t1);
+    EXPECT_FALSE(res);
 }
