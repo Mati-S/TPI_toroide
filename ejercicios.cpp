@@ -109,13 +109,20 @@ toroide evolucionMultiple(toroide const &t, int K) {
 // EJERCICIO 9
 bool esPeriodico(toroide const &t, int &p) {
     bool resp = false;
+    bool esConstante = false;
     toroide tEvo = t;
-    p = 0;
-    while(!toroideMuerto(tEvo) && !resp){
+    toroide tConstante = t;
+    p = 1;
+    evolucionToroide(tEvo);
+    while(!toroideMuerto(tEvo) && !resp && !esConstante){
         evolucionToroide(tEvo);
+        evolucionToroide(tConstante);
         p++;
         if(sonIguales(t, tEvo)){
             resp = true;
+        }if(tEvo == tConstante){
+            esConstante = true;
+            p = 0;
         }
     }if(toroideMuerto(tEvo)){
         p = 0;
@@ -128,15 +135,21 @@ bool primosLejanos(toroide const &t, toroide const &u) {
     bool mismasDimenciones = t.size() == u.size() && t[0].size() == t[0].size();
     bool resp = false;
     toroide tEvo = t;
+    toroide tConstante = t;
     bool seRepite = false;
+    bool esConstante = false;
     if(mismasDimenciones) {
-        while (!seRepite && !resp){
+        evolucionToroide(tEvo);
+        while (!seRepite && !resp && !esConstante){
             if (toroideMuerto(tEvo) && !sonIguales(tEvo, u)) {
                 break;
-            } else if (sonIguales(tEvo, u)) {
+            }else if (sonIguales(tEvo, u)) {
                 resp = true;
-            } else {
+            }else if (sonIguales(tEvo, tConstante)){
+                esConstante = true;
+            }else{
                 evolucionToroide(tEvo);
+                evolucionToroide(tConstante);
                 seRepite = sonIguales(t, tEvo);
             }
         }
