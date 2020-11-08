@@ -3621,7 +3621,7 @@
         -: 3610:       *  @param  __s  Source C string.
         -: 3611:       *  @param  __a  Allocator to use (default is default allocator).
         -: 3612:       */
-     450*: 3613:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc());
+     455*: 3613:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc());
     %%%%%: 3613-block  0
     $$$$$: 3613-block  1
     %%%%%: 3613-block  2
@@ -3850,9 +3850,9 @@
     $$$$$: 3613-block 225
     $$$$$: 3613-block 226
     %%%%%: 3613-block 227
-       77: 3613-block 228
+       78: 3613-block 228
     %%%%%: 3613-block 229
-       77: 3613-block 230
+       78: 3613-block 230
     $$$$$: 3613-block 231
     $$$$$: 3613-block 232
     $$$$$: 3613-block 233
@@ -6380,15 +6380,15 @@
         -: 6056:   */
         -: 6057:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 6058:    inline basic_string<_CharT, _Traits, _Alloc>
-       77: 6059:    operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+       78: 6059:    operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
         -: 6060:	      const _CharT* __rhs)
         -: 6061:    {
-       77: 6062:      basic_string<_CharT, _Traits, _Alloc> __str(__lhs);
-       77: 6062-block  0
-       77: 6063:      __str.append(__rhs);
-       77: 6064:      return __str;
-       77: 6064-block  0
-       77: 6064-block  1
+       78: 6062:      basic_string<_CharT, _Traits, _Alloc> __str(__lhs);
+       78: 6062-block  0
+       78: 6063:      __str.append(__rhs);
+       78: 6064:      return __str;
+       78: 6064-block  0
+       78: 6064-block  1
         -: 6065:    }
         -: 6066:
         -: 6067:  /**
@@ -6469,10 +6469,10 @@
         -: 6130:
         -: 6131:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 6132:    inline basic_string<_CharT, _Traits, _Alloc>
-      151: 6133:    operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      152: 6133:    operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
         -: 6134:	      const _CharT* __rhs)
-      151: 6135:    { return std::move(__lhs.append(__rhs)); }
-      151: 6135-block  0
+      152: 6135:    { return std::move(__lhs.append(__rhs)); }
+      152: 6135-block  0
         -: 6136:
         -: 6137:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 6138:    inline basic_string<_CharT, _Traits, _Alloc>

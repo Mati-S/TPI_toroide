@@ -258,17 +258,17 @@
         -:  251:  template<typename _Tp>
         -:  252:    _GLIBCXX14_CONSTEXPR
         -:  253:    inline const _Tp&
-      170:  254:    max(const _Tp& __a, const _Tp& __b)
+      208:  254:    max(const _Tp& __a, const _Tp& __b)
         -:  255:    {
         -:  256:      // concept requirements
         -:  257:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  258:      //return  __a < __b ? __b : __a;
-      170:  259:      if (__a < __b)
-      170:  259-block  0
-       44:  260:	return __b;
-       44:  260-block  0
-      126:  261:      return __a;
-      126:  261-block  0
+      208:  259:      if (__a < __b)
+      208:  259-block  0
+       60:  260:	return __b;
+       60:  260-block  0
+      148:  261:      return __a;
+      148:  261-block  0
         -:  262:    }
         -:  263:
         -:  264:  /**
@@ -320,39 +320,45 @@
         -:  310:  template<typename _Iterator>
         -:  311:    _GLIBCXX20_CONSTEXPR
         -:  312:    inline _Iterator
- 65879849:  313:    __niter_base(_Iterator __it)
+ 67702272:  313:    __niter_base(_Iterator __it)
         -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
- 65879849:  315:    { return __it; }
-------------------
-_ZSt12__niter_baseISt13_Bit_iteratorET_S1_:
- 10983265:  313:    __niter_base(_Iterator __it)
-        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
- 10983265:  315:    { return __it; }
- 10983265:  315-block  0
-------------------
-_ZSt12__niter_baseIPmET_S1_:
- 32935821:  313:    __niter_base(_Iterator __it)
-        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
- 32935821:  315:    { return __it; }
- 32935821:  315-block  0
-------------------
-_ZSt12__niter_baseISt19_Bit_const_iteratorET_S1_:
- 21960445:  313:    __niter_base(_Iterator __it)
-        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
- 21960445:  315:    { return __it; }
- 21960445:  315-block  0
+ 67702272:  315:    { return __it; }
 ------------------
 _ZSt12__niter_baseIPSt6vectorIS0_IbSaIbEESaIS2_EEET_S6_:
-      240:  313:    __niter_base(_Iterator __it)
+      216:  313:    __niter_base(_Iterator __it)
         -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-      240:  315:    { return __it; }
-      240:  315-block  0
+      216:  315:    { return __it; }
+      216:  315-block  0
 ------------------
 _ZSt12__niter_baseIPSt4pairIiiEET_S3_:
-       78:  313:    __niter_base(_Iterator __it)
+      150:  313:    __niter_base(_Iterator __it)
         -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-       78:  315:    { return __it; }
-       78:  315-block  0
+      150:  315:    { return __it; }
+      150:  315-block  0
+------------------
+_ZSt12__niter_baseIPSt6vectorIbSaIbEEET_S4_:
+      138:  313:    __niter_base(_Iterator __it)
+        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
+      138:  315:    { return __it; }
+      138:  315-block  0
+------------------
+_ZSt12__niter_baseISt19_Bit_const_iteratorET_S1_:
+ 22567857:  313:    __niter_base(_Iterator __it)
+        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
+ 22567857:  315:    { return __it; }
+ 22567857:  315-block  0
+------------------
+_ZSt12__niter_baseIPmET_S1_:
+ 33847182:  313:    __niter_base(_Iterator __it)
+        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
+ 33847182:  315:    { return __it; }
+ 33847182:  315-block  0
+------------------
+_ZSt12__niter_baseISt13_Bit_iteratorET_S1_:
+ 11286729:  313:    __niter_base(_Iterator __it)
+        -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
+ 11286729:  315:    { return __it; }
+ 11286729:  315-block  0
 ------------------
         -:  316:
         -:  317:  // Reverse the __niter_base transformation to get a
@@ -368,18 +374,18 @@ _ZSt12__niter_baseIPSt4pairIiiEET_S3_:
         -:  327:  template<typename _Iterator>
         -:  328:    _GLIBCXX20_CONSTEXPR
         -:  329:    inline _Iterator
- 21961872:  330:    __niter_wrap(const _Iterator&, _Iterator __res)
- 21961872:  331:    { return __res; }
-------------------
-_ZSt12__niter_wrapISt13_Bit_iteratorET_RKS1_S1_:
- 10983265:  330:    __niter_wrap(const _Iterator&, _Iterator __res)
- 10983265:  331:    { return __res; }
- 10983265:  331-block  0
+ 22569109:  330:    __niter_wrap(const _Iterator&, _Iterator __res)
+ 22569109:  331:    { return __res; }
 ------------------
 _ZSt12__niter_wrapIPmET_RKS1_S1_:
- 10978607:  330:    __niter_wrap(const _Iterator&, _Iterator __res)
- 10978607:  331:    { return __res; }
- 10978607:  331-block  0
+ 11282394:  330:    __niter_wrap(const _Iterator&, _Iterator __res)
+ 11282394:  331:    { return __res; }
+ 11282394:  331-block  0
+------------------
+_ZSt12__niter_wrapISt13_Bit_iteratorET_RKS1_S1_:
+ 11286715:  330:    __niter_wrap(const _Iterator&, _Iterator __res)
+ 11286715:  331:    { return __res; }
+ 11286715:  331-block  0
 ------------------
         -:  332:
         -:  333:  // All of these auxiliary structs serve two purposes.  (1) Replace
@@ -424,21 +430,52 @@ _ZSt12__niter_wrapIPmET_RKS1_S1_:
         -:  372:      template<typename _II, typename _OI>
         -:  373:	_GLIBCXX20_CONSTEXPR
         -:  374:	static _OI
- 10978607:  375:	__copy_m(_II __first, _II __last, _OI __result)
+ 11282401:  375:	__copy_m(_II __first, _II __last, _OI __result)
         -:  376:	{
         -:  377:	  typedef typename iterator_traits<_II>::difference_type _Distance;
-186545978:  378:	  for(_Distance __n = __last - __first; __n > 0; --__n)
- 10978607:  378-block  0
-186545978:  378-block  1
+188729968*:  378:	  for(_Distance __n = __last - __first; __n > 0; --__n)
         -:  379:	    {
-175567371:  380:	      *__result = *__first;
-175567371:  380-block  0
-175567371:  381:	      ++__first;
-175567371:  382:	      ++__result;
+177447567*:  380:	      *__result = *__first;
+177447567*:  381:	      ++__first;
+177447567*:  382:	      ++__result;
         -:  383:	    }
- 10978607:  384:	  return __result;
- 10978607:  384-block  0
+ 11282401:  384:	  return __result;
         -:  385:	}
+------------------
+_ZNSt11__copy_moveILb0ELb0ESt26random_access_iterator_tagE8__copy_mISt19_Bit_const_iteratorSt13_Bit_iteratorEET0_T_S6_S5_:
+ 11282394:  375:	__copy_m(_II __first, _II __last, _OI __result)
+        -:  376:	{
+        -:  377:	  typedef typename iterator_traits<_II>::difference_type _Distance;
+188729961:  378:	  for(_Distance __n = __last - __first; __n > 0; --__n)
+ 11282394:  378-block  0
+188729961:  378-block  1
+        -:  379:	    {
+177447567:  380:	      *__result = *__first;
+177447567:  380-block  0
+177447567:  381:	      ++__first;
+177447567:  382:	      ++__result;
+        -:  383:	    }
+ 11282394:  384:	  return __result;
+ 11282394:  384-block  0
+        -:  385:	}
+------------------
+_ZNSt11__copy_moveILb0ELb0ESt26random_access_iterator_tagE8__copy_mISt13_Bit_iteratorS3_EET0_T_S5_S4_:
+        7:  375:	__copy_m(_II __first, _II __last, _OI __result)
+        -:  376:	{
+        -:  377:	  typedef typename iterator_traits<_II>::difference_type _Distance;
+       7*:  378:	  for(_Distance __n = __last - __first; __n > 0; --__n)
+        7:  378-block  0
+        7:  378-block  1
+        -:  379:	    {
+    #####:  380:	      *__result = *__first;
+    %%%%%:  380-block  0
+    #####:  381:	      ++__first;
+    #####:  382:	      ++__result;
+        -:  383:	    }
+        7:  384:	  return __result;
+        7:  384-block  0
+        -:  385:	}
+------------------
         -:  386:    };
         -:  387:
         -:  388:#if __cplusplus >= 201103L
@@ -468,7 +505,7 @@ _ZSt12__niter_wrapIPmET_RKS1_S1_:
         -:  412:      template<typename _Tp>
         -:  413:	_GLIBCXX20_CONSTEXPR
         -:  414:	static _Tp*
- 10978607:  415:	__copy_m(const _Tp* __first, const _Tp* __last, _Tp* __result)
+ 11282394:  415:	__copy_m(const _Tp* __first, const _Tp* __last, _Tp* __result)
         -:  416:	{
         -:  417:#if __cplusplus >= 201103L
         -:  418:	  using __assignable = conditional<_IsMove,
@@ -477,13 +514,13 @@ _ZSt12__niter_wrapIPmET_RKS1_S1_:
         -:  421:	  // trivial types can have deleted assignment
         -:  422:	  static_assert( __assignable::type::value, "type is not assignable" );
         -:  423:#endif
- 10978607:  424:	  const ptrdiff_t _Num = __last - __first;
- 10978607:  425:	  if (_Num)
- 10978607:  425-block  0
+ 11282394:  424:	  const ptrdiff_t _Num = __last - __first;
+ 11282394:  425:	  if (_Num)
+ 11282394:  425-block  0
     #####:  426:	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
     %%%%%:  426-block  0
- 10978607:  427:	  return __result + _Num;
- 10978607:  427-block  0
+ 11282394:  427:	  return __result + _Num;
+ 11282394:  427-block  0
         -:  428:	}
         -:  429:    };
         -:  430:
@@ -519,7 +556,7 @@ _ZSt12__niter_wrapIPmET_RKS1_S1_:
         -:  460:  template<bool _IsMove, typename _II, typename _OI>
         -:  461:    _GLIBCXX20_CONSTEXPR
         -:  462:    inline _OI
- 21957214:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
+ 22564795:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  464:    {
         -:  465:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  466:#ifdef __cpp_lib_is_constant_evaluated
@@ -528,11 +565,11 @@ _ZSt12__niter_wrapIPmET_RKS1_S1_:
         -:  469:	  __copy_m(__first, __last, __result);
         -:  470:#endif
         -:  471:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
- 21957214:  472:			      _Category>::__copy_m(__first, __last, __result);
+ 22564795:  472:			      _Category>::__copy_m(__first, __last, __result);
         -:  473:    }
 ------------------
 _ZSt14__copy_move_a2ILb0ESt19_Bit_const_iteratorSt13_Bit_iteratorET1_T0_S3_S2_:
- 10978607:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
+ 11282394:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  464:    {
         -:  465:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  466:#ifdef __cpp_lib_is_constant_evaluated
@@ -541,12 +578,12 @@ _ZSt14__copy_move_a2ILb0ESt19_Bit_const_iteratorSt13_Bit_iteratorET1_T0_S3_S2_:
         -:  469:	  __copy_m(__first, __last, __result);
         -:  470:#endif
         -:  471:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
- 10978607:  472:			      _Category>::__copy_m(__first, __last, __result);
- 10978607:  472-block  0
+ 11282394:  472:			      _Category>::__copy_m(__first, __last, __result);
+ 11282394:  472-block  0
         -:  473:    }
 ------------------
 _ZSt14__copy_move_a2ILb0EPmS0_ET1_T0_S2_S1_:
- 10978607:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
+ 11282394:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  464:    {
         -:  465:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  466:#ifdef __cpp_lib_is_constant_evaluated
@@ -555,8 +592,22 @@ _ZSt14__copy_move_a2ILb0EPmS0_ET1_T0_S2_S1_:
         -:  469:	  __copy_m(__first, __last, __result);
         -:  470:#endif
         -:  471:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
- 10978607:  472:			      _Category>::__copy_m(__first, __last, __result);
- 10978607:  472-block  0
+ 11282394:  472:			      _Category>::__copy_m(__first, __last, __result);
+ 11282394:  472-block  0
+        -:  473:    }
+------------------
+_ZSt14__copy_move_a2ILb0ESt13_Bit_iteratorS0_ET1_T0_S2_S1_:
+        7:  463:    __copy_move_a2(_II __first, _II __last, _OI __result)
+        -:  464:    {
+        -:  465:      typedef typename iterator_traits<_II>::iterator_category _Category;
+        -:  466:#ifdef __cpp_lib_is_constant_evaluated
+        -:  467:      if (std::is_constant_evaluated())
+        -:  468:	return std::__copy_move<_IsMove, false, _Category>::
+        -:  469:	  __copy_m(__first, __last, __result);
+        -:  470:#endif
+        -:  471:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
+        7:  472:			      _Category>::__copy_m(__first, __last, __result);
+        7:  472-block  0
         -:  473:    }
 ------------------
         -:  474:
@@ -590,49 +641,64 @@ _ZSt14__copy_move_a2ILb0EPmS0_ET1_T0_S2_S1_:
         -:  502:  template<bool _IsMove, typename _II, typename _OI>
         -:  503:    _GLIBCXX20_CONSTEXPR
         -:  504:    inline _OI
- 21957214:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
- 21957214:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+ 22564795:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
+ 22564795:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
 ------------------
 _ZSt14__copy_move_a1ILb0ESt19_Bit_const_iteratorSt13_Bit_iteratorET1_T0_S3_S2_:
- 10978607:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
- 10978607:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
- 10978607:  506-block  0
+ 11282394:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
+ 11282394:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+ 11282394:  506-block  0
 ------------------
 _ZSt14__copy_move_a1ILb0EPmS0_ET1_T0_S2_S1_:
- 10978607:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
- 10978607:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
- 10978607:  506-block  0
+ 11282394:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
+ 11282394:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+ 11282394:  506-block  0
+------------------
+_ZSt14__copy_move_a1ILb0ESt13_Bit_iteratorS0_ET1_T0_S2_S1_:
+        7:  505:    __copy_move_a1(_II __first, _II __last, _OI __result)
+        7:  506:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+        7:  506-block  0
 ------------------
         -:  507:
         -:  508:  template<bool _IsMove, typename _II, typename _OI>
         -:  509:    _GLIBCXX20_CONSTEXPR
         -:  510:    inline _OI
- 21957214:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
+ 22564795:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  512:    {
- 21957214:  513:      return std::__niter_wrap(__result,
+ 22564795:  513:      return std::__niter_wrap(__result,
         -:  514:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  515:					     std::__niter_base(__last),
- 21957214:  516:					     std::__niter_base(__result)));
+ 22564795:  516:					     std::__niter_base(__result)));
         -:  517:    }
 ------------------
 _ZSt13__copy_move_aILb0ESt19_Bit_const_iteratorSt13_Bit_iteratorET1_T0_S3_S2_:
- 10978607:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
+ 11282394:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  512:    {
- 10978607:  513:      return std::__niter_wrap(__result,
- 10978607:  513-block  0
+ 11282394:  513:      return std::__niter_wrap(__result,
+ 11282394:  513-block  0
         -:  514:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  515:					     std::__niter_base(__last),
- 10978607:  516:					     std::__niter_base(__result)));
+ 11282394:  516:					     std::__niter_base(__result)));
         -:  517:    }
 ------------------
 _ZSt13__copy_move_aILb0EPmS0_ET1_T0_S2_S1_:
- 10978607:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
+ 11282394:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  512:    {
- 10978607:  513:      return std::__niter_wrap(__result,
- 10978607:  513-block  0
+ 11282394:  513:      return std::__niter_wrap(__result,
+ 11282394:  513-block  0
         -:  514:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  515:					     std::__niter_base(__last),
- 10978607:  516:					     std::__niter_base(__result)));
+ 11282394:  516:					     std::__niter_base(__result)));
+        -:  517:    }
+------------------
+_ZSt13__copy_move_aILb0ESt13_Bit_iteratorS0_ET1_T0_S2_S1_:
+        7:  511:    __copy_move_a(_II __first, _II __last, _OI __result)
+        -:  512:    {
+        7:  513:      return std::__niter_wrap(__result,
+        7:  513-block  0
+        -:  514:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
+        -:  515:					     std::__niter_base(__last),
+        7:  516:					     std::__niter_base(__result)));
         -:  517:    }
 ------------------
         -:  518:
@@ -677,7 +743,7 @@ _ZSt13__copy_move_aILb0EPmS0_ET1_T0_S2_S1_:
         -:  557:  template<typename _II, typename _OI>
         -:  558:    _GLIBCXX20_CONSTEXPR
         -:  559:    inline _OI
- 21957214:  560:    copy(_II __first, _II __last, _OI __result)
+ 22564795:  560:    copy(_II __first, _II __last, _OI __result)
         -:  561:    {
         -:  562:      // concept requirements
         -:  563:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
@@ -686,11 +752,11 @@ _ZSt13__copy_move_aILb0EPmS0_ET1_T0_S2_S1_:
         -:  566:      __glibcxx_requires_can_increment_range(__first, __last, __result);
         -:  567:
         -:  568:      return std::__copy_move_a<__is_move_iterator<_II>::__value>
- 21957214:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
+ 22564795:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
         -:  570:    }
 ------------------
 _ZSt4copyISt19_Bit_const_iteratorSt13_Bit_iteratorET0_T_S3_S2_:
- 10978607:  560:    copy(_II __first, _II __last, _OI __result)
+ 11282394:  560:    copy(_II __first, _II __last, _OI __result)
         -:  561:    {
         -:  562:      // concept requirements
         -:  563:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
@@ -699,12 +765,12 @@ _ZSt4copyISt19_Bit_const_iteratorSt13_Bit_iteratorET0_T_S3_S2_:
         -:  566:      __glibcxx_requires_can_increment_range(__first, __last, __result);
         -:  567:
         -:  568:      return std::__copy_move_a<__is_move_iterator<_II>::__value>
- 10978607:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
- 10978607:  569-block  0
+ 11282394:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
+ 11282394:  569-block  0
         -:  570:    }
 ------------------
 _ZSt4copyIPmS0_ET0_T_S2_S1_:
- 10978607:  560:    copy(_II __first, _II __last, _OI __result)
+ 11282394:  560:    copy(_II __first, _II __last, _OI __result)
         -:  561:    {
         -:  562:      // concept requirements
         -:  563:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
@@ -713,8 +779,22 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  566:      __glibcxx_requires_can_increment_range(__first, __last, __result);
         -:  567:
         -:  568:      return std::__copy_move_a<__is_move_iterator<_II>::__value>
- 10978607:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
- 10978607:  569-block  0
+ 11282394:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
+ 11282394:  569-block  0
+        -:  570:    }
+------------------
+_ZSt4copyISt13_Bit_iteratorS0_ET0_T_S2_S1_:
+        7:  560:    copy(_II __first, _II __last, _OI __result)
+        -:  561:    {
+        -:  562:      // concept requirements
+        -:  563:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
+        -:  564:      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
+        -:  565:	    typename iterator_traits<_II>::value_type>)
+        -:  566:      __glibcxx_requires_can_increment_range(__first, __last, __result);
+        -:  567:
+        -:  568:      return std::__copy_move_a<__is_move_iterator<_II>::__value>
+        7:  569:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
+        7:  569-block  0
         -:  570:    }
 ------------------
         -:  571:
@@ -792,13 +872,17 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  643:      template<typename _BI1, typename _BI2>
         -:  644:	_GLIBCXX20_CONSTEXPR
         -:  645:	static _BI2
-        -:  646:	__copy_move_b(_BI1 __first, _BI1 __last, _BI2 __result)
+    #####:  646:	__copy_move_b(_BI1 __first, _BI1 __last, _BI2 __result)
         -:  647:	{
         -:  648:	  typename iterator_traits<_BI1>::difference_type
-        -:  649:	    __n = __last - __first;
-        -:  650:	  for (; __n > 0; --__n)
-        -:  651:	    *--__result = *--__last;
-        -:  652:	  return __result;
+    #####:  649:	    __n = __last - __first;
+    %%%%%:  649-block  0
+    #####:  650:	  for (; __n > 0; --__n)
+    %%%%%:  650-block  0
+    #####:  651:	    *--__result = *--__last;
+    %%%%%:  651-block  0
+    #####:  652:	  return __result;
+    %%%%%:  652-block  0
         -:  653:	}
         -:  654:    };
         -:  655:
@@ -845,7 +929,7 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  696:  template<bool _IsMove, typename _BI1, typename _BI2>
         -:  697:    _GLIBCXX20_CONSTEXPR
         -:  698:    inline _BI2
-        -:  699:    __copy_move_backward_a2(_BI1 __first, _BI1 __last, _BI2 __result)
+    #####:  699:    __copy_move_backward_a2(_BI1 __first, _BI1 __last, _BI2 __result)
         -:  700:    {
         -:  701:      typedef typename iterator_traits<_BI1>::iterator_category _Category;
         -:  702:#ifdef __cpp_lib_is_constant_evaluated
@@ -855,16 +939,18 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  706:#endif
         -:  707:      return std::__copy_move_backward<_IsMove,
         -:  708:				       __memcpyable<_BI2, _BI1>::__value,
-        -:  709:				       _Category>::__copy_move_b(__first,
+    #####:  709:				       _Category>::__copy_move_b(__first,
+    %%%%%:  709-block  0
         -:  710:								 __last,
-        -:  711:								 __result);
+    #####:  711:								 __result);
         -:  712:    }
         -:  713:
         -:  714:  template<bool _IsMove, typename _BI1, typename _BI2>
         -:  715:    _GLIBCXX20_CONSTEXPR
         -:  716:    inline _BI2
-        -:  717:    __copy_move_backward_a1(_BI1 __first, _BI1 __last, _BI2 __result)
-        -:  718:    { return std::__copy_move_backward_a2<_IsMove>(__first, __last, __result); }
+    #####:  717:    __copy_move_backward_a1(_BI1 __first, _BI1 __last, _BI2 __result)
+    #####:  718:    { return std::__copy_move_backward_a2<_IsMove>(__first, __last, __result); }
+    %%%%%:  718-block  0
         -:  719:
         -:  720:  template<bool _IsMove,
         -:  721:	   typename _Tp, typename _Ref, typename _Ptr, typename _OI>
@@ -891,12 +977,13 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  742:  template<bool _IsMove, typename _II, typename _OI>
         -:  743:    _GLIBCXX20_CONSTEXPR
         -:  744:    inline _OI
-        -:  745:    __copy_move_backward_a(_II __first, _II __last, _OI __result)
+    #####:  745:    __copy_move_backward_a(_II __first, _II __last, _OI __result)
         -:  746:    {
-        -:  747:      return std::__niter_wrap(__result,
+    #####:  747:      return std::__niter_wrap(__result,
+    %%%%%:  747-block  0
         -:  748:		std::__copy_move_backward_a1<_IsMove>
         -:  749:		  (std::__niter_base(__first), std::__niter_base(__last),
-        -:  750:		   std::__niter_base(__result)));
+    #####:  750:		   std::__niter_base(__result)));
         -:  751:    }
         -:  752:
         -:  753:  template<bool _IsMove,
@@ -943,7 +1030,7 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  794:  template<typename _BI1, typename _BI2>
         -:  795:    _GLIBCXX20_CONSTEXPR
         -:  796:    inline _BI2
-        -:  797:    copy_backward(_BI1 __first, _BI1 __last, _BI2 __result)
+    #####:  797:    copy_backward(_BI1 __first, _BI1 __last, _BI2 __result)
         -:  798:    {
         -:  799:      // concept requirements
         -:  800:      __glibcxx_function_requires(_BidirectionalIteratorConcept<_BI1>)
@@ -954,7 +1041,8 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -:  805:      __glibcxx_requires_can_decrement_range(__first, __last, __result);
         -:  806:
         -:  807:      return std::__copy_move_backward_a<__is_move_iterator<_BI1>::__value>
-        -:  808:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
+    #####:  808:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
+    %%%%%:  808-block  0
         -:  809:    }
         -:  810:
         -:  811:#if __cplusplus >= 201103L
@@ -1250,40 +1338,40 @@ _ZSt4copyIPmS0_ET0_T_S2_S1_:
         -: 1101:      template<typename _II1, typename _II2>
         -: 1102:	_GLIBCXX20_CONSTEXPR
         -: 1103:	static bool
-     7321: 1104:	equal(_II1 __first1, _II1 __last1, _II2 __first2)
+     6961: 1104:	equal(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1105:	{
-     7321: 1106:	  for (; __first1 != __last1; ++__first1, (void) ++__first2)
-     6670: 1107:	    if (!(*__first1 == *__first2))
+     6961: 1106:	  for (; __first1 != __last1; ++__first1, (void) ++__first2)
+     6372: 1107:	    if (!(*__first1 == *__first2))
       984: 1108:	      return false;
-      651: 1109:	  return true;
+      589: 1109:	  return true;
         -: 1110:	}
 ------------------
 _ZNSt7__equalILb0EE5equalISt19_Bit_const_iteratorS2_EEbT_S3_T0_:
-     6178: 1104:	equal(_II1 __first1, _II1 __last1, _II2 __first2)
+     5880: 1104:	equal(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1105:	{
-     6178: 1106:	  for (; __first1 != __last1; ++__first1, (void) ++__first2)
-     6178: 1106-block  0
-     5101: 1106-block  1
-     5593: 1107:	    if (!(*__first1 == *__first2))
-     5593: 1107-block  0
+     5880: 1106:	  for (; __first1 != __last1; ++__first1, (void) ++__first2)
+     5880: 1106-block  0
+     4857: 1106-block  1
+     5349: 1107:	    if (!(*__first1 == *__first2))
+     5349: 1107-block  0
       492: 1108:	      return false;
       492: 1108-block  0
-      585: 1109:	  return true;
-      585: 1109-block  0
+      531: 1109:	  return true;
+      531: 1109-block  0
         -: 1110:	}
 ------------------
 _ZNSt7__equalILb0EE5equalIPKSt6vectorIbSaIbEES6_EEbT_S7_T0_:
-     1143: 1104:	equal(_II1 __first1, _II1 __last1, _II2 __first2)
+     1081: 1104:	equal(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1105:	{
-     1143: 1106:	  for (; __first1 != __last1; ++__first1, (void) ++__first2)
-     1143: 1106-block  0
-      585: 1106-block  1
-     1077: 1107:	    if (!(*__first1 == *__first2))
-     1077: 1107-block  0
+     1081: 1106:	  for (; __first1 != __last1; ++__first1, (void) ++__first2)
+     1081: 1106-block  0
+      531: 1106-block  1
+     1023: 1107:	    if (!(*__first1 == *__first2))
+     1023: 1107-block  0
       492: 1108:	      return false;
       492: 1108-block  0
-       66: 1109:	  return true;
-       66: 1109-block  0
+       58: 1109:	  return true;
+       58: 1109-block  0
         -: 1110:	}
 ------------------
         -: 1111:    };
@@ -1325,64 +1413,64 @@ _ZNSt7__equalILb0EE5equalIPKSt6vectorIbSaIbEES6_EEbT_S7_T0_:
         -: 1147:  template<typename _II1, typename _II2>
         -: 1148:    _GLIBCXX20_CONSTEXPR
         -: 1149:    inline bool
-     1635: 1150:    __equal_aux1(_II1 __first1, _II1 __last1, _II2 __first2)
+     1573: 1150:    __equal_aux1(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1151:    {
         -: 1152:      typedef typename iterator_traits<_II1>::value_type _ValueType1;
-     1635: 1153:      const bool __simple = ((__is_integer<_ValueType1>::__value
+     1573: 1153:      const bool __simple = ((__is_integer<_ValueType1>::__value
         -: 1154:			      || __is_pointer<_ValueType1>::__value)
         -: 1155:			     && __memcmpable<_II1, _II2>::__value);
-     1635: 1156:      return std::__equal<__simple>::equal(__first1, __last1, __first2);
+     1573: 1156:      return std::__equal<__simple>::equal(__first1, __last1, __first2);
         -: 1157:    }
 ------------------
 _ZSt12__equal_aux1ISt19_Bit_const_iteratorS0_EbT_S1_T0_:
-     1077: 1150:    __equal_aux1(_II1 __first1, _II1 __last1, _II2 __first2)
+     1023: 1150:    __equal_aux1(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1151:    {
         -: 1152:      typedef typename iterator_traits<_II1>::value_type _ValueType1;
-     1077: 1153:      const bool __simple = ((__is_integer<_ValueType1>::__value
+     1023: 1153:      const bool __simple = ((__is_integer<_ValueType1>::__value
         -: 1154:			      || __is_pointer<_ValueType1>::__value)
         -: 1155:			     && __memcmpable<_II1, _II2>::__value);
-     1077: 1156:      return std::__equal<__simple>::equal(__first1, __last1, __first2);
-     1077: 1156-block  0
+     1023: 1156:      return std::__equal<__simple>::equal(__first1, __last1, __first2);
+     1023: 1156-block  0
         -: 1157:    }
 ------------------
 _ZSt12__equal_aux1IPKSt6vectorIbSaIbEES4_EbT_S5_T0_:
-      558: 1150:    __equal_aux1(_II1 __first1, _II1 __last1, _II2 __first2)
+      550: 1150:    __equal_aux1(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1151:    {
         -: 1152:      typedef typename iterator_traits<_II1>::value_type _ValueType1;
-      558: 1153:      const bool __simple = ((__is_integer<_ValueType1>::__value
+      550: 1153:      const bool __simple = ((__is_integer<_ValueType1>::__value
         -: 1154:			      || __is_pointer<_ValueType1>::__value)
         -: 1155:			     && __memcmpable<_II1, _II2>::__value);
-      558: 1156:      return std::__equal<__simple>::equal(__first1, __last1, __first2);
-      558: 1156-block  0
+      550: 1156:      return std::__equal<__simple>::equal(__first1, __last1, __first2);
+      550: 1156-block  0
         -: 1157:    }
 ------------------
         -: 1158:
         -: 1159:  template<typename _II1, typename _II2>
         -: 1160:    _GLIBCXX20_CONSTEXPR
         -: 1161:    inline bool
-     1635: 1162:    __equal_aux(_II1 __first1, _II1 __last1, _II2 __first2)
+     1573: 1162:    __equal_aux(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1163:    {
-     1635: 1164:      return std::__equal_aux1(std::__niter_base(__first1),
+     1573: 1164:      return std::__equal_aux1(std::__niter_base(__first1),
         -: 1165:			       std::__niter_base(__last1),
-     1635: 1166:			       std::__niter_base(__first2));
+     1573: 1166:			       std::__niter_base(__first2));
         -: 1167:    }
 ------------------
 _ZSt11__equal_auxISt19_Bit_const_iteratorS0_EbT_S1_T0_:
-     1077: 1162:    __equal_aux(_II1 __first1, _II1 __last1, _II2 __first2)
+     1023: 1162:    __equal_aux(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1163:    {
-     1077: 1164:      return std::__equal_aux1(std::__niter_base(__first1),
-     1077: 1164-block  0
+     1023: 1164:      return std::__equal_aux1(std::__niter_base(__first1),
+     1023: 1164-block  0
         -: 1165:			       std::__niter_base(__last1),
-     1077: 1166:			       std::__niter_base(__first2));
+     1023: 1166:			       std::__niter_base(__first2));
         -: 1167:    }
 ------------------
 _ZSt11__equal_auxIN9__gnu_cxx17__normal_iteratorIPKSt6vectorIbSaIbEES2_IS4_SaIS4_EEEES9_EbT_SA_T0_:
-      558: 1162:    __equal_aux(_II1 __first1, _II1 __last1, _II2 __first2)
+      550: 1162:    __equal_aux(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1163:    {
-      558: 1164:      return std::__equal_aux1(std::__niter_base(__first1),
-      558: 1164-block  0
+      550: 1164:      return std::__equal_aux1(std::__niter_base(__first1),
+      550: 1164-block  0
         -: 1165:			       std::__niter_base(__last1),
-      558: 1166:			       std::__niter_base(__first2));
+      550: 1166:			       std::__niter_base(__first2));
         -: 1167:    }
 ------------------
         -: 1168:
@@ -1623,7 +1711,7 @@ _ZSt11__equal_auxIN9__gnu_cxx17__normal_iteratorIPKSt6vectorIbSaIbEES2_IS4_SaIS4
         -: 1403:  template<typename _II1, typename _II2>
         -: 1404:    _GLIBCXX20_CONSTEXPR
         -: 1405:    inline bool
-     1635: 1406:    equal(_II1 __first1, _II1 __last1, _II2 __first2)
+     1573: 1406:    equal(_II1 __first1, _II1 __last1, _II2 __first2)
         -: 1407:    {
         -: 1408:      // concept requirements
         -: 1409:      __glibcxx_function_requires(_InputIteratorConcept<_II1>)
@@ -1633,7 +1721,7 @@ _ZSt11__equal_auxIN9__gnu_cxx17__normal_iteratorIPKSt6vectorIbSaIbEES2_IS4_SaIS4
         -: 1413:	    typename iterator_traits<_II2>::value_type>)
         -: 1414:      __glibcxx_requires_can_increment_range(__first1, __last1, __first2);
         -: 1415:
-     1635: 1416:      return std::__equal_aux(__first1, __last1, __first2);
+     1573: 1416:      return std::__equal_aux(__first1, __last1, __first2);
         -: 1417:    }
         -: 1418:
         -: 1419:  /**

@@ -1185,16 +1185,16 @@
         -: 1181: public:
         -: 1182:  typedef T element_type;
         -: 1183:
-       87: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
-      249: 1185:  ~scoped_ptr() { reset(); }
+       88: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
+      251: 1185:  ~scoped_ptr() { reset(); }
 ------------------
 _ZN7testing8internal10scoped_ptrISsED1Ev:
-       87: 1185:  ~scoped_ptr() { reset(); }
-       87: 1185-block  0
+       88: 1185:  ~scoped_ptr() { reset(); }
+       88: 1185-block  0
 ------------------
 _ZN7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcEEED1Ev:
-      162: 1185:  ~scoped_ptr() { reset(); }
-      162: 1185-block  0
+      163: 1185:  ~scoped_ptr() { reset(); }
+      163: 1185-block  0
 ------------------
         -: 1186:
         -: 1187:  T& operator*() const { return *ptr_; }
@@ -1207,34 +1207,34 @@ _ZN7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcE
         -: 1194:    return ptr;
         -: 1195:  }
         -: 1196:
-      249: 1197:  void reset(T* p = NULL) {
-      249: 1198:    if (p != ptr_) {
-     162*: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
-     162*: 1200:        delete ptr_;
+      251: 1197:  void reset(T* p = NULL) {
+      251: 1198:    if (p != ptr_) {
+     163*: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
+     163*: 1200:        delete ptr_;
         -: 1201:      }
-     162*: 1202:      ptr_ = p;
+     163*: 1202:      ptr_ = p;
         -: 1203:    }
-      249: 1204:  }
+      251: 1204:  }
 ------------------
 _ZN7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcEEE5resetEPS6_:
-      162: 1197:  void reset(T* p = NULL) {
-      162: 1198:    if (p != ptr_) {
-      162: 1198-block  0
-      162: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
-      162: 1199-block  0
-      162: 1200:        delete ptr_;
-      162: 1200-block  0
-      162: 1200-block  1
+      163: 1197:  void reset(T* p = NULL) {
+      163: 1198:    if (p != ptr_) {
+      163: 1198-block  0
+      163: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
+      163: 1199-block  0
+      163: 1200:        delete ptr_;
+      163: 1200-block  0
+      163: 1200-block  1
         -: 1201:      }
-      162: 1202:      ptr_ = p;
-      162: 1202-block  0
+      163: 1202:      ptr_ = p;
+      163: 1202-block  0
         -: 1203:    }
-      162: 1204:  }
+      163: 1204:  }
 ------------------
 _ZN7testing8internal10scoped_ptrISsE5resetEPSs:
-       87: 1197:  void reset(T* p = NULL) {
-       87: 1198:    if (p != ptr_) {
-       87: 1198-block  0
+       88: 1197:  void reset(T* p = NULL) {
+       88: 1198:    if (p != ptr_) {
+       88: 1198-block  0
     #####: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
     %%%%%: 1199-block  0
     #####: 1200:        delete ptr_;
@@ -1244,7 +1244,7 @@ _ZN7testing8internal10scoped_ptrISsE5resetEPSs:
     #####: 1202:      ptr_ = p;
     %%%%%: 1202-block  0
         -: 1203:    }
-       87: 1204:  }
+       88: 1204:  }
 ------------------
         -: 1205:
         -: 1206:  friend void swap(scoped_ptr& a, scoped_ptr& b) {

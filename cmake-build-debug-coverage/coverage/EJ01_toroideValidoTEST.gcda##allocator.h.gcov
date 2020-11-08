@@ -145,11 +145,11 @@
         -:  141:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  142:      // 3035. std::allocator's constructors should be constexpr
         -:  143:      _GLIBCXX20_CONSTEXPR
-      45*:  144:      allocator() _GLIBCXX_NOTHROW { }
+      28*:  144:      allocator() _GLIBCXX_NOTHROW { }
 ------------------
 _ZNSaImEC2Ev:
-        2:  144:      allocator() _GLIBCXX_NOTHROW { }
-        2:  144-block  0
+    #####:  144:      allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  144-block  0
 ------------------
 _ZNSaISt6vectorIS_IbSaIbEESaIS1_EEEC1Ev:
        28:  144:      allocator() _GLIBCXX_NOTHROW { }
@@ -160,8 +160,8 @@ _ZNSaISt6vectorIbSaIbEEEC1Ev:
     %%%%%:  144-block  0
 ------------------
 _ZNSaISt6vectorIbSaIbEEEC2Ev:
-       15:  144:      allocator() _GLIBCXX_NOTHROW { }
-       15:  144-block  0
+    #####:  144:      allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  144-block  0
 ------------------
 _ZNSaIbEC1Ev:
     #####:  144:      allocator() _GLIBCXX_NOTHROW { }
@@ -169,18 +169,18 @@ _ZNSaIbEC1Ev:
 ------------------
         -:  145:
         -:  146:      _GLIBCXX20_CONSTEXPR
-      70*:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
-      70*:  148:      : __allocator_base<_Tp>(__a) { }
+      68*:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
+      68*:  148:      : __allocator_base<_Tp>(__a) { }
 ------------------
 _ZNSaISt6vectorIS_IbSaIbEESaIS1_EEEC1ERKS4_:
-       35:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
-       35:  148:      : __allocator_base<_Tp>(__a) { }
-       35:  148-block  0
+       34:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
+       34:  148:      : __allocator_base<_Tp>(__a) { }
+       34:  148-block  0
 ------------------
 _ZNSaISt6vectorIS_IbSaIbEESaIS1_EEEC2ERKS4_:
-       35:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
-       35:  148:      : __allocator_base<_Tp>(__a) { }
-       35:  148-block  0
+       34:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
+       34:  148:      : __allocator_base<_Tp>(__a) { }
+       34:  148-block  0
 ------------------
 _ZNSaISt6vectorIbSaIbEEEC1ERKS2_:
     #####:  147:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
@@ -224,7 +224,7 @@ _ZNSaIbEC1ImEERKSaIT_E:
         -:  159:#if __cpp_constexpr_dynamic_alloc
         -:  160:      constexpr
         -:  161:#endif
-      63*:  162:      ~allocator() _GLIBCXX_NOTHROW { }
+      62*:  162:      ~allocator() _GLIBCXX_NOTHROW { }
 ------------------
 _ZNSaImED1Ev:
     #####:  162:      ~allocator() _GLIBCXX_NOTHROW { }
@@ -235,8 +235,8 @@ _ZNSaImED2Ev:
     %%%%%:  162-block  0
 ------------------
 _ZNSaISt6vectorIS_IbSaIbEESaIS1_EEED1Ev:
-       63:  162:      ~allocator() _GLIBCXX_NOTHROW { }
-       63:  162-block  0
+       62:  162:      ~allocator() _GLIBCXX_NOTHROW { }
+       62:  162-block  0
 ------------------
 _ZNSaISt6vectorIS_IbSaIbEESaIS1_EEED2Ev:
     #####:  162:      ~allocator() _GLIBCXX_NOTHROW { }

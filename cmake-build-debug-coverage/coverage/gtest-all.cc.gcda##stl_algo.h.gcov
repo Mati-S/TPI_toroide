@@ -3840,13 +3840,13 @@
         -: 3830:  template<typename _InputIterator, typename _Function>
         -: 3831:    _GLIBCXX20_CONSTEXPR
         -: 3832:    _Function
-     108*: 3833:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
+     109*: 3833:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
         -: 3834:    {
         -: 3835:      // concept requirements
         -: 3836:      __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
         -: 3837:      __glibcxx_requires_valid_range(__first, __last);
-     108*: 3838:      for (; __first != __last; ++__first)
-      91*: 3839:	__f(*__first);
+     109*: 3838:      for (; __first != __last; ++__first)
+      92*: 3839:	__f(*__first);
       17*: 3840:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
         -: 3841:    }
 ------------------
@@ -3879,15 +3879,15 @@ _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing17TestEventListenerESt6
         -: 3841:    }
 ------------------
 _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEPFvS4_EET0_T_SE_SD_:
-       91: 3833:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
+       92: 3833:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
         -: 3834:    {
         -: 3835:      // concept requirements
         -: 3836:      __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
         -: 3837:      __glibcxx_requires_valid_range(__first, __last);
-       91: 3838:      for (; __first != __last; ++__first)
-       91: 3838-block  0
-       77: 3839:	__f(*__first);
-       77: 3839-block  0
+       92: 3838:      for (; __first != __last; ++__first)
+       92: 3838-block  0
+       78: 3839:	__f(*__first);
+       78: 3839-block  0
        14: 3840:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
        14: 3840-block  0
         -: 3841:    }
@@ -3998,7 +3998,7 @@ _ZSt8for_eachISt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPPN7testing11E
         -: 3916:  template<typename _InputIterator, typename _Predicate>
         -: 3917:    _GLIBCXX20_CONSTEXPR
         -: 3918:    inline _InputIterator
-      77*: 3919:    find_if(_InputIterator __first, _InputIterator __last,
+      78*: 3919:    find_if(_InputIterator __first, _InputIterator __last,
         -: 3920:	    _Predicate __pred)
         -: 3921:    {
         -: 3922:      // concept requirements
@@ -4007,8 +4007,8 @@ _ZSt8for_eachISt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPPN7testing11E
         -: 3925:	      typename iterator_traits<_InputIterator>::value_type>)
         -: 3926:      __glibcxx_requires_valid_range(__first, __last);
         -: 3927:
-      77*: 3928:      return std::__find_if(__first, __last,
-     154*: 3929:			    __gnu_cxx::__ops::__pred_iter(__pred));
+      78*: 3928:      return std::__find_if(__first, __last,
+     156*: 3929:			    __gnu_cxx::__ops::__pred_iter(__pred));
         -: 3930:    }
         -: 3931:
         -: 3932:  /**

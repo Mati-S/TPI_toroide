@@ -287,13 +287,13 @@
         -:  283:  // the argument is implicitly convertible to AssertionResult. In that case
         -:  284:  // we want AssertionResult's copy constructor to be used.
         -:  285:  template <typename T>
-       87:  286:  explicit AssertionResult(
+       88:  286:  explicit AssertionResult(
         -:  287:      const T& success,
         -:  288:      typename internal::EnableIf<
         -:  289:          !internal::ImplicitlyConvertible<T, AssertionResult>::value>::type*
         -:  290:          /*enabler*/ = NULL)
-       87:  291:      : success_(success) {}
-       87:  291-block  0
+       88:  291:      : success_(success) {}
+       88:  291-block  0
         -:  292:
         -:  293:#if defined(_MSC_VER) && _MSC_VER < 1910
         -:  294:  GTEST_DISABLE_MSC_WARNINGS_POP_()
@@ -306,8 +306,8 @@
         -:  301:  }
         -:  302:
         -:  303:  // Returns true iff the assertion succeeded.
-       87:  304:  operator bool() const { return success_; }  // NOLINT
-       87:  304-block  0
+       88:  304:  operator bool() const { return success_; }  // NOLINT
+       88:  304-block  0
         -:  305:
         -:  306:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
         -:  307:  AssertionResult operator!() const;

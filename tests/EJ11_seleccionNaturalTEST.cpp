@@ -75,9 +75,9 @@ TEST(seleccionNaturalTEST, seleccionNormal){
     EXPECT_EQ(res, 4);
 }
 
+
 TEST(seleccionNaturalTEST, prueba_multiple){
     vector<toroide> ts = listaT1;
-
     int res = seleccionNatural(ts);
-    EXPECT_EQ(res, 6);
+    EXPECT_EQ(res, 4);
 }

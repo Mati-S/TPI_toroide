@@ -106,9 +106,9 @@
         -:   97:    }
         -:   98:
         -:   99:    _Bit_reference&
-      547:  100:    operator=(const _Bit_reference& __x) _GLIBCXX_NOEXCEPT
-      547:  101:    { return *this = bool(__x); }
-      547:  101-block  0
+    #####:  100:    operator=(const _Bit_reference& __x) _GLIBCXX_NOEXCEPT
+    #####:  101:    { return *this = bool(__x); }
+    %%%%%:  101-block  0
         -:  102:
         -:  103:    bool
         -:  104:    operator==(const _Bit_reference& __x) const
@@ -701,7 +701,7 @@
         -:  663:      : vector(__n, false, __a)
         -:  664:      { }
         -:  665:
-    #####:  666:      vector(size_type __n, const bool& __value,
+      123:  666:      vector(size_type __n, const bool& __value,
       123:  667:	     const allocator_type& __a = allocator_type())
     $$$$$:  667-block  0
         -:  668:#else
@@ -709,14 +709,14 @@
         -:  670:      vector(size_type __n, const bool& __value = bool(),
         -:  671:	     const allocator_type& __a = allocator_type())
         -:  672:#endif
-    #####:  673:      : _Base(__a)
-    %%%%%:  673-block  0
+      123:  673:      : _Base(__a)
+      123:  673-block  0
     $$$$$:  673-block  1
         -:  674:      {
-    #####:  675:	_M_initialize(__n);
-    #####:  676:	_M_initialize_value(__value);
-    %%%%%:  676-block  0
-    #####:  677:      }
+      123:  675:	_M_initialize(__n);
+      123:  676:	_M_initialize_value(__value);
+      123:  676-block  0
+      123:  677:      }
         -:  678:
     #####:  679:      vector(const vector& __x)
     #####:  680:      : _Base(_Bit_alloc_traits::_S_select_on_copy(__x._M_get_Bit_allocator()))
@@ -1221,18 +1221,18 @@
     #####: 1158:      }
         -: 1159:
         -: 1160:      void
-    #####: 1161:      _M_initialize_value(bool __x)
+      123: 1161:      _M_initialize_value(bool __x)
         -: 1162:      {
-    #####: 1163:	if (_Bit_type* __p = this->_M_impl._M_start._M_p)
-    %%%%%: 1163-block  0
-    #####: 1164:	  __builtin_memset(__p, __x ? ~0 : 0,
+      123: 1163:	if (_Bit_type* __p = this->_M_impl._M_start._M_p)
+      123: 1163-block  0
+     123*: 1164:	  __builtin_memset(__p, __x ? ~0 : 0,
     %%%%%: 1164-block  0
-    %%%%%: 1164-block  1
-    %%%%%: 1164-block  2
-    #####: 1165:			   (this->_M_impl._M_end_addr() - __p)
-    %%%%%: 1165-block  0
+      123: 1164-block  1
+      123: 1164-block  2
+      123: 1165:			   (this->_M_impl._M_end_addr() - __p)
+      123: 1165-block  0
         -: 1166:			   * sizeof(_Bit_type));
-    #####: 1167:      }
+      123: 1167:      }
         -: 1168:
         -: 1169:      void
         -: 1170:      _M_reallocate(size_type __n);

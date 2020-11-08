@@ -17,6 +17,4 @@ int seleccionNatural(vector <toroide> ts);
 toroide fusionar(toroide const &t, toroide const &u);
 bool vistaTrasladada(toroide const &t, toroide const &u);
 int menorSuperficieViva(toroide const &t);
-
-
 #endif //

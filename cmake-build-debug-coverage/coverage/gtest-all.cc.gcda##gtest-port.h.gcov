@@ -1185,7 +1185,7 @@
         -: 1181: public:
         -: 1182:  typedef T element_type;
         -: 1183:
-     411*: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
+     415*: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
 ------------------
 _ZN7testing8internal10scoped_ptrINS0_11ThreadLocalISt6vectorINS0_9TraceInfoESaIS4_EEE18ValueHolderFactoryEEC1EPS8_:
         1: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
@@ -1200,18 +1200,18 @@ _ZN7testing8internal10scoped_ptrINS0_24InternalRunDeathTestFlagEEC1EPS2_:
         1: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
 ------------------
 _ZN7testing8internal10scoped_ptrIKSsEC1EPS2_:
-      168: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
+      170: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
 ------------------
 _ZN7testing8internal10scoped_ptrINS0_14GTestFlagSaverEEC1EPS2_:
-       77: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
+       78: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
 ------------------
 _ZN7testing8internal10scoped_ptrISsEC1EPSs:
     #####: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
 ------------------
 _ZN7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcEEEC1EPS6_:
-      162: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
+      163: 1184:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
 ------------------
-      77*: 1185:  ~scoped_ptr() { reset(); }
+      78*: 1185:  ~scoped_ptr() { reset(); }
 ------------------
 _ZN7testing8internal10scoped_ptrINS0_11ThreadLocalISt6vectorINS0_9TraceInfoESaIS4_EEE18ValueHolderFactoryEED1Ev:
     #####: 1185:  ~scoped_ptr() { reset(); }
@@ -1234,8 +1234,8 @@ _ZN7testing8internal10scoped_ptrIKSsED1Ev:
     %%%%%: 1185-block  0
 ------------------
 _ZN7testing8internal10scoped_ptrINS0_14GTestFlagSaverEED1Ev:
-       77: 1185:  ~scoped_ptr() { reset(); }
-       77: 1185-block  0
+       78: 1185:  ~scoped_ptr() { reset(); }
+       78: 1185-block  0
 ------------------
 _ZN7testing8internal10scoped_ptrISsED1Ev:
     #####: 1185:  ~scoped_ptr() { reset(); }
@@ -1246,15 +1246,15 @@ _ZN7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcE
     %%%%%: 1185-block  0
 ------------------
         -: 1186:
-     634*: 1187:  T& operator*() const { return *ptr_; }
+     636*: 1187:  T& operator*() const { return *ptr_; }
 ------------------
 _ZNK7testing8internal10scoped_ptrISsEdeEv:
     #####: 1187:  T& operator*() const { return *ptr_; }
     %%%%%: 1187-block  0
 ------------------
 _ZNK7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcEEEdeEv:
-      634: 1187:  T& operator*() const { return *ptr_; }
-      634: 1187-block  0
+      636: 1187:  T& operator*() const { return *ptr_; }
+      636: 1187-block  0
 ------------------
     #####: 1188:  T* operator->() const { return ptr_; }
 ------------------
@@ -1274,11 +1274,11 @@ _ZNK7testing8internal10scoped_ptrISsEptEv:
     #####: 1188:  T* operator->() const { return ptr_; }
     %%%%%: 1188-block  0
 ------------------
-     255*: 1189:  T* get() const { return ptr_; }
+     257*: 1189:  T* get() const { return ptr_; }
 ------------------
 _ZNK7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcEEE3getEv:
-      162: 1189:  T* get() const { return ptr_; }
-      162: 1189-block  0
+      163: 1189:  T* get() const { return ptr_; }
+      163: 1189-block  0
 ------------------
 _ZNK7testing8internal10scoped_ptrINS0_16DeathTestFactoryEE3getEv:
     #####: 1189:  T* get() const { return ptr_; }
@@ -1289,8 +1289,8 @@ _ZNK7testing8internal10scoped_ptrINS0_24InternalRunDeathTestFlagEE3getEv:
         2: 1189-block  0
 ------------------
 _ZNK7testing8internal10scoped_ptrIKSsE3getEv:
-       91: 1189:  T* get() const { return ptr_; }
-       91: 1189-block  0
+       92: 1189:  T* get() const { return ptr_; }
+       92: 1189-block  0
 ------------------
 _ZNK7testing8internal10scoped_ptrISsE3getEv:
     #####: 1189:  T* get() const { return ptr_; }
@@ -1303,14 +1303,14 @@ _ZNK7testing8internal10scoped_ptrISsE3getEv:
         -: 1194:    return ptr;
         -: 1195:  }
         -: 1196:
-      78*: 1197:  void reset(T* p = NULL) {
-      78*: 1198:    if (p != ptr_) {
-      77*: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
-      77*: 1200:        delete ptr_;
+      79*: 1197:  void reset(T* p = NULL) {
+      79*: 1198:    if (p != ptr_) {
+      78*: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
+      78*: 1200:        delete ptr_;
         -: 1201:      }
-      77*: 1202:      ptr_ = p;
+      78*: 1202:      ptr_ = p;
         -: 1203:    }
-      78*: 1204:  }
+      79*: 1204:  }
 ------------------
 _ZN7testing8internal10scoped_ptrINS0_11ThreadLocalISt6vectorINS0_9TraceInfoESaIS4_EEE18ValueHolderFactoryEE5resetEPS8_:
     #####: 1197:  void reset(T* p = NULL) {
@@ -1373,19 +1373,19 @@ _ZN7testing8internal10scoped_ptrIKSsE5resetEPS2_:
     #####: 1204:  }
 ------------------
 _ZN7testing8internal10scoped_ptrINS0_14GTestFlagSaverEE5resetEPS2_:
-       77: 1197:  void reset(T* p = NULL) {
-       77: 1198:    if (p != ptr_) {
-       77: 1198-block  0
-       77: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
-       77: 1199-block  0
-       77: 1200:        delete ptr_;
-       77: 1200-block  0
-       77: 1200-block  1
+       78: 1197:  void reset(T* p = NULL) {
+       78: 1198:    if (p != ptr_) {
+       78: 1198-block  0
+       78: 1199:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
+       78: 1199-block  0
+       78: 1200:        delete ptr_;
+       78: 1200-block  0
+       78: 1200-block  1
         -: 1201:      }
-       77: 1202:      ptr_ = p;
-       77: 1202-block  0
+       78: 1202:      ptr_ = p;
+       78: 1202-block  0
         -: 1203:    }
-       77: 1204:  }
+       78: 1204:  }
 ------------------
 _ZN7testing8internal10scoped_ptrISt18basic_stringstreamIcSt11char_traitsIcESaIcEEE5resetEPS6_:
     #####: 1197:  void reset(T* p = NULL) {
@@ -2402,17 +2402,17 @@ _ZN7testing8internal27CheckedDowncastToActualTypeINS0_11ThreadLocalISt6vectorINS
         -: 2098:// shares its API with MutexBase otherwise.
         -: 2099:class Mutex : public MutexBase {
         -: 2100: public:
-       94: 2101:  Mutex() {
-      94*: 2102:    GTEST_CHECK_POSIX_SUCCESS_(pthread_mutex_init(&mutex_, NULL));
-       94: 2102-block  0
+       95: 2101:  Mutex() {
+      95*: 2102:    GTEST_CHECK_POSIX_SUCCESS_(pthread_mutex_init(&mutex_, NULL));
+       95: 2102-block  0
     %%%%%: 2102-block  1
     %%%%%: 2102-block  2
     %%%%%: 2102-block  3
     %%%%%: 2102-block  4
     $$$$$: 2102-block  5
-       94: 2103:    has_owner_ = false;
-       94: 2104:  }
-       94: 2104-block  0
+       95: 2103:    has_owner_ = false;
+       95: 2104:  }
+       95: 2104-block  0
     #####: 2105:  ~Mutex() {
     #####: 2106:    GTEST_CHECK_POSIX_SUCCESS_(pthread_mutex_destroy(&mutex_));
     %%%%%: 2106-block  0

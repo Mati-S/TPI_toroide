@@ -467,7 +467,7 @@
         -:  463:template <class TestClass>
         -:  464:class TestFactoryImpl : public TestFactoryBase {
         -:  465: public:
-        6:  466:  virtual Test* CreateTest() { return new TestClass; }
+        5:  466:  virtual Test* CreateTest() { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI50seleccionNaturalTEST_toroideDiagonalVsUnoVivo_TestE10CreateTestEv:
         1:  466:  virtual Test* CreateTest() { return new TestClass; }
@@ -476,21 +476,7 @@ _ZN7testing8internal15TestFactoryImplI50seleccionNaturalTEST_toroideDiagonalVsUn
         1:  466-block  2
     $$$$$:  466-block  3
 ------------------
-_ZN7testing8internal15TestFactoryImplI46seleccionNaturalTEST_DiagonalVsHorizontal_TestE10CreateTestEv:
-        1:  466:  virtual Test* CreateTest() { return new TestClass; }
-        1:  466-block  0
-        1:  466-block  1
-        1:  466-block  2
-    $$$$$:  466-block  3
-------------------
-_ZN7testing8internal15TestFactoryImplI41seleccionNaturalTEST_seleccionNormal_TestE10CreateTestEv:
-        1:  466:  virtual Test* CreateTest() { return new TestClass; }
-        1:  466-block  0
-        1:  466-block  1
-        1:  466-block  2
-    $$$$$:  466-block  3
-------------------
-_ZN7testing8internal15TestFactoryImplI46seleccionNaturalTEST_cementerioDeToroides_TestE10CreateTestEv:
+_ZN7testing8internal15TestFactoryImplI47seleccionNaturalTEST_seleccionConPeriodico_TestE10CreateTestEv:
         1:  466:  virtual Test* CreateTest() { return new TestClass; }
         1:  466-block  0
         1:  466-block  1
@@ -498,6 +484,13 @@ _ZN7testing8internal15TestFactoryImplI46seleccionNaturalTEST_cementerioDeToroide
     $$$$$:  466-block  3
 ------------------
 _ZN7testing8internal15TestFactoryImplI42seleccionNaturalTEST_bosqueDeToroides_TestE10CreateTestEv:
+        1:  466:  virtual Test* CreateTest() { return new TestClass; }
+        1:  466-block  0
+        1:  466-block  1
+        1:  466-block  2
+    $$$$$:  466-block  3
+------------------
+_ZN7testing8internal15TestFactoryImplI41seleccionNaturalTEST_seleccionNormal_TestE10CreateTestEv:
         1:  466:  virtual Test* CreateTest() { return new TestClass; }
         1:  466-block  0
         1:  466-block  1

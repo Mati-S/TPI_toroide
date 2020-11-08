@@ -386,17 +386,17 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EEC2ERKS3_:
         -:  300:      { _M_create_storage(__n); }
         -:  301:#endif
         -:  302:
-       7*:  303:      _Vector_base(size_t __n, const allocator_type& __a)
-       7*:  304:      : _M_impl(__a)
-       7*:  305:      { _M_create_storage(__n); }
+       6*:  303:      _Vector_base(size_t __n, const allocator_type& __a)
+       6*:  304:      : _M_impl(__a)
+       6*:  305:      { _M_create_storage(__n); }
 ------------------
 _ZNSt12_Vector_baseISt6vectorIS0_IbSaIbEESaIS2_EESaIS4_EEC2EmRKS5_:
-        7:  303:      _Vector_base(size_t __n, const allocator_type& __a)
-        7:  304:      : _M_impl(__a)
-        7:  304-block  0
+        6:  303:      _Vector_base(size_t __n, const allocator_type& __a)
+        6:  304:      : _M_impl(__a)
+        6:  304-block  0
     $$$$$:  304-block  1
-        7:  305:      { _M_create_storage(__n); }
-        7:  305-block  0
+        6:  305:      { _M_create_storage(__n); }
+        6:  305-block  0
 ------------------
 _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EEC2EmRKS3_:
     #####:  303:      _Vector_base(size_t __n, const allocator_type& __a)
@@ -521,21 +521,21 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE13_M_deallocateEPS2_m:
         -:  356:
         -:  357:    protected:
         -:  358:      void
-       7*:  359:      _M_create_storage(size_t __n)
+       6*:  359:      _M_create_storage(size_t __n)
         -:  360:      {
-       7*:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
-       7*:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
-       7*:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
-       7*:  364:      }
+       6*:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
+       6*:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
+       6*:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+       6*:  364:      }
 ------------------
 _ZNSt12_Vector_baseISt6vectorIS0_IbSaIbEESaIS2_EESaIS4_EE17_M_create_storageEm:
-        7:  359:      _M_create_storage(size_t __n)
+        6:  359:      _M_create_storage(size_t __n)
         -:  360:      {
-        7:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
-        7:  361-block  0
-        7:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
-        7:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
-        7:  364:      }
+        6:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
+        6:  361-block  0
+        6:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
+        6:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+        6:  364:      }
 ------------------
 _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE17_M_create_storageEm:
     #####:  359:      _M_create_storage(size_t __n)
@@ -747,32 +747,32 @@ _ZNSt6vectorIS_IbSaIbEESaIS1_EEC1Ev:
         -:  550:       *  The newly-created %vector uses a copy of the allocator object used
         -:  551:       *  by @a __x (unless the allocator traits dictate a different object).
         -:  552:       */
-       7*:  553:      vector(const vector& __x)
+       6*:  553:      vector(const vector& __x)
         -:  554:      : _Base(__x.size(),
-       7*:  555:	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+       6*:  555:	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
         -:  556:      {
-       7*:  557:	this->_M_impl._M_finish =
-       7*:  558:	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+       6*:  557:	this->_M_impl._M_finish =
+       6*:  558:	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
         -:  559:				      this->_M_impl._M_start,
-       7*:  560:				      _M_get_Tp_allocator());
-       7*:  561:      }
+       6*:  560:				      _M_get_Tp_allocator());
+       6*:  561:      }
 ------------------
 _ZNSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EEC1ERKS5_:
-        7:  553:      vector(const vector& __x)
+        6:  553:      vector(const vector& __x)
         -:  554:      : _Base(__x.size(),
-        7:  555:	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
-        7:  555-block  0
-        7:  555-block  1
+        6:  555:	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+        6:  555-block  0
+        6:  555-block  1
     $$$$$:  555-block  2
     $$$$$:  555-block  3
     $$$$$:  555-block  4
         -:  556:      {
-        7:  557:	this->_M_impl._M_finish =
-        7:  558:	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+        6:  557:	this->_M_impl._M_finish =
+        6:  558:	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
         -:  559:				      this->_M_impl._M_start,
-        7:  560:				      _M_get_Tp_allocator());
-        7:  561:      }
-        7:  561-block  0
+        6:  560:				      _M_get_Tp_allocator());
+        6:  561:      }
+        6:  561-block  0
 ------------------
 _ZNSt6vectorIS_IbSaIbEESaIS1_EEC1ERKS3_:
     #####:  553:      vector(const vector& __x)
@@ -1101,13 +1101,13 @@ _ZNSt6vectorIS_IbSaIbEESaIS1_EED1Ev:
         -:  817:       *  element order.
         -:  818:       */
         -:  819:      const_iterator
-       7*:  820:      begin() const _GLIBCXX_NOEXCEPT
-       7*:  821:      { return const_iterator(this->_M_impl._M_start); }
+       6*:  820:      begin() const _GLIBCXX_NOEXCEPT
+       6*:  821:      { return const_iterator(this->_M_impl._M_start); }
 ------------------
 _ZNKSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EE5beginEv:
-        7:  820:      begin() const _GLIBCXX_NOEXCEPT
-        7:  821:      { return const_iterator(this->_M_impl._M_start); }
-        7:  821-block  0
+        6:  820:      begin() const _GLIBCXX_NOEXCEPT
+        6:  821:      { return const_iterator(this->_M_impl._M_start); }
+        6:  821-block  0
 ------------------
 _ZNKSt6vectorIS_IbSaIbEESaIS1_EE5beginEv:
     #####:  820:      begin() const _GLIBCXX_NOEXCEPT
@@ -1131,13 +1131,13 @@ _ZNKSt6vectorIS_IbSaIbEESaIS1_EE5beginEv:
         -:  835:       *  ordinary element order.
         -:  836:       */
         -:  837:      const_iterator
-       7*:  838:      end() const _GLIBCXX_NOEXCEPT
-       7*:  839:      { return const_iterator(this->_M_impl._M_finish); }
+       6*:  838:      end() const _GLIBCXX_NOEXCEPT
+       6*:  839:      { return const_iterator(this->_M_impl._M_finish); }
 ------------------
 _ZNKSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EE3endEv:
-        7:  838:      end() const _GLIBCXX_NOEXCEPT
-        7:  839:      { return const_iterator(this->_M_impl._M_finish); }
-        7:  839-block  0
+        6:  838:      end() const _GLIBCXX_NOEXCEPT
+        6:  839:      { return const_iterator(this->_M_impl._M_finish); }
+        6:  839-block  0
 ------------------
 _ZNKSt6vectorIS_IbSaIbEESaIS1_EE3endEv:
     #####:  838:      end() const _GLIBCXX_NOEXCEPT
@@ -1503,22 +1503,22 @@ _ZNKSt6vectorIS_IbSaIbEESaIS1_EE4sizeEv:
         -: 1184:       *  available.
         -: 1185:       */
         -: 1186:      void
-       23: 1187:      push_back(const value_type& __x)
+       17: 1187:      push_back(const value_type& __x)
         -: 1188:      {
-       23: 1189:	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
-       23: 1189-block  0
+       17: 1189:	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
+       17: 1189-block  0
         -: 1190:	  {
         -: 1191:	    _GLIBCXX_ASAN_ANNOTATE_GROW(1);
-        5: 1192:	    _Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
-        5: 1192-block  0
+        3: 1192:	    _Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
+        3: 1192-block  0
         -: 1193:				     __x);
-        5: 1194:	    ++this->_M_impl._M_finish;
+        3: 1194:	    ++this->_M_impl._M_finish;
         -: 1195:	    _GLIBCXX_ASAN_ANNOTATE_GREW(1);
         -: 1196:	  }
         -: 1197:	else
-       18: 1198:	  _M_realloc_insert(end(), __x);
-       18: 1198-block  0
-       23: 1199:      }
+       14: 1198:	  _M_realloc_insert(end(), __x);
+       14: 1198-block  0
+       17: 1199:      }
         -: 1200:
         -: 1201:#if __cplusplus >= 201103L
         -: 1202:      void

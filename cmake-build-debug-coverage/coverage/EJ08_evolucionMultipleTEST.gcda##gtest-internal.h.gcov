@@ -467,9 +467,23 @@
         -:  463:template <class TestClass>
         -:  464:class TestFactoryImpl : public TestFactoryBase {
         -:  465: public:
-        3:  466:  virtual Test* CreateTest() { return new TestClass; }
+        5:  466:  virtual Test* CreateTest() { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI59evolucionMultipleTEST_toroideDiagonalTresPorTresUnPaso_TestE10CreateTestEv:
+        1:  466:  virtual Test* CreateTest() { return new TestClass; }
+        1:  466-block  0
+        1:  466-block  1
+        1:  466-block  2
+    $$$$$:  466-block  3
+------------------
+_ZN7testing8internal15TestFactoryImplI48evolucionMultipleTEST_toroideMuereEnKMenos1_TestE10CreateTestEv:
+        1:  466:  virtual Test* CreateTest() { return new TestClass; }
+        1:  466-block  0
+        1:  466-block  1
+        1:  466-block  2
+    $$$$$:  466-block  3
+------------------
+_ZN7testing8internal15TestFactoryImplI43evolucionMultipleTEST_toroidePeriodico_TestE10CreateTestEv:
         1:  466:  virtual Test* CreateTest() { return new TestClass; }
         1:  466-block  0
         1:  466-block  1

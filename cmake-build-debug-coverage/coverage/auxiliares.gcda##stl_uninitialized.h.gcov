@@ -342,21 +342,21 @@ _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSt4pairIiiESt6vectorIS
         -:  226:    {
         -:  227:      template<typename _ForwardIterator, typename _Size, typename _Tp>
         -:  228:        static _ForwardIterator
-    #####:  229:        __uninit_fill_n(_ForwardIterator __first, _Size __n,
+      123:  229:        __uninit_fill_n(_ForwardIterator __first, _Size __n,
         -:  230:			const _Tp& __x)
         -:  231:        {
-    #####:  232:	  _ForwardIterator __cur = __first;
-    %%%%%:  232-block  0
+      123:  232:	  _ForwardIterator __cur = __first;
+      123:  232-block  0
         -:  233:	  __try
         -:  234:	    {
-    #####:  235:	      for (; __n > 0; --__n, (void) ++__cur)
-    %%%%%:  235-block  0
-    %%%%%:  235-block  1
-    #####:  236:		std::_Construct(std::__addressof(*__cur), __x);
-    %%%%%:  236-block  0
-    #####:  237:	      return __cur;
-    %%%%%:  237-block  0
-    %%%%%:  237-block  1
+      610:  235:	      for (; __n > 0; --__n, (void) ++__cur)
+      610:  235-block  0
+      487:  235-block  1
+      487:  236:		std::_Construct(std::__addressof(*__cur), __x);
+      487:  236-block  0
+      123:  237:	      return __cur;
+      123:  237-block  0
+      123:  237-block  1
         -:  238:	    }
     =====:  239:	  __catch(...)
     $$$$$:  239-block  0
@@ -395,7 +395,7 @@ _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSt4pairIiiESt6vectorIS
         -:  269:  */
         -:  270:  template<typename _ForwardIterator, typename _Size, typename _Tp>
         -:  271:    inline _ForwardIterator
-    #####:  272:    uninitialized_fill_n(_ForwardIterator __first, _Size __n, const _Tp& __x)
+      123:  272:    uninitialized_fill_n(_ForwardIterator __first, _Size __n, const _Tp& __x)
         -:  273:    {
         -:  274:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  275:	_ValueType;
@@ -409,11 +409,11 @@ _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSt4pairIiiESt6vectorIS
         -:  283:
         -:  284:      // Trivial types can have deleted assignment, so using std::fill
         -:  285:      // would be ill-formed. Require assignability before using std::fill:
-    #####:  286:      const bool __assignable = is_copy_assignable<_ValueType>::value;
+      123:  286:      const bool __assignable = is_copy_assignable<_ValueType>::value;
         -:  287:#endif
         -:  288:      return __uninitialized_fill_n<__is_trivial(_ValueType) && __assignable>::
-    #####:  289:	__uninit_fill_n(__first, __n, __x);
-    %%%%%:  289-block  0
+      123:  289:	__uninit_fill_n(__first, __n, __x);
+      123:  289-block  0
         -:  290:    }
         -:  291:
         -:  292:  /// @cond undocumented
@@ -537,10 +537,10 @@ _ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSt4pairIiiESt6vect
         -:  397:  template<typename _ForwardIterator, typename _Size, typename _Tp,
         -:  398:	   typename _Tp2>
         -:  399:    inline _ForwardIterator
-    #####:  400:    __uninitialized_fill_n_a(_ForwardIterator __first, _Size __n, 
+      123:  400:    __uninitialized_fill_n_a(_ForwardIterator __first, _Size __n, 
         -:  401:			     const _Tp& __x, allocator<_Tp2>&)
-    #####:  402:    { return std::uninitialized_fill_n(__first, __n, __x); }
-    %%%%%:  402-block  0
+      123:  402:    { return std::uninitialized_fill_n(__first, __n, __x); }
+      123:  402-block  0
         -:  403:
         -:  404:
         -:  405:  // Extensions: __uninitialized_copy_move, __uninitialized_move_copy,

@@ -95,18 +95,13 @@ bool esPeriodico(toroide const &t, int &p) {
     bool resp = false;
     toroide tEvo = t;
     toroide tConstante = t;
-
     int i = 1;
     evolucionToroide(tEvo);
-
     while(tEvo != t && !toroideMuerto(tEvo) && tEvo != tConstante){
-
         evolucionToroide(tEvo);
         evolucionToroide(tConstante);
         i++;
-
     }
-
     if(t == tEvo && !toroideMuerto(tEvo)){
         resp = true;
     }else{
@@ -161,7 +156,7 @@ int seleccionNatural(vector<toroide> ts) {
         if(hayPeriodico){
             resp = -1;
         }
-        if (!toroideMuerto(ts[i]) && !hayPeriodico) {
+        if (!toroideMuerto(ts[i]) && (!hayPeriodico)) {
             while (!toroideMuerto(ts[i])) {
                 evolucionToroide(ts[i]);
                 muereEn++;

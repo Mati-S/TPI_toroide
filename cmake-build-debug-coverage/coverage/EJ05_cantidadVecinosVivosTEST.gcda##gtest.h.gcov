@@ -1441,14 +1441,14 @@
         -: 1423:
         -: 1424:// The helper function for {ASSERT|EXPECT}_EQ.
         -: 1425:template <typename T1, typename T2>
-       21: 1426:AssertionResult CmpHelperEQ(const char* lhs_expression,
+       20: 1426:AssertionResult CmpHelperEQ(const char* lhs_expression,
         -: 1427:                            const char* rhs_expression,
         -: 1428:                            const T1& lhs,
         -: 1429:                            const T2& rhs) {
-       21: 1430:  if (lhs == rhs) {
-       21: 1430-block  0
-       21: 1431:    return AssertionSuccess();
-       21: 1431-block  0
+       20: 1430:  if (lhs == rhs) {
+       20: 1430-block  0
+       20: 1431:    return AssertionSuccess();
+       20: 1431-block  0
         -: 1432:  }
         -: 1433:
     #####: 1434:  return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);
@@ -1472,12 +1472,12 @@
         -: 1451: public:
         -: 1452:  // This templatized version is for the general case.
         -: 1453:  template <typename T1, typename T2>
-       21: 1454:  static AssertionResult Compare(const char* lhs_expression,
+       20: 1454:  static AssertionResult Compare(const char* lhs_expression,
         -: 1455:                                 const char* rhs_expression,
         -: 1456:                                 const T1& lhs,
         -: 1457:                                 const T2& rhs) {
-       21: 1458:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
-       21: 1458-block  0
+       20: 1458:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       20: 1458-block  0
         -: 1459:  }
         -: 1460:
         -: 1461:  // With this overloaded version, we allow anonymous enums to be used

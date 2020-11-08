@@ -145,7 +145,7 @@
         -:  141:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  142:      // 3035. std::allocator's constructors should be constexpr
         -:  143:      _GLIBCXX20_CONSTEXPR
-     218*:  144:      allocator() _GLIBCXX_NOTHROW { }
+     220*:  144:      allocator() _GLIBCXX_NOTHROW { }
 ------------------
 _ZNSaISt13_Rb_tree_nodeISt4pairIKSsmEEEC2Ev:
     #####:  144:      allocator() _GLIBCXX_NOTHROW { }
@@ -184,8 +184,8 @@ _ZNSaIPN7testing8internal29ParameterizedTestCaseInfoBaseEEC2Ev:
         1:  144-block  0
 ------------------
 _ZNSaIN7testing14TestPartResultEEC2Ev:
-       92:  144:      allocator() _GLIBCXX_NOTHROW { }
-       92:  144-block  0
+       93:  144:      allocator() _GLIBCXX_NOTHROW { }
+       93:  144-block  0
 ------------------
 _ZNSaImEC2Ev:
     #####:  144:      allocator() _GLIBCXX_NOTHROW { }
@@ -200,8 +200,8 @@ _ZNSaISt10_List_nodeISt4pairIcPKcEEEC2Ev:
     %%%%%:  144-block  0
 ------------------
 _ZNSaIN7testing12TestPropertyEEC2Ev:
-       92:  144:      allocator() _GLIBCXX_NOTHROW { }
-       92:  144-block  0
+       93:  144:      allocator() _GLIBCXX_NOTHROW { }
+       93:  144-block  0
 ------------------
 _ZNSaIPN7testing8TestInfoEEC2Ev:
        14:  144:      allocator() _GLIBCXX_NOTHROW { }

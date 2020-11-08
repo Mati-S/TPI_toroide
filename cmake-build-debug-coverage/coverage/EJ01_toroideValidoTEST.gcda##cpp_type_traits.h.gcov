@@ -501,8 +501,8 @@
         -:  497:  template<typename _Iterator>
         -:  498:    _GLIBCXX20_CONSTEXPR
         -:  499:    inline _Iterator
-    9316*:  500:    __miter_base(_Iterator __it)
-    9316*:  501:    { return __it; }
+    8628*:  500:    __miter_base(_Iterator __it)
+    8628*:  501:    { return __it; }
 ------------------
 _ZSt12__miter_baseISt19_Bit_const_iteratorET_S1_:
     #####:  500:    __miter_base(_Iterator __it)
@@ -515,9 +515,9 @@ _ZSt12__miter_baseIPmET_S1_:
     %%%%%:  501-block  0
 ------------------
 _ZSt12__miter_baseIPKbET_S2_:
-     9316:  500:    __miter_base(_Iterator __it)
-     9316:  501:    { return __it; }
-     9316:  501-block  0
+     8628:  500:    __miter_base(_Iterator __it)
+     8628:  501:    { return __it; }
+     8628:  501-block  0
 ------------------
         -:  502:
         -:  503:_GLIBCXX_END_NAMESPACE_VERSION

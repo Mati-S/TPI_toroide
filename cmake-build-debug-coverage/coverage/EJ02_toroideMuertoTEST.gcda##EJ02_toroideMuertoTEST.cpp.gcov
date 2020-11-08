@@ -109,73 +109,72 @@ _ZN34toroideMuertoTEST_toroideVivo_TestC1Ev:
         1:   20-block  0
 ------------------
         -:   24:
-        -:   25:
-        2:   26:TEST(toroideMuertoTEST, UltimoHombreEnPie){
-        2:   27:    toroide t4 = tUnoVivo;
-       1*:   28:    EXPECT_FALSE(toroideMuerto(t4));
-        1:   29:}
+        2:   25:TEST(toroideMuertoTEST, UltimoHombreEnPie){
+        2:   26:    toroide t4 = tUnoVivo;
+       1*:   27:    EXPECT_FALSE(toroideMuerto(t4));
+        1:   28:}
 ------------------
 _ZN40toroideMuertoTEST_UltimoHombreEnPie_Test8TestBodyEv:
-        1:   26:TEST(toroideMuertoTEST, UltimoHombreEnPie){
-        2:   27:    toroide t4 = tUnoVivo;
+        1:   25:TEST(toroideMuertoTEST, UltimoHombreEnPie){
+        2:   26:    toroide t4 = tUnoVivo;
+        1:   26-block  0
+    $$$$$:   26-block  1
+       1*:   27:    EXPECT_FALSE(toroideMuerto(t4));
         1:   27-block  0
-    $$$$$:   27-block  1
-       1*:   28:    EXPECT_FALSE(toroideMuerto(t4));
-        1:   28-block  0
-        1:   28-block  1
-        1:   28-block  2
-    %%%%%:   28-block  3
-    %%%%%:   28-block  4
-    %%%%%:   28-block  5
-    %%%%%:   28-block  6
-    %%%%%:   28-block  7
-        1:   28-block  8
-    $$$$$:   28-block  9
-    $$$$$:   28-block 10
-    $$$$$:   28-block 11
-    $$$$$:   28-block 12
-    $$$$$:   28-block 13
-    $$$$$:   28-block 14
-    $$$$$:   28-block 15
-    $$$$$:   28-block 16
-        1:   29:}
+        1:   27-block  1
+        1:   27-block  2
+    %%%%%:   27-block  3
+    %%%%%:   27-block  4
+    %%%%%:   27-block  5
+    %%%%%:   27-block  6
+    %%%%%:   27-block  7
+        1:   27-block  8
+    $$$$$:   27-block  9
+    $$$$$:   27-block 10
+    $$$$$:   27-block 11
+    $$$$$:   27-block 12
+    $$$$$:   27-block 13
+    $$$$$:   27-block 14
+    $$$$$:   27-block 15
+    $$$$$:   27-block 16
+        1:   28:}
 ------------------
 _ZN40toroideMuertoTEST_UltimoHombreEnPie_TestC1Ev:
-        1:   26:TEST(toroideMuertoTEST, UltimoHombreEnPie){
-        1:   26-block  0
+        1:   25:TEST(toroideMuertoTEST, UltimoHombreEnPie){
+        1:   25-block  0
 ------------------
-        -:   30:
-        2:   31:TEST(toroideMuertoTEST, torMuerto){
-        2:   32:    toroide t3 = tMuerto;
-       1*:   33:    EXPECT_TRUE(toroideMuerto(t3));
-        1:   34:}
+        -:   29:
+        2:   30:TEST(toroideMuertoTEST, torMuerto){
+        2:   31:    toroide t3 = tMuerto;
+       1*:   32:    EXPECT_TRUE(toroideMuerto(t3));
+        1:   33:}
 ------------------
 _ZN32toroideMuertoTEST_torMuerto_Test8TestBodyEv:
-        1:   31:TEST(toroideMuertoTEST, torMuerto){
-        2:   32:    toroide t3 = tMuerto;
+        1:   30:TEST(toroideMuertoTEST, torMuerto){
+        2:   31:    toroide t3 = tMuerto;
+        1:   31-block  0
+    $$$$$:   31-block  1
+       1*:   32:    EXPECT_TRUE(toroideMuerto(t3));
         1:   32-block  0
-    $$$$$:   32-block  1
-       1*:   33:    EXPECT_TRUE(toroideMuerto(t3));
-        1:   33-block  0
-        1:   33-block  1
-        1:   33-block  2
-    %%%%%:   33-block  3
-    %%%%%:   33-block  4
-    %%%%%:   33-block  5
-    %%%%%:   33-block  6
-    %%%%%:   33-block  7
-        1:   33-block  8
-    $$$$$:   33-block  9
-    $$$$$:   33-block 10
-    $$$$$:   33-block 11
-    $$$$$:   33-block 12
-    $$$$$:   33-block 13
-    $$$$$:   33-block 14
-    $$$$$:   33-block 15
-    $$$$$:   33-block 16
-        1:   34:}
+        1:   32-block  1
+        1:   32-block  2
+    %%%%%:   32-block  3
+    %%%%%:   32-block  4
+    %%%%%:   32-block  5
+    %%%%%:   32-block  6
+    %%%%%:   32-block  7
+        1:   32-block  8
+    $$$$$:   32-block  9
+    $$$$$:   32-block 10
+    $$$$$:   32-block 11
+    $$$$$:   32-block 12
+    $$$$$:   32-block 13
+    $$$$$:   32-block 14
+    $$$$$:   32-block 15
+    $$$$$:   32-block 16
+        1:   33:}
 ------------------
 _ZN32toroideMuertoTEST_torMuerto_TestC1Ev:
-        1:   31:TEST(toroideMuertoTEST, torMuerto){
-        1:   31-block  0
+        1:   30:TEST(toroideMuertoTEST, torMuerto){
+        1:   30-block  0
 ------------------

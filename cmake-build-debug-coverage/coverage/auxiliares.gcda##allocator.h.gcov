@@ -145,15 +145,15 @@
         -:  141:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  142:      // 3035. std::allocator's constructors should be constexpr
         -:  143:      _GLIBCXX20_CONSTEXPR
-    #####:  144:      allocator() _GLIBCXX_NOTHROW { }
+     5401:  144:      allocator() _GLIBCXX_NOTHROW { }
 ------------------
 _ZNSaISt6vectorIbSaIbEEEC1Ev:
-    #####:  144:      allocator() _GLIBCXX_NOTHROW { }
-    %%%%%:  144-block  0
+      964:  144:      allocator() _GLIBCXX_NOTHROW { }
+      964:  144-block  0
 ------------------
 _ZNSaIbEC1Ev:
-    #####:  144:      allocator() _GLIBCXX_NOTHROW { }
-    %%%%%:  144-block  0
+     4437:  144:      allocator() _GLIBCXX_NOTHROW { }
+     4437:  144-block  0
 ------------------
         -:  145:
         -:  146:      _GLIBCXX20_CONSTEXPR

@@ -239,8 +239,8 @@
         -:  235:  template<typename _Iter>
         -:  236:    inline _GLIBCXX_CONSTEXPR
         -:  237:    typename iterator_traits<_Iter>::iterator_category
-      77*:  238:    __iterator_category(const _Iter&)
-      77*:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+      78*:  238:    __iterator_category(const _Iter&)
+      78*:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
 ------------------
 _ZSt19__iterator_categoryIPN7testing8internal13edit_distance8EditTypeEENSt15iterator_traitsIT_E17iterator_categoryERKS6_:
     #####:  238:    __iterator_category(const _Iter&)
@@ -258,9 +258,9 @@ _ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_:
     %%%%%:  239-block  0
 ------------------
 _ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestCaseESt6vectorIS4_SaIS4_EEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_:
-       77:  238:    __iterator_category(const _Iter&)
-       77:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
-       77:  239-block  0
+       78:  238:    __iterator_category(const _Iter&)
+       78:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+       78:  239-block  0
 ------------------
 _ZSt19__iterator_categoryIPKPKcENSt15iterator_traitsIT_E17iterator_categoryERKS5_:
     #####:  238:    __iterator_category(const _Iter&)

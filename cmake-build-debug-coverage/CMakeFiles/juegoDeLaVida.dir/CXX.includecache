@@ -284,12 +284,6 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/auxiliares.cpp
-definiciones.h
-/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/definiciones.h
-auxiliares.h
-/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/auxiliares.h
-
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/auxiliares.h
 definiciones.h
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/definiciones.h
@@ -309,16 +303,12 @@ ejercicios.h
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/ejercicios.h
 auxiliares.h
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/auxiliares.h
+iostream
+/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/iostream
 
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/ejercicios.h
 definiciones.h
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/definiciones.h
-
-/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/main.cpp
-iostream
--
-gtest/gtest.h
-/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/gtest/gtest.h
 
 /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/tests/EJ01_toroideValidoTEST.cpp
 ../ejercicios.h

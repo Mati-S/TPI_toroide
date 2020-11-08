@@ -666,13 +666,13 @@ _ZNSt12_Vector_baseISt4pairIiiESaIS1_EE17_M_create_storageEm:
         -:  519:       *
         -:  520:       *  This constructor fills the %vector with @a __n copies of @a __value.
         -:  521:       */
-    #####:  522:      vector(size_type __n, const value_type& __value,
+      123:  522:      vector(size_type __n, const value_type& __value,
       123:  523:	     const allocator_type& __a = allocator_type())
-    #####:  524:      : _Base(_S_check_init_len(__n, __a), __a)
-    %%%%%:  524-block  0
+      123:  524:      : _Base(_S_check_init_len(__n, __a), __a)
+      123:  524-block  0
     $$$$$:  524-block  1
-    #####:  525:      { _M_fill_initialize(__n, __value); }
-    %%%%%:  525-block  0
+      123:  525:      { _M_fill_initialize(__n, __value); }
+      123:  525-block  0
         -:  526:#else
         -:  527:      /**
         -:  528:       *  @brief  Creates a %vector with copies of an exemplar element.
@@ -1813,13 +1813,13 @@ _ZNKSt6vectorIS_IbSaIbEESaIS1_EE4sizeEv:
         -: 1590:      // Called by the first initialize_dispatch above and by the
         -: 1591:      // vector(n,value,a) constructor.
         -: 1592:      void
-    #####: 1593:      _M_fill_initialize(size_type __n, const value_type& __value)
+      123: 1593:      _M_fill_initialize(size_type __n, const value_type& __value)
         -: 1594:      {
-    #####: 1595:	this->_M_impl._M_finish =
-    #####: 1596:	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
-    #####: 1597:					_M_get_Tp_allocator());
-    %%%%%: 1597-block  0
-    #####: 1598:      }
+      123: 1595:	this->_M_impl._M_finish =
+      123: 1596:	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
+      123: 1597:					_M_get_Tp_allocator());
+      123: 1597-block  0
+      123: 1598:      }
         -: 1599:
         -: 1600:#if __cplusplus >= 201103L
         -: 1601:      // Called by the vector(n) constructor.
@@ -1988,15 +1988,15 @@ _ZNKSt6vectorIS_IbSaIbEESaIS1_EE4sizeEv:
         -: 1764:
         -: 1765:      // Called by constructors to check initial size.
         -: 1766:      static size_type
-    #####: 1767:      _S_check_init_len(size_type __n, const allocator_type& __a)
+      964: 1767:      _S_check_init_len(size_type __n, const allocator_type& __a)
         -: 1768:      {
-    #####: 1769:	if (__n > _S_max_size(_Tp_alloc_type(__a)))
-    %%%%%: 1769-block  0
+      964: 1769:	if (__n > _S_max_size(_Tp_alloc_type(__a)))
+      964: 1769-block  0
     #####: 1770:	  __throw_length_error(
     %%%%%: 1770-block  0
         -: 1771:	      __N("cannot create std::vector larger than max_size()"));
-    #####: 1772:	return __n;
-    %%%%%: 1772-block  0
+      964: 1772:	return __n;
+      964: 1772-block  0
         -: 1773:      }
         -: 1774:
         -: 1775:      static size_type

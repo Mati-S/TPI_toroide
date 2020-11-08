@@ -327,9 +327,9 @@ _ZNK9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEE8max_sizeEv:
         -:  145:#if __cplusplus >= 201103L
         -:  146:      template<typename _Up, typename... _Args>
         -:  147:	void
-      23*:  148:	construct(_Up* __p, _Args&&... __args)
+      17*:  148:	construct(_Up* __p, _Args&&... __args)
         -:  149:	noexcept(std::is_nothrow_constructible<_Up, _Args...>::value)
-      23*:  150:	{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      17*:  150:	{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
 ------------------
 _ZN9__gnu_cxx13new_allocatorISt6vectorIS1_IbSaIbEESaIS3_EEE9constructIS5_JS5_EEEvPT_DpOT0_:
     #####:  148:	construct(_Up* __p, _Args&&... __args)
@@ -338,11 +338,11 @@ _ZN9__gnu_cxx13new_allocatorISt6vectorIS1_IbSaIbEESaIS3_EEE9constructIS5_JS5_EEE
     %%%%%:  150-block  0
 ------------------
 _ZN9__gnu_cxx13new_allocatorISt6vectorIS1_IbSaIbEESaIS3_EEE9constructIS5_JRKS5_EEEvPT_DpOT0_:
-       23:  148:	construct(_Up* __p, _Args&&... __args)
+       17:  148:	construct(_Up* __p, _Args&&... __args)
         -:  149:	noexcept(std::is_nothrow_constructible<_Up, _Args...>::value)
-       23:  150:	{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
-       23:  150-block  0
-       23:  150-block  1
+       17:  150:	{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+       17:  150-block  0
+       17:  150-block  1
     $$$$$:  150-block  2
 ------------------
         -:  151:

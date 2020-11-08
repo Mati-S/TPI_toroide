@@ -239,8 +239,8 @@
         -:  235:  template<typename _Iter>
         -:  236:    inline _GLIBCXX_CONSTEXPR
         -:  237:    typename iterator_traits<_Iter>::iterator_category
-     5582:  238:    __iterator_category(const _Iter&)
-     5582:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+     5183:  238:    __iterator_category(const _Iter&)
+     5183:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
 ------------------
 _ZSt19__iterator_categoryIPKSt6vectorIS0_IbSaIbEESaIS2_EEENSt15iterator_traitsIT_E17iterator_categoryERKS8_:
        28:  238:    __iterator_category(const _Iter&)
@@ -248,14 +248,14 @@ _ZSt19__iterator_categoryIPKSt6vectorIS0_IbSaIbEESaIS2_EEENSt15iterator_traitsIT
        28:  239-block  0
 ------------------
 _ZSt19__iterator_categoryIPKSt6vectorIbSaIbEEENSt15iterator_traitsIT_E17iterator_categoryERKS6_:
-      896:  238:    __iterator_category(const _Iter&)
-      896:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
-      896:  239-block  0
+      841:  238:    __iterator_category(const _Iter&)
+      841:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+      841:  239-block  0
 ------------------
 _ZSt19__iterator_categoryIPKbENSt15iterator_traitsIT_E17iterator_categoryERKS3_:
-     4658:  238:    __iterator_category(const _Iter&)
-     4658:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
-     4658:  239-block  0
+     4314:  238:    __iterator_category(const _Iter&)
+     4314:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+     4314:  239-block  0
 ------------------
         -:  240:
         -:  241:  //@}

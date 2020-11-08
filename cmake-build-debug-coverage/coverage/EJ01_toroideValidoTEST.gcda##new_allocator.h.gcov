@@ -99,10 +99,10 @@ _ZN9__gnu_cxx13new_allocatorIcEC2Ev:
 ------------------
         -:   80:
         -:   81:      _GLIBCXX20_CONSTEXPR
-      70*:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+      68*:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorISt6vectorIS1_IbSaIbEESaIS3_EEEC2ERKS6_:
-       70:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+       68:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorISt6vectorIbSaIbEEEC2ERKS4_:
     #####:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }

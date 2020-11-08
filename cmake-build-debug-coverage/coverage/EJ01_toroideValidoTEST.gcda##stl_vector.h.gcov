@@ -143,21 +143,21 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE17_Vector_impl_dataC2Ev:
         -:  128:      struct _Vector_impl
         -:  129:	: public _Tp_alloc_type, public _Vector_impl_data
         -:  130:      {
-       15:  131:	_Vector_impl() _GLIBCXX_NOEXCEPT_IF(
+    #####:  131:	_Vector_impl() _GLIBCXX_NOEXCEPT_IF(
         -:  132:	    is_nothrow_default_constructible<_Tp_alloc_type>::value)
-       15:  133:	: _Tp_alloc_type()
-       15:  133-block  0
-       15:  134:	{ }
+    #####:  133:	: _Tp_alloc_type()
+    %%%%%:  133-block  0
+    #####:  134:	{ }
         -:  135:
-      35*:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
-      35*:  137:	: _Tp_alloc_type(__a)
-      35*:  138:	{ }
+      34*:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+      34*:  137:	: _Tp_alloc_type(__a)
+      34*:  138:	{ }
 ------------------
 _ZNSt12_Vector_baseISt6vectorIS0_IbSaIbEESaIS2_EESaIS4_EE12_Vector_implC1ERKS5_:
-       35:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
-       35:  137:	: _Tp_alloc_type(__a)
-       35:  137-block  0
-       35:  138:	{ }
+       34:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+       34:  137:	: _Tp_alloc_type(__a)
+       34:  137-block  0
+       34:  138:	{ }
 ------------------
 _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE12_Vector_implC1ERKS3_:
     #####:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
@@ -326,8 +326,8 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE19_M_get_Tp_allocatorEv:
         -:  285:      { return allocator_type(_M_get_Tp_allocator()); }
         -:  286:
         -:  287:#if __cplusplus >= 201103L
-       15:  288:      _Vector_base() = default;
-       15:  288-block  0
+    #####:  288:      _Vector_base() = default;
+    %%%%%:  288-block  0
         -:  289:#else
         -:  290:      _Vector_base() { }
         -:  291:#endif
@@ -602,8 +602,8 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE13_M_deallocateEPS2_m:
         -:  484:       *  @brief  Creates a %vector with no elements.
         -:  485:       */
         -:  486:#if __cplusplus >= 201103L
-       15:  487:      vector() = default;
-       15:  487-block  0
+    #####:  487:      vector() = default;
+    %%%%%:  487-block  0
         -:  488:#else
         -:  489:      vector() { }
         -:  490:#endif
@@ -747,16 +747,16 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE13_M_deallocateEPS2_m:
         -:  622:       *  This will call the element type's copy constructor N times
         -:  623:       *  (where N is @a __l.size()) and do no memory reallocation.
         -:  624:       */
-      924:  625:      vector(initializer_list<value_type> __l,
+      869:  625:      vector(initializer_list<value_type> __l,
         3:  626:	     const allocator_type& __a = allocator_type())
     $$$$$:  626-block  0
     $$$$$:  626-block  1
     $$$$$:  626-block  2
-      924:  627:      : _Base(__a)
+      869:  627:      : _Base(__a)
         -:  628:      {
-      924:  629:	_M_range_initialize(__l.begin(), __l.end(),
-      924:  630:			    random_access_iterator_tag());
-      924:  631:      }
+      869:  629:	_M_range_initialize(__l.begin(), __l.end(),
+      869:  630:			    random_access_iterator_tag());
+      869:  631:      }
 ------------------
 _ZNSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EEC1ESt16initializer_listIS3_ERKS4_:
        28:  625:      vector(initializer_list<value_type> __l,
@@ -772,17 +772,17 @@ _ZNSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EEC1ESt16initializer_listIS3_ERKS4_:
        28:  631-block  0
 ------------------
 _ZNSt6vectorIS_IbSaIbEESaIS1_EEC1ESt16initializer_listIS1_ERKS2_:
-      896:  625:      vector(initializer_list<value_type> __l,
+      841:  625:      vector(initializer_list<value_type> __l,
         -:  626:	     const allocator_type& __a = allocator_type())
-      896:  627:      : _Base(__a)
-      896:  627-block  0
+      841:  627:      : _Base(__a)
+      841:  627-block  0
     $$$$$:  627-block  1
         -:  628:      {
-      896:  629:	_M_range_initialize(__l.begin(), __l.end(),
-      896:  630:			    random_access_iterator_tag());
+      841:  629:	_M_range_initialize(__l.begin(), __l.end(),
+      841:  630:			    random_access_iterator_tag());
     $$$$$:  630-block  0
-      896:  631:      }
-      896:  631-block  0
+      841:  631:      }
+      841:  631-block  0
 ------------------
         -:  632:#endif
         -:  633:
@@ -1751,18 +1751,18 @@ _ZNSt6vectorIS_IbSaIbEESaIS1_EED1Ev:
         -: 1574:      // Called by the second initialize_dispatch above
         -: 1575:      template<typename _ForwardIterator>
         -: 1576:	void
-      924: 1577:	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
+      869: 1577:	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
         -: 1578:			    std::forward_iterator_tag)
         -: 1579:	{
-      924: 1580:	  const size_type __n = std::distance(__first, __last);
+      869: 1580:	  const size_type __n = std::distance(__first, __last);
         -: 1581:	  this->_M_impl._M_start
-      924: 1582:	    = this->_M_allocate(_S_check_init_len(__n, _M_get_Tp_allocator()));
-      924: 1583:	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
-      924: 1584:	  this->_M_impl._M_finish =
-      924: 1585:	    std::__uninitialized_copy_a(__first, __last,
+      869: 1582:	    = this->_M_allocate(_S_check_init_len(__n, _M_get_Tp_allocator()));
+      869: 1583:	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+      869: 1584:	  this->_M_impl._M_finish =
+      869: 1585:	    std::__uninitialized_copy_a(__first, __last,
         -: 1586:					this->_M_impl._M_start,
-      924: 1587:					_M_get_Tp_allocator());
-      924: 1588:	}
+      869: 1587:					_M_get_Tp_allocator());
+      869: 1588:	}
 ------------------
 _ZNSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EE19_M_range_initializeIPKS3_EEvT_S9_St20forward_iterator_tag:
        28: 1577:	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
@@ -1780,19 +1780,19 @@ _ZNSt6vectorIS_IS_IbSaIbEESaIS1_EESaIS3_EE19_M_range_initializeIPKS3_EEvT_S9_St2
        28: 1588:	}
 ------------------
 _ZNSt6vectorIS_IbSaIbEESaIS1_EE19_M_range_initializeIPKS1_EEvT_S7_St20forward_iterator_tag:
-      896: 1577:	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
+      841: 1577:	_M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,
         -: 1578:			    std::forward_iterator_tag)
         -: 1579:	{
-      896: 1580:	  const size_type __n = std::distance(__first, __last);
-      896: 1580-block  0
+      841: 1580:	  const size_type __n = std::distance(__first, __last);
+      841: 1580-block  0
         -: 1581:	  this->_M_impl._M_start
-      896: 1582:	    = this->_M_allocate(_S_check_init_len(__n, _M_get_Tp_allocator()));
-      896: 1583:	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
-      896: 1584:	  this->_M_impl._M_finish =
-      896: 1585:	    std::__uninitialized_copy_a(__first, __last,
+      841: 1582:	    = this->_M_allocate(_S_check_init_len(__n, _M_get_Tp_allocator()));
+      841: 1583:	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+      841: 1584:	  this->_M_impl._M_finish =
+      841: 1585:	    std::__uninitialized_copy_a(__first, __last,
         -: 1586:					this->_M_impl._M_start,
-      896: 1587:					_M_get_Tp_allocator());
-      896: 1588:	}
+      841: 1587:					_M_get_Tp_allocator());
+      841: 1588:	}
 ------------------
         -: 1589:
         -: 1590:      // Called by the first initialize_dispatch above and by the

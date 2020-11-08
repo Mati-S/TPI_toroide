@@ -278,18 +278,18 @@ _ZN36vistaTrasladadaTEST_noCoinciden_TestC1Ev:
 ------------------
         -:   55:
         2:   56:TEST(vistaTrasladadaTEST, transladarDos){
-        2:   57:    toroide t1 = tTransladarDos1;
-        2:   58:    toroide t2 = tTransladarDos2;
+        2:   57:    toroide t1 = tTransladarDos1; 
+        2:   58:    toroide t2 = tTransladarDos2; 
         1:   59:    bool res = vistaTrasladada(t1, t2);
        1*:   60:    EXPECT_TRUE(res);
         1:   61:}
 ------------------
 _ZN38vistaTrasladadaTEST_transladarDos_Test8TestBodyEv:
         1:   56:TEST(vistaTrasladadaTEST, transladarDos){
-        2:   57:    toroide t1 = tTransladarDos1;
+        2:   57:    toroide t1 = tTransladarDos1; 
         1:   57-block  0
     $$$$$:   57-block  1
-        2:   58:    toroide t2 = tTransladarDos2;
+        2:   58:    toroide t2 = tTransladarDos2; 
         1:   58-block  0
     $$$$$:   58-block  1
         1:   59:    bool res = vistaTrasladada(t1, t2);

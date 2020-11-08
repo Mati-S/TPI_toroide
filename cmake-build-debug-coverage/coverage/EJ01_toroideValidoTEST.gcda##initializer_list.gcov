@@ -72,53 +72,53 @@
         -:   68:
         -:   69:      // Number of elements.
         -:   70:      constexpr size_type
-     5582:   71:      size() const noexcept { return _M_len; }
+     5183:   71:      size() const noexcept { return _M_len; }
 ------------------
 _ZNKSt16initializer_listISt6vectorIS0_IbSaIbEESaIS2_EEE4sizeEv:
        28:   71:      size() const noexcept { return _M_len; }
        28:   71-block  0
 ------------------
 _ZNKSt16initializer_listISt6vectorIbSaIbEEE4sizeEv:
-      896:   71:      size() const noexcept { return _M_len; }
-      896:   71-block  0
+      841:   71:      size() const noexcept { return _M_len; }
+      841:   71-block  0
 ------------------
 _ZNKSt16initializer_listIbE4sizeEv:
-     4658:   71:      size() const noexcept { return _M_len; }
-     4658:   71-block  0
+     4314:   71:      size() const noexcept { return _M_len; }
+     4314:   71-block  0
 ------------------
         -:   72:
         -:   73:      // First element.
         -:   74:      constexpr const_iterator
-    11164:   75:      begin() const noexcept { return _M_array; }
+    10366:   75:      begin() const noexcept { return _M_array; }
 ------------------
 _ZNKSt16initializer_listISt6vectorIS0_IbSaIbEESaIS2_EEE5beginEv:
        56:   75:      begin() const noexcept { return _M_array; }
        56:   75-block  0
 ------------------
 _ZNKSt16initializer_listISt6vectorIbSaIbEEE5beginEv:
-     1792:   75:      begin() const noexcept { return _M_array; }
-     1792:   75-block  0
+     1682:   75:      begin() const noexcept { return _M_array; }
+     1682:   75-block  0
 ------------------
 _ZNKSt16initializer_listIbE5beginEv:
-     9316:   75:      begin() const noexcept { return _M_array; }
-     9316:   75-block  0
+     8628:   75:      begin() const noexcept { return _M_array; }
+     8628:   75-block  0
 ------------------
         -:   76:
         -:   77:      // One past the last element.
         -:   78:      constexpr const_iterator
-     5582:   79:      end() const noexcept { return begin() + size(); }
+     5183:   79:      end() const noexcept { return begin() + size(); }
 ------------------
 _ZNKSt16initializer_listISt6vectorIS0_IbSaIbEESaIS2_EEE3endEv:
        28:   79:      end() const noexcept { return begin() + size(); }
        28:   79-block  0
 ------------------
 _ZNKSt16initializer_listISt6vectorIbSaIbEEE3endEv:
-      896:   79:      end() const noexcept { return begin() + size(); }
-      896:   79-block  0
+      841:   79:      end() const noexcept { return begin() + size(); }
+      841:   79-block  0
 ------------------
 _ZNKSt16initializer_listIbE3endEv:
-     4658:   79:      end() const noexcept { return begin() + size(); }
-     4658:   79-block  0
+     4314:   79:      end() const noexcept { return begin() + size(); }
+     4314:   79-block  0
 ------------------
         -:   80:    };
         -:   81:

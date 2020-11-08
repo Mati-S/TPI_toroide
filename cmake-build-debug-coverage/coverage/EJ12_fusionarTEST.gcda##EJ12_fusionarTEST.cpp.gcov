@@ -152,7 +152,7 @@ _ZN32fusionarTEST_todosCoinciden_TestC1Ev:
 ------------------
         -:   36:
         2:   37:TEST(fusionarTEST, ningunoCoincide){
-        2:   38:    toroide t1 = tNoCoinciden1;
+        2:   38:    toroide t1 = tNoCoinciden1; 
         2:   39:    toroide t2 = tNoCoinciden2;
         -:   40:
         2:   41:    toroide tout = tMuerto;
@@ -163,7 +163,7 @@ _ZN32fusionarTEST_todosCoinciden_TestC1Ev:
 ------------------
 _ZN33fusionarTEST_ningunoCoincide_Test8TestBodyEv:
         1:   37:TEST(fusionarTEST, ningunoCoincide){
-        2:   38:    toroide t1 = tNoCoinciden1;
+        2:   38:    toroide t1 = tNoCoinciden1; 
         1:   38-block  0
     $$$$$:   38-block  1
         2:   39:    toroide t2 = tNoCoinciden2;
@@ -199,7 +199,7 @@ _ZN33fusionarTEST_ningunoCoincide_TestC1Ev:
 ------------------
         -:   46:
         2:   47:TEST(fusionarTEST, todosVivos){
-        2:   48:    toroide t1 = tVivo;
+        2:   48:    toroide t1 = tVivo; 
         2:   49:    toroide t2 = tVivo;
         -:   50:
         2:   51:    toroide tout = tVivo;
@@ -210,7 +210,7 @@ _ZN33fusionarTEST_ningunoCoincide_TestC1Ev:
 ------------------
 _ZN28fusionarTEST_todosVivos_Test8TestBodyEv:
         1:   47:TEST(fusionarTEST, todosVivos){
-        2:   48:    toroide t1 = tVivo;
+        2:   48:    toroide t1 = tVivo; 
         1:   48-block  0
     $$$$$:   48-block  1
         2:   49:    toroide t2 = tVivo;

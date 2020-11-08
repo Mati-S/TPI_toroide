@@ -522,11 +522,11 @@
         -:  496:	: public _Bit_alloc_type, public _Bvector_impl_data
         -:  497:	{
         -:  498:	public:
-        2:  499:	  _Bvector_impl() _GLIBCXX_NOEXCEPT_IF(
+    #####:  499:	  _Bvector_impl() _GLIBCXX_NOEXCEPT_IF(
         -:  500:		is_nothrow_default_constructible<_Bit_alloc_type>::value)
-        2:  501:	  : _Bit_alloc_type()
-        2:  501-block  0
-        2:  502:	  { }
+    #####:  501:	  : _Bit_alloc_type()
+    %%%%%:  501-block  0
+    #####:  502:	  { }
         -:  503:
     #####:  504:	  _Bvector_impl(const _Bit_alloc_type& __a) _GLIBCXX_NOEXCEPT
     #####:  505:	  : _Bit_alloc_type(__a)
@@ -566,8 +566,8 @@
         -:  534:      { return allocator_type(_M_get_Bit_allocator()); }
         -:  535:
         -:  536:#if __cplusplus >= 201103L
-        2:  537:      _Bvector_base() = default;
-        2:  537-block  0
+    #####:  537:      _Bvector_base() = default;
+    %%%%%:  537-block  0
         -:  538:#else
         -:  539:      _Bvector_base() { }
         -:  540:#endif
@@ -687,8 +687,8 @@
         -:  648:
         -:  649:    public:
         -:  650:#if __cplusplus >= 201103L
-        2:  651:      vector() = default;
-        2:  651-block  0
+    #####:  651:      vector() = default;
+    %%%%%:  651-block  0
         -:  652:#else
         -:  653:      vector() { }
         -:  654:#endif
@@ -751,20 +751,20 @@
         -:  707:	_M_copy_aligned(__x.begin(), __x.end(), this->_M_impl._M_start);
         -:  708:      }
         -:  709:
-     4658:  710:      vector(initializer_list<bool> __l,
+     4314:  710:      vector(initializer_list<bool> __l,
         1:  711:	     const allocator_type& __a = allocator_type())
     $$$$$:  711-block  0
     $$$$$:  711-block  1
     $$$$$:  711-block  2
-     4658:  712:      : _Base(__a)
-     4658:  712-block  0
+     4314:  712:      : _Base(__a)
+     4314:  712-block  0
     $$$$$:  712-block  1
         -:  713:      {
-     4658:  714:	_M_initialize_range(__l.begin(), __l.end(),
-     4658:  715:			    random_access_iterator_tag());
+     4314:  714:	_M_initialize_range(__l.begin(), __l.end(),
+     4314:  715:			    random_access_iterator_tag());
     $$$$$:  715-block  0
-     4658:  716:      }
-     4658:  716-block  0
+     4314:  716:      }
+     4314:  716-block  0
         -:  717:#endif
         -:  718:
         -:  719:#if __cplusplus >= 201103L
@@ -1268,14 +1268,14 @@
         -: 1204:
         -: 1205:      template<typename _ForwardIterator>
         -: 1206:	void
-     4658: 1207:	_M_initialize_range(_ForwardIterator __first, _ForwardIterator __last,
+     4314: 1207:	_M_initialize_range(_ForwardIterator __first, _ForwardIterator __last,
         -: 1208:			    std::forward_iterator_tag)
         -: 1209:	{
-     4658: 1210:	  const size_type __n = std::distance(__first, __last);
-     4658: 1210-block  0
-     4658: 1211:	  _M_initialize(__n);
-     4658: 1212:	  std::copy(__first, __last, this->_M_impl._M_start);
-     4658: 1213:	}
+     4314: 1210:	  const size_type __n = std::distance(__first, __last);
+     4314: 1210-block  0
+     4314: 1211:	  _M_initialize(__n);
+     4314: 1212:	  std::copy(__first, __last, this->_M_impl._M_start);
+     4314: 1213:	}
         -: 1214:
         -: 1215:#if __cplusplus < 201103L
         -: 1216:      // _GLIBCXX_RESOLVE_LIB_DEFECTS

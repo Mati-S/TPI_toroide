@@ -173,40 +173,39 @@ _ZN45menorSuperficieVivaTEST_toroidePeriodico_TestC1Ev:
         1:   31:TEST(menorSuperficieVivaTEST, toroidePeriodico){
         1:   31-block  0
 ------------------
-        -:   37:
-        2:   38:TEST(menorSuperficieVivaTEST, tetris){
-        2:   39:    toroide t = tetris;
-        -:   40:
-        1:   41:    int res = menorSuperficieViva(t);
-       1*:   42:    EXPECT_EQ(res, 12);
-        1:   43:}
+        2:   37:TEST(menorSuperficieVivaTEST, tetris){
+        2:   38:    toroide t = tetris;
+        -:   39:
+        1:   40:    int res = menorSuperficieViva(t);
+       1*:   41:    EXPECT_EQ(res, 12);
+        1:   42:}
 ------------------
 _ZN35menorSuperficieVivaTEST_tetris_Test8TestBodyEv:
-        1:   38:TEST(menorSuperficieVivaTEST, tetris){
-        2:   39:    toroide t = tetris;
-        1:   39-block  0
-    $$$$$:   39-block  1
-        -:   40:
-        1:   41:    int res = menorSuperficieViva(t);
+        1:   37:TEST(menorSuperficieVivaTEST, tetris){
+        2:   38:    toroide t = tetris;
+        1:   38-block  0
+    $$$$$:   38-block  1
+        -:   39:
+        1:   40:    int res = menorSuperficieViva(t);
+        1:   40-block  0
+       1*:   41:    EXPECT_EQ(res, 12);
         1:   41-block  0
-       1*:   42:    EXPECT_EQ(res, 12);
-        1:   42-block  0
-        1:   42-block  1
-    %%%%%:   42-block  2
-    %%%%%:   42-block  3
-    %%%%%:   42-block  4
-    %%%%%:   42-block  5
-    %%%%%:   42-block  6
-        1:   42-block  7
-    $$$$$:   42-block  8
-    $$$$$:   42-block  9
-    $$$$$:   42-block 10
-    $$$$$:   42-block 11
-    $$$$$:   42-block 12
-    $$$$$:   42-block 13
-        1:   43:}
+        1:   41-block  1
+    %%%%%:   41-block  2
+    %%%%%:   41-block  3
+    %%%%%:   41-block  4
+    %%%%%:   41-block  5
+    %%%%%:   41-block  6
+        1:   41-block  7
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+    $$$$$:   41-block 11
+    $$$$$:   41-block 12
+    $$$$$:   41-block 13
+        1:   42:}
 ------------------
 _ZN35menorSuperficieVivaTEST_tetris_TestC1Ev:
-        1:   38:TEST(menorSuperficieVivaTEST, tetris){
-        1:   38-block  0
+        1:   37:TEST(menorSuperficieVivaTEST, tetris){
+        1:   37-block  0
 ------------------

@@ -748,8 +748,9 @@ _ZNSt12_Vector_baseISt6vectorIbSaIbEESaIS2_EE13_M_deallocateEPS2_m:
         -:  623:       *  (where N is @a __l.size()) and do no memory reallocation.
         -:  624:       */
     #####:  625:      vector(initializer_list<value_type> __l,
-        1:  626:	     const allocator_type& __a = allocator_type())
+        2:  626:	     const allocator_type& __a = allocator_type())
     $$$$$:  626-block  0
+    $$$$$:  626-block  1
     #####:  627:      : _Base(__a)
         -:  628:      {
     #####:  629:	_M_range_initialize(__l.begin(), __l.end(),

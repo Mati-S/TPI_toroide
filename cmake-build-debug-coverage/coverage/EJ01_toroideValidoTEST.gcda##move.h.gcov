@@ -93,13 +93,13 @@ _ZSt11__addressofImEPT_RS0_:
         -:   73:   */
         -:   74:  template<typename _Tp>
         -:   75:    constexpr _Tp&&
-     387*:   76:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-     387*:   77:    { return static_cast<_Tp&&>(__t); }
+     301*:   76:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+     301*:   77:    { return static_cast<_Tp&&>(__t); }
 ------------------
 _ZSt7forwardIRKSt6vectorIS0_IbSaIbEESaIS2_EEEOT_RNSt16remove_referenceIS7_E4typeE:
-      387:   76:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-      387:   77:    { return static_cast<_Tp&&>(__t); }
-      387:   77-block  0
+      301:   76:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+      301:   77:    { return static_cast<_Tp&&>(__t); }
+      301:   77-block  0
 ------------------
 _ZSt7forwardIRKSt6vectorIbSaIbEEEOT_RNSt16remove_referenceIS5_E4typeE:
     #####:   76:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept

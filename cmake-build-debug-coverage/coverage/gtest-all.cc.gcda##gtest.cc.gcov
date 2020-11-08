@@ -605,14 +605,14 @@
         -:  475://
         -:  476:// This recursive algorithm isn't very efficient, but is clear and
         -:  477:// works well enough for matching test names, which are short.
-     9821:  478:bool UnitTestOptions::PatternMatchesString(const char *pattern,
+     9914:  478:bool UnitTestOptions::PatternMatchesString(const char *pattern,
         -:  479:                                           const char *str) {
-     9821:  480:  switch (*pattern) {
-     9821:  480-block  0
-      154:  481:    case '\0':
+     9914:  480:  switch (*pattern) {
+     9914:  480-block  0
+      156:  481:    case '\0':
         -:  482:    case ':':  // Either ':' or '\0' marks the end of the pattern.
-      154:  483:      return *str == '\0';
-      154:  483-block  0
+      156:  483:      return *str == '\0';
+      156:  483-block  0
     #####:  484:    case '?':  // Matches any single character.
     #####:  485:      return *str != '\0' && PatternMatchesString(pattern + 1, str + 1);
     %%%%%:  485-block  0
@@ -620,78 +620,78 @@
     %%%%%:  485-block  2
     %%%%%:  485-block  3
     %%%%%:  485-block  4
-     6150:  486:    case '*':  // Matches any string (possibly empty) of characters.
-     9584:  487:      return (*str != '\0' && PatternMatchesString(pattern, str + 1)) ||
-     6150:  487-block  0
-     5891:  487-block  1
-     2793:  487-block  2
-     3357:  487-block  3
-     9584:  488:          PatternMatchesString(pattern + 1, str);
-     3434:  488-block  0
-     6150:  488-block  1
-     3517:  489:    default:  // Non-special character.  Matches itself.
-    3523*:  490:      return *pattern == *str &&
-     3517:  490-block  0
+     6210:  486:    case '*':  // Matches any string (possibly empty) of characters.
+     9675:  487:      return (*str != '\0' && PatternMatchesString(pattern, str + 1)) ||
+     6210:  487-block  0
+     5948:  487-block  1
+     2823:  487-block  2
+     3387:  487-block  3
+     9675:  488:          PatternMatchesString(pattern + 1, str);
+     3465:  488-block  0
+     6210:  488-block  1
+     3548:  489:    default:  // Non-special character.  Matches itself.
+    3553*:  490:      return *pattern == *str &&
+     3548:  490-block  0
     %%%%%:  490-block  1
-     3517:  490-block  2
-     3523:  491:          PatternMatchesString(pattern + 1, str + 1);
-        6:  491-block  0
-     3517:  491-block  1
+     3548:  490-block  2
+     3553:  491:          PatternMatchesString(pattern + 1, str + 1);
+        5:  491-block  0
+     3548:  491-block  1
         -:  492:  }
         -:  493:}
         -:  494:
-      322:  495:bool UnitTestOptions::MatchesFilter(
+      326:  495:bool UnitTestOptions::MatchesFilter(
         -:  496:    const std::string& name, const char* filter) {
-      322:  497:  const char *cur_pattern = filter;
-      322:  497-block  0
+      326:  497:  const char *cur_pattern = filter;
+      326:  497-block  0
         -:  498:  for (;;) {
-      490:  499:    if (PatternMatchesString(cur_pattern, name.c_str())) {
-      490:  499-block  0
-       77:  500:      return true;
-       77:  500-block  0
+      496:  499:    if (PatternMatchesString(cur_pattern, name.c_str())) {
+      496:  499-block  0
+       78:  500:      return true;
+       78:  500-block  0
         -:  501:    }
         -:  502:
         -:  503:    // Finds the next pattern in the filter.
-      413:  504:    cur_pattern = strchr(cur_pattern, ':');
+      418:  504:    cur_pattern = strchr(cur_pattern, ':');
         -:  505:
         -:  506:    // Returns if no more pattern can be found.
-      413:  507:    if (cur_pattern == NULL) {
-      413:  507-block  0
-      245:  508:      return false;
-      245:  508-block  0
+      418:  507:    if (cur_pattern == NULL) {
+      418:  507-block  0
+      248:  508:      return false;
+      248:  508-block  0
         -:  509:    }
         -:  510:
         -:  511:    // Skips the pattern separater (the ':' character).
-      168:  512:    cur_pattern++;
-      168:  512-block  0
+      170:  512:    cur_pattern++;
+      170:  512-block  0
         -:  513:  }
         -:  514:}
         -:  515:
         -:  516:// Returns true iff the user-specified filter matches the test case
         -:  517:// name and the test name.
-       77:  518:bool UnitTestOptions::FilterMatchesTest(const std::string &test_case_name,
+       78:  518:bool UnitTestOptions::FilterMatchesTest(const std::string &test_case_name,
         -:  519:                                        const std::string &test_name) {
-      154:  520:  const std::string& full_name = test_case_name + "." + test_name.c_str();
-       77:  520-block  0
-       77:  520-block  1
-       77:  520-block  2
+      156:  520:  const std::string& full_name = test_case_name + "." + test_name.c_str();
+       78:  520-block  0
+       78:  520-block  1
+       78:  520-block  2
     $$$$$:  520-block  3
     $$$$$:  520-block  4
     $$$$$:  520-block  5
         -:  521:
         -:  522:  // Split --gtest_filter at '-', if there is one, to separate into
         -:  523:  // positive filter and negative filter portions
-       77:  524:  const char* const p = GTEST_FLAG(filter).c_str();
-       77:  525:  const char* const dash = strchr(p, '-');
-      154:  526:  std::string positive;
+       78:  524:  const char* const p = GTEST_FLAG(filter).c_str();
+       78:  525:  const char* const dash = strchr(p, '-');
+      156:  526:  std::string positive;
     $$$$$:  526-block  0
-       77:  527:  std::string negative;
+       78:  527:  std::string negative;
     $$$$$:  527-block  0
-       77:  528:  if (dash == NULL) {
-       77:  529:    positive = GTEST_FLAG(filter).c_str();  // Whole string is a positive filter
-       77:  529-block  0
-       77:  530:    negative = "";
-       77:  530-block  0
+       78:  528:  if (dash == NULL) {
+       78:  529:    positive = GTEST_FLAG(filter).c_str();  // Whole string is a positive filter
+       78:  529-block  0
+       78:  530:    negative = "";
+       78:  530-block  0
         -:  531:  } else {
     #####:  532:    positive = std::string(p, dash);   // Everything up to the dash
     %%%%%:  532-block  0
@@ -707,16 +707,16 @@
         -:  539:
         -:  540:  // A filter is a colon-separated list of patterns.  It matches a
         -:  541:  // test if any pattern in it matches the test.
-     154*:  542:  return (MatchesFilter(full_name, positive.c_str()) &&
-       77:  542-block  0
-       77:  542-block  1
-       77:  542-block  2
+     156*:  542:  return (MatchesFilter(full_name, positive.c_str()) &&
+       78:  542-block  0
+       78:  542-block  1
+       78:  542-block  2
     %%%%%:  542-block  3
-      231:  543:          !MatchesFilter(full_name, negative.c_str()));
-       77:  543-block  0
-       77:  543-block  1
-       77:  543-block  2
-       77:  543-block  3
+      234:  543:          !MatchesFilter(full_name, negative.c_str()));
+       78:  543-block  0
+       78:  543-block  1
+       78:  543-block  2
+       78:  543-block  3
         -:  544:}
         -:  545:
         -:  546:#if GTEST_HAS_SEH
@@ -845,9 +845,9 @@ _ZN7testing32ScopedFakeTestPartResultReporterD2Ev:
         -:  633:// from user test code.  GetTestTypeId() is guaranteed to always
         -:  634:// return the same value, as it always calls GetTypeId<>() from the
         -:  635:// gtest.cc, which is within the Google Test framework.
-       78:  636:TypeId GetTestTypeId() {
-       78:  637:  return GetTypeId<Test>();
-       78:  637-block  0
+       79:  636:TypeId GetTestTypeId() {
+       79:  637:  return GetTypeId<Test>();
+       79:  637-block  0
         -:  638:}
         -:  639:
         -:  640:// The value of GetTestTypeId() as seen from within the Google Test
@@ -1109,7 +1109,7 @@ _ZN7testing32ScopedFakeTestPartResultReporterD2Ev:
         -:  816:}
         -:  817:
         -:  818:// Returns the current time in milliseconds.
-      185:  819:TimeInMillis GetTimeInMillis() {
+      187:  819:TimeInMillis GetTimeInMillis() {
         -:  820:#if GTEST_OS_WINDOWS_MOBILE || defined(__BORLANDC__)
         -:  821:  // Difference between 1970-01-01 and 1601-01-01 in milliseconds.
         -:  822:  // http://analogous.blogspot.com/2005/04/epoch.html
@@ -1145,11 +1145,11 @@ _ZN7testing32ScopedFakeTestPartResultReporterD2Ev:
         -:  852:  return static_cast<TimeInMillis>(now.time) * 1000 + now.millitm;
         -:  853:#elif GTEST_HAS_GETTIMEOFDAY_
         -:  854:  struct timeval now;
-      185:  855:  gettimeofday(&now, NULL);
-      185:  855-block  0
-      185:  856:  return static_cast<TimeInMillis>(now.tv_sec) * 1000 + now.tv_usec / 1000;
-      185:  856-block  0
-      185:  856-block  1
+      187:  855:  gettimeofday(&now, NULL);
+      187:  855-block  0
+      187:  856:  return static_cast<TimeInMillis>(now.tv_sec) * 1000 + now.tv_usec / 1000;
+      187:  856-block  0
+      187:  856-block  1
         -:  857:#else
         -:  858:# error "Don't know how to get the current time on your system."
         -:  859:#endif
@@ -1273,16 +1273,16 @@ _ZN7testing32ScopedFakeTestPartResultReporterD2Ev:
         -:  956:// ASSERT/EXPECT in a procedure adds over 200 bytes to the procedure's
         -:  957:// stack frame leading to huge stack frames in some cases; gcc does not reuse
         -:  958:// the stack space.
-      162:  959:Message::Message() : ss_(new ::std::stringstream) {
-      162:  959-block  0
-      162:  959-block  1
+      163:  959:Message::Message() : ss_(new ::std::stringstream) {
+      163:  959-block  0
+      163:  959-block  1
     $$$$$:  959-block  2
     $$$$$:  959-block  3
         -:  960:  // By default, we want there to be enough precision when printing
         -:  961:  // a double to a Message.
-      162:  962:  *ss_ << std::setprecision(std::numeric_limits<double>::digits10 + 2);
-      162:  963:}
-      162:  963-block  0
+      163:  962:  *ss_ << std::setprecision(std::numeric_limits<double>::digits10 + 2);
+      163:  963:}
+      163:  963-block  0
         -:  964:
         -:  965:// These two overloads allow streaming a wide C string to a Message
         -:  966:// using the UTF-8 encoding.
@@ -1321,9 +1321,9 @@ _ZN7testing32ScopedFakeTestPartResultReporterD2Ev:
         -:  991:
         -:  992:// Gets the text streamed to this object so far as an std::string.
         -:  993:// Each '\0' character in the buffer is replaced with "\\0".
-      162:  994:std::string Message::GetString() const {
-      162:  995:  return internal::StringStreamToString(ss_.get());
-      162:  995-block  0
+      163:  994:std::string Message::GetString() const {
+      163:  995:  return internal::StringStreamToString(ss_.get());
+      163:  995-block  0
         -:  996:}
         -:  997:
         -:  998:// AssertionResult constructors.
@@ -1362,9 +1362,9 @@ _ZN7testing32ScopedFakeTestPartResultReporterD2Ev:
         -: 1020:}
         -: 1021:
         -: 1022:// Makes a successful assertion result.
-       43: 1023:AssertionResult AssertionSuccess() {
-       43: 1024:  return AssertionResult(true);
-       43: 1024-block  0
+       44: 1023:AssertionResult AssertionSuccess() {
+       44: 1024:  return AssertionResult(true);
+       44: 1024-block  0
         -: 1025:}
         -: 1026:
         -: 1027:// Makes a failed assertion result.
@@ -3166,34 +3166,34 @@ _ZN7testing12_GLOBAL__N_115IsSubstringImplIPKcEENS_15AssertionResultEbS3_S3_RKT_
         -: 1993:
         -: 1994:// Converts the buffer in a stringstream to an std::string, converting NUL
         -: 1995:// bytes to "\\0" along the way.
-      162: 1996:std::string StringStreamToString(::std::stringstream* ss) {
-      324: 1997:  const ::std::string& str = ss->str();
-      162: 1997-block  0
-      162: 1997-block  1
+      163: 1996:std::string StringStreamToString(::std::stringstream* ss) {
+      326: 1997:  const ::std::string& str = ss->str();
+      163: 1997-block  0
+      163: 1997-block  1
     $$$$$: 1997-block  2
-      162: 1998:  const char* const start = str.c_str();
-      162: 1998-block  0
-      162: 1999:  const char* const end = start + str.length();
+      163: 1998:  const char* const start = str.c_str();
+      163: 1998-block  0
+      163: 1999:  const char* const end = start + str.length();
         -: 2000:
-      162: 2001:  std::string result;
-      162: 2002:  result.reserve(2 * (end - start));
-     1047: 2003:  for (const char* ch = start; ch != end; ++ch) {
-      162: 2003-block  0
-     1047: 2003-block  1
-      885: 2003-block  2
-      885: 2004:    if (*ch == '\0') {
-      885: 2004-block  0
+      163: 2001:  std::string result;
+      163: 2002:  result.reserve(2 * (end - start));
+     1050: 2003:  for (const char* ch = start; ch != end; ++ch) {
+      163: 2003-block  0
+     1050: 2003-block  1
+      887: 2003-block  2
+      887: 2004:    if (*ch == '\0') {
+      887: 2004-block  0
     #####: 2005:      result += "\\0";  // Replaces NUL with "\\0";
     %%%%%: 2005-block  0
         -: 2006:    } else {
-      885: 2007:      result += *ch;
-      885: 2007-block  0
+      887: 2007:      result += *ch;
+      887: 2007-block  0
         -: 2008:    }
         -: 2009:  }
         -: 2010:
-      324: 2011:  return result;
-      162: 2011-block  0
-      162: 2011-block  1
+      326: 2011:  return result;
+      163: 2011-block  0
+      163: 2011-block  1
         -: 2012:}
         -: 2013:
         -: 2014:// Appends the user-supplied message to the Google-Test-generated message.
@@ -3223,11 +3223,11 @@ _ZN7testing12_GLOBAL__N_115IsSubstringImplIPKcEENS_15AssertionResultEbS3_S3_RKT_
         -: 2028:// class TestResult
         -: 2029:
         -: 2030:// Creates an empty TestResult.
-       92: 2031:TestResult::TestResult()
+       93: 2031:TestResult::TestResult()
         -: 2032:    : death_test_count_(0),
-       92: 2033:      elapsed_time_(0) {
-       92: 2033-block  0
-       92: 2034:}
+       93: 2033:      elapsed_time_(0) {
+       93: 2033-block  0
+       93: 2034:}
         -: 2035:
         -: 2036:// D'tor.
     #####: 2037:TestResult::~TestResult() {
@@ -3482,27 +3482,27 @@ _ZN7testing13ArrayAsVectorILi8EEESt6vectorISsSaISsEERAT__KPKc:
         -: 2174:}
         -: 2175:
         -: 2176:// Clears the object.
-       91: 2177:void TestResult::Clear() {
-       91: 2178:  test_part_results_.clear();
-       91: 2178-block  0
-       91: 2179:  test_properties_.clear();
-       91: 2180:  death_test_count_ = 0;
-       91: 2181:  elapsed_time_ = 0;
-       91: 2182:}
+       92: 2177:void TestResult::Clear() {
+       92: 2178:  test_part_results_.clear();
+       92: 2178-block  0
+       92: 2179:  test_properties_.clear();
+       92: 2180:  death_test_count_ = 0;
+       92: 2181:  elapsed_time_ = 0;
+       92: 2182:}
         -: 2183:
         -: 2184:// Returns true iff the test failed.
-      464: 2185:bool TestResult::Failed() const {
-     464*: 2186:  for (int i = 0; i < total_part_count(); ++i) {
-      464: 2186-block  0
-      464: 2186-block  1
+      470: 2185:bool TestResult::Failed() const {
+     470*: 2186:  for (int i = 0; i < total_part_count(); ++i) {
+      470: 2186-block  0
+      470: 2186-block  1
     %%%%%: 2186-block  2
     #####: 2187:    if (GetTestPartResult(i).failed())
     %%%%%: 2187-block  0
     #####: 2188:      return true;
     %%%%%: 2188-block  0
         -: 2189:  }
-      464: 2190:  return false;
-      464: 2190-block  0
+      470: 2190:  return false;
+      470: 2190-block  0
         -: 2191:}
         -: 2192:
         -: 2193:// Returns true iff the test part fatally failed.
@@ -3512,9 +3512,9 @@ _ZN7testing13ArrayAsVectorILi8EEESt6vectorISsSaISsEERAT__KPKc:
         -: 2196:}
         -: 2197:
         -: 2198:// Returns true iff the test fatally failed.
-      155: 2199:bool TestResult::HasFatalFailure() const {
-      155: 2200:  return CountIf(test_part_results_, TestPartFatallyFailed) > 0;
-      155: 2200-block  0
+      157: 2199:bool TestResult::HasFatalFailure() const {
+      157: 2200:  return CountIf(test_part_results_, TestPartFatallyFailed) > 0;
+      157: 2200-block  0
         -: 2201:}
         -: 2202:
         -: 2203:// Returns true iff the test part non-fatally failed.
@@ -3531,9 +3531,9 @@ _ZN7testing13ArrayAsVectorILi8EEESt6vectorISsSaISsEERAT__KPKc:
         -: 2212:
         -: 2213:// Gets the number of all test parts.  This is the sum of the number
         -: 2214:// of successful test parts and the number of failed test parts.
-      464: 2215:int TestResult::total_part_count() const {
-      464: 2216:  return static_cast<int>(test_part_results_.size());
-      464: 2216-block  0
+      470: 2215:int TestResult::total_part_count() const {
+      470: 2216:  return static_cast<int>(test_part_results_.size());
+      470: 2216-block  0
         -: 2217:}
         -: 2218:
         -: 2219:// Returns the number of the test properties.
@@ -3547,18 +3547,18 @@ _ZN7testing13ArrayAsVectorILi8EEESt6vectorISsSaISsEERAT__KPKc:
         -: 2226:// Creates a Test object.
         -: 2227:
         -: 2228:// The c'tor saves the states of all flags.
-       77: 2229:Test::Test()
-       77: 2230:    : gtest_flag_saver_(new GTEST_FLAG_SAVER_) {
-       77: 2230-block  0
-       77: 2230-block  1
+       78: 2229:Test::Test()
+       78: 2230:    : gtest_flag_saver_(new GTEST_FLAG_SAVER_) {
+       78: 2230-block  0
+       78: 2230-block  1
     $$$$$: 2230-block  2
-       77: 2231:}
+       78: 2231:}
         -: 2232:
         -: 2233:// The d'tor restores the states of all flags.  The actual work is
         -: 2234:// done by the d'tor of the gtest_flag_saver_ field, and thus not
         -: 2235:// visible here.
-      77*: 2236:Test::~Test() {
-      77*: 2237:}
+      78*: 2236:Test::~Test() {
+      78*: 2237:}
 ------------------
 _ZN7testing4TestD0Ev:
     #####: 2236:Test::~Test() {
@@ -3566,22 +3566,22 @@ _ZN7testing4TestD0Ev:
     %%%%%: 2237-block  0
 ------------------
 _ZN7testing4TestD2Ev:
-       77: 2236:Test::~Test() {
-       77: 2236-block  0
-       77: 2237:}
+       78: 2236:Test::~Test() {
+       78: 2236-block  0
+       78: 2237:}
 ------------------
         -: 2238:
         -: 2239:// Sets up the test fixture.
         -: 2240://
         -: 2241:// A sub-class may override this.
-       77: 2242:void Test::SetUp() {
-       77: 2243:}
+       78: 2242:void Test::SetUp() {
+       78: 2243:}
         -: 2244:
         -: 2245:// Tears down the test fixture.
         -: 2246://
         -: 2247:// A sub-class may override this.
-       77: 2248:void Test::TearDown() {
-       77: 2249:}
+       78: 2248:void Test::TearDown() {
+       78: 2249:}
         -: 2250:
         -: 2251:// Allows user supplied key value pairs to be recorded for later output.
     #####: 2252:void Test::RecordProperty(const std::string& key, const std::string& value) {
@@ -3633,23 +3633,23 @@ _ZN7testing4TestD2Ev:
         -: 2281:// same fixture class as the first test in the current test case.  If
         -: 2282:// yes, it returns true; otherwise it generates a Google Test failure and
         -: 2283:// returns false.
-       77: 2284:bool Test::HasSameFixtureClass() {
-       77: 2285:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
-       77: 2285-block  0
-       77: 2286:  const TestCase* const test_case = impl->current_test_case();
-       77: 2286-block  0
+       78: 2284:bool Test::HasSameFixtureClass() {
+       78: 2285:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
+       78: 2285-block  0
+       78: 2286:  const TestCase* const test_case = impl->current_test_case();
+       78: 2286-block  0
         -: 2287:
         -: 2288:  // Info about the first test in the current test case.
-       77: 2289:  const TestInfo* const first_test_info = test_case->test_info_list()[0];
-       77: 2290:  const internal::TypeId first_fixture_id = first_test_info->fixture_class_id_;
-       77: 2291:  const char* const first_test_name = first_test_info->name();
+       78: 2289:  const TestInfo* const first_test_info = test_case->test_info_list()[0];
+       78: 2290:  const internal::TypeId first_fixture_id = first_test_info->fixture_class_id_;
+       78: 2291:  const char* const first_test_name = first_test_info->name();
         -: 2292:
         -: 2293:  // Info about the current test.
-       77: 2294:  const TestInfo* const this_test_info = impl->current_test_info();
-       77: 2295:  const internal::TypeId this_fixture_id = this_test_info->fixture_class_id_;
-       77: 2296:  const char* const this_test_name = this_test_info->name();
+       78: 2294:  const TestInfo* const this_test_info = impl->current_test_info();
+       78: 2295:  const internal::TypeId this_fixture_id = this_test_info->fixture_class_id_;
+       78: 2296:  const char* const this_test_name = this_test_info->name();
         -: 2297:
-       77: 2298:  if (this_fixture_id != first_fixture_id) {
+       78: 2298:  if (this_fixture_id != first_fixture_id) {
         -: 2299:    // Is the first test defined using TEST?
     #####: 2300:    const bool first_is_TEST = first_fixture_id == internal::GetTestTypeId();
     %%%%%: 2300-block  0
@@ -3748,8 +3748,8 @@ _ZN7testing4TestD2Ev:
     %%%%%: 2339-block  0
         -: 2340:  }
         -: 2341:
-       77: 2342:  return true;
-       77: 2342-block  0
+       78: 2342:  return true;
+       78: 2342-block  0
         -: 2343:}
         -: 2344:
         -: 2345:#if GTEST_HAS_SEH
@@ -3821,7 +3821,7 @@ _ZN7testing4TestD2Ev:
         -: 2395:// exceptions in the same function.  Therefore, we provide a separate
         -: 2396:// wrapper function for handling SEH exceptions.)
         -: 2397:template <class T, typename Result>
-      414: 2398:Result HandleSehExceptionsInMethodIfSupported(
+      419: 2398:Result HandleSehExceptionsInMethodIfSupported(
         -: 2399:    T* object, Result (T::*method)(), const char* location) {
         -: 2400:#if GTEST_HAS_SEH
         -: 2401:  __try {
@@ -3840,7 +3840,7 @@ _ZN7testing4TestD2Ev:
         -: 2414:  }
         -: 2415:#else
         -: 2416:  (void)location;
-     414*: 2417:  return (object->*method)();
+     419*: 2417:  return (object->*method)();
         -: 2418:#endif  // GTEST_HAS_SEH
         -: 2419:}
 ------------------
@@ -3901,7 +3901,7 @@ _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_8TestCaseEvEET0_
         -: 2419:}
 ------------------
 _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc:
-       77: 2398:Result HandleSehExceptionsInMethodIfSupported(
+       78: 2398:Result HandleSehExceptionsInMethodIfSupported(
         -: 2399:    T* object, Result (T::*method)(), const char* location) {
         -: 2400:#if GTEST_HAS_SEH
         -: 2401:  __try {
@@ -3920,16 +3920,16 @@ _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS0_15TestFactoryBa
         -: 2414:  }
         -: 2415:#else
         -: 2416:  (void)location;
-      77*: 2417:  return (object->*method)();
-       77: 2417-block  0
-       77: 2417-block  1
+      78*: 2417:  return (object->*method)();
+       78: 2417-block  0
+       78: 2417-block  1
     %%%%%: 2417-block  2
-       77: 2417-block  3
+       78: 2417-block  3
         -: 2418:#endif  // GTEST_HAS_SEH
         -: 2419:}
 ------------------
 _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc:
-      308: 2398:Result HandleSehExceptionsInMethodIfSupported(
+      312: 2398:Result HandleSehExceptionsInMethodIfSupported(
         -: 2399:    T* object, Result (T::*method)(), const char* location) {
         -: 2400:#if GTEST_HAS_SEH
         -: 2401:  __try {
@@ -3948,11 +3948,11 @@ _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_M
         -: 2414:  }
         -: 2415:#else
         -: 2416:  (void)location;
-      308: 2417:  return (object->*method)();
-      308: 2417-block  0
-      231: 2417-block  1
-       77: 2417-block  2
-      308: 2417-block  3
+      312: 2417:  return (object->*method)();
+      312: 2417-block  0
+      234: 2417-block  1
+       78: 2417-block  2
+      312: 2417-block  3
         -: 2418:#endif  // GTEST_HAS_SEH
         -: 2419:}
 ------------------
@@ -3961,7 +3961,7 @@ _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_M
         -: 2422:// exceptions, if they are supported; returns the 0-value for type
         -: 2423:// Result in case of an SEH exception.
         -: 2424:template <class T, typename Result>
-      414: 2425:Result HandleExceptionsInMethodIfSupported(
+      419: 2425:Result HandleExceptionsInMethodIfSupported(
         -: 2426:    T* object, Result (T::*method)(), const char* location) {
         -: 2427:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2428:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -3986,10 +3986,10 @@ _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_M
         -: 2447:  // throw statement in the code under test.  For this reason, we perform
         -: 2448:  // the check early, sacrificing the ability to affect Google Test's
         -: 2449:  // exception handling in the method where the exception is thrown.
-      414: 2450:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+      419: 2450:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
         -: 2451:#if GTEST_HAS_EXCEPTIONS
         -: 2452:    try {
-      414: 2453:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+      419: 2453:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
     =====: 2454:    } catch (const AssertionException&) {  // NOLINT
         -: 2455:      // This failure was reported already.
     =====: 2456:    } catch (const internal::GoogleTestFailureException&) {  // NOLINT
@@ -4174,7 +4174,7 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_8TestCaseEvEET0_PT_
         -: 2477:}
 ------------------
 _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc:
-       77: 2425:Result HandleExceptionsInMethodIfSupported(
+       78: 2425:Result HandleExceptionsInMethodIfSupported(
         -: 2426:    T* object, Result (T::*method)(), const char* location) {
         -: 2427:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2428:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -4199,13 +4199,13 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFactoryBaseE
         -: 2447:  // throw statement in the code under test.  For this reason, we perform
         -: 2448:  // the check early, sacrificing the ability to affect Google Test's
         -: 2449:  // exception handling in the method where the exception is thrown.
-       77: 2450:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
-       77: 2450-block  0
+       78: 2450:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+       78: 2450-block  0
         -: 2451:#if GTEST_HAS_EXCEPTIONS
         -: 2452:    try {
-       77: 2453:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
-       77: 2453-block  0
-       77: 2453-block  1
+       78: 2453:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+       78: 2453-block  0
+       78: 2453-block  1
     =====: 2454:    } catch (const AssertionException&) {  // NOLINT
     $$$$$: 2454-block  0
     $$$$$: 2454-block  1
@@ -4253,7 +4253,7 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFactoryBaseE
         -: 2477:}
 ------------------
 _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc:
-      308: 2425:Result HandleExceptionsInMethodIfSupported(
+      312: 2425:Result HandleExceptionsInMethodIfSupported(
         -: 2426:    T* object, Result (T::*method)(), const char* location) {
         -: 2427:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2428:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -4278,13 +4278,13 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2447:  // throw statement in the code under test.  For this reason, we perform
         -: 2448:  // the check early, sacrificing the ability to affect Google Test's
         -: 2449:  // exception handling in the method where the exception is thrown.
-      308: 2450:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
-      308: 2450-block  0
+      312: 2450:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+      312: 2450-block  0
         -: 2451:#if GTEST_HAS_EXCEPTIONS
         -: 2452:    try {
-      308: 2453:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
-      308: 2453-block  0
-      308: 2453-block  1
+      312: 2453:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+      312: 2453-block  0
+      312: 2453-block  1
     =====: 2454:    } catch (const AssertionException&) {  // NOLINT
     $$$$$: 2454-block  0
     $$$$$: 2454-block  1
@@ -4335,36 +4335,36 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2479:}  // namespace internal
         -: 2480:
         -: 2481:// Runs the test and updates the test result.
-       77: 2482:void Test::Run() {
-      77*: 2483:  if (!HasSameFixtureClass()) return;
-       77: 2483-block  0
+       78: 2482:void Test::Run() {
+      78*: 2483:  if (!HasSameFixtureClass()) return;
+       78: 2483-block  0
     %%%%%: 2483-block  1
         -: 2484:
-       77: 2485:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
-       77: 2485-block  0
-       77: 2486:  impl->os_stack_trace_getter()->UponLeavingGTest();
-       77: 2487:  internal::HandleExceptionsInMethodIfSupported(this, &Test::SetUp, "SetUp()");
+       78: 2485:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
+       78: 2485-block  0
+       78: 2486:  impl->os_stack_trace_getter()->UponLeavingGTest();
+       78: 2487:  internal::HandleExceptionsInMethodIfSupported(this, &Test::SetUp, "SetUp()");
         -: 2488:  // We will run the test only if SetUp() was successful.
-       77: 2489:  if (!HasFatalFailure()) {
-       77: 2490:    impl->os_stack_trace_getter()->UponLeavingGTest();
-       77: 2490-block  0
-       77: 2491:    internal::HandleExceptionsInMethodIfSupported(
+       78: 2489:  if (!HasFatalFailure()) {
+       78: 2490:    impl->os_stack_trace_getter()->UponLeavingGTest();
+       78: 2490-block  0
+       78: 2491:    internal::HandleExceptionsInMethodIfSupported(
         -: 2492:        this, &Test::TestBody, "the test body");
         -: 2493:  }
         -: 2494:
         -: 2495:  // However, we want to clean up as much as possible.  Hence we will
         -: 2496:  // always call TearDown(), even if SetUp() or the test body has
         -: 2497:  // failed.
-       77: 2498:  impl->os_stack_trace_getter()->UponLeavingGTest();
-       77: 2498-block  0
-       77: 2499:  internal::HandleExceptionsInMethodIfSupported(
+       78: 2498:  impl->os_stack_trace_getter()->UponLeavingGTest();
+       78: 2498-block  0
+       78: 2499:  internal::HandleExceptionsInMethodIfSupported(
         -: 2500:      this, &Test::TearDown, "TearDown()");
         -: 2501:}
         -: 2502:
         -: 2503:// Returns true iff the current test has a fatal failure.
-      155: 2504:bool Test::HasFatalFailure() {
-      155: 2505:  return internal::GetUnitTestImpl()->current_test_result()->HasFatalFailure();
-      155: 2505-block  0
+      157: 2504:bool Test::HasFatalFailure() {
+      157: 2505:  return internal::GetUnitTestImpl()->current_test_result()->HasFatalFailure();
+      157: 2505-block  0
         -: 2506:}
         -: 2507:
         -: 2508:// Returns true iff the current test has a non-fatal failure.
@@ -4378,13 +4378,13 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2515:
         -: 2516:// Constructs a TestInfo object. It assumes ownership of the test factory
         -: 2517:// object.
-       77: 2518:TestInfo::TestInfo(const std::string& a_test_case_name,
+       78: 2518:TestInfo::TestInfo(const std::string& a_test_case_name,
         -: 2519:                   const std::string& a_name,
         -: 2520:                   const char* a_type_param,
         -: 2521:                   const char* a_value_param,
         -: 2522:                   internal::CodeLocation a_code_location,
         -: 2523:                   internal::TypeId fixture_class_id,
-       77: 2524:                   internal::TestFactoryBase* factory)
+       78: 2524:                   internal::TestFactoryBase* factory)
         -: 2525:    : test_case_name_(a_test_case_name),
         -: 2526:      name_(a_name),
     #####: 2527:      type_param_(a_type_param ? new std::string(a_type_param) : NULL),
@@ -4401,19 +4401,19 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2532:      is_disabled_(false),
         -: 2533:      matches_filter_(false),
         -: 2534:      factory_(factory),
-     231*: 2535:      result_() {}
-       77: 2535-block  0
-       77: 2535-block  1
+     234*: 2535:      result_() {}
+       78: 2535-block  0
+       78: 2535-block  1
     %%%%%: 2535-block  2
-       77: 2535-block  3
-       77: 2535-block  4
-       77: 2535-block  5
+       78: 2535-block  3
+       78: 2535-block  4
+       78: 2535-block  5
     %%%%%: 2535-block  6
-       77: 2535-block  7
-       77: 2535-block  8
-       77: 2535-block  9
-       77: 2535-block 10
-       77: 2535-block 11
+       78: 2535-block  7
+       78: 2535-block  8
+       78: 2535-block  9
+       78: 2535-block 10
+       78: 2535-block 11
     $$$$$: 2535-block 12
     $$$$$: 2535-block 13
     $$$$$: 2535-block 14
@@ -4446,7 +4446,7 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2557://   factory:          pointer to the factory that creates a test object.
         -: 2558://                     The newly created TestInfo instance will assume
         -: 2559://                     ownership of the factory object.
-       77: 2560:TestInfo* MakeAndRegisterTestInfo(
+       78: 2560:TestInfo* MakeAndRegisterTestInfo(
         -: 2561:    const char* test_case_name,
         -: 2562:    const char* name,
         -: 2563:    const char* type_param,
@@ -4458,13 +4458,13 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2569:    TestFactoryBase* factory) {
         -: 2570:  TestInfo* const test_info =
         -: 2571:      new TestInfo(test_case_name, name, type_param, value_param,
-       77: 2572:                   code_location, fixture_class_id, factory);
-       77: 2572-block  0
-       77: 2572-block  1
-       77: 2572-block  2
-       77: 2572-block  3
-       77: 2572-block  4
-       77: 2572-block  5
+       78: 2572:                   code_location, fixture_class_id, factory);
+       78: 2572-block  0
+       78: 2572-block  1
+       78: 2572-block  2
+       78: 2572-block  3
+       78: 2572-block  4
+       78: 2572-block  5
     $$$$$: 2572-block  6
     $$$$$: 2572-block  7
     $$$$$: 2572-block  8
@@ -4472,9 +4472,9 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
     $$$$$: 2572-block 10
     $$$$$: 2572-block 11
     $$$$$: 2572-block 12
-       77: 2573:  GetUnitTestImpl()->AddTestInfo(set_up_tc, tear_down_tc, test_info);
-       77: 2574:  return test_info;
-       77: 2574-block  0
+       78: 2573:  GetUnitTestImpl()->AddTestInfo(set_up_tc, tear_down_tc, test_info);
+       78: 2574:  return test_info;
+       78: 2574-block  0
         -: 2575:}
         -: 2576:
     #####: 2577:void ReportInvalidTestCaseType(const char* test_case_name,
@@ -4570,57 +4570,57 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2638:
         -: 2639:// Creates the test object, runs it, records its result, and then
         -: 2640:// deletes it.
-       77: 2641:void TestInfo::Run() {
-      77*: 2642:  if (!should_run_) return;
-       77: 2642-block  0
+       78: 2641:void TestInfo::Run() {
+      78*: 2642:  if (!should_run_) return;
+       78: 2642-block  0
     %%%%%: 2642-block  1
         -: 2643:
         -: 2644:  // Tells UnitTest where to store test result.
-       77: 2645:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
-       77: 2645-block  0
-       77: 2646:  impl->set_current_test_info(this);
+       78: 2645:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
+       78: 2645-block  0
+       78: 2646:  impl->set_current_test_info(this);
         -: 2647:
-       77: 2648:  TestEventListener* repeater = UnitTest::GetInstance()->listeners().repeater();
+       78: 2648:  TestEventListener* repeater = UnitTest::GetInstance()->listeners().repeater();
         -: 2649:
         -: 2650:  // Notifies the unit test event listeners that a test is about to start.
-       77: 2651:  repeater->OnTestStart(*this);
+       78: 2651:  repeater->OnTestStart(*this);
         -: 2652:
-       77: 2653:  const TimeInMillis start = internal::GetTimeInMillis();
+       78: 2653:  const TimeInMillis start = internal::GetTimeInMillis();
         -: 2654:
-       77: 2655:  impl->os_stack_trace_getter()->UponLeavingGTest();
+       78: 2655:  impl->os_stack_trace_getter()->UponLeavingGTest();
         -: 2656:
         -: 2657:  // Creates the test object.
-      154: 2658:  Test* const test = internal::HandleExceptionsInMethodIfSupported(
-       77: 2659:      factory_, &internal::TestFactoryBase::CreateTest,
+      156: 2658:  Test* const test = internal::HandleExceptionsInMethodIfSupported(
+       78: 2659:      factory_, &internal::TestFactoryBase::CreateTest,
         -: 2660:      "the test fixture's constructor");
         -: 2661:
         -: 2662:  // Runs the test only if the test object was created and its
         -: 2663:  // constructor didn't generate a fatal failure.
-      77*: 2664:  if ((test != NULL) && !Test::HasFatalFailure()) {
-       77: 2664-block  0
-       77: 2664-block  1
+      78*: 2664:  if ((test != NULL) && !Test::HasFatalFailure()) {
+       78: 2664-block  0
+       78: 2664-block  1
     %%%%%: 2664-block  2
-       77: 2664-block  3
+       78: 2664-block  3
         -: 2665:    // This doesn't throw as all user code that can throw are wrapped into
         -: 2666:    // exception handling code.
-       77: 2667:    test->Run();
-       77: 2667-block  0
+       78: 2667:    test->Run();
+       78: 2667-block  0
         -: 2668:  }
         -: 2669:
         -: 2670:  // Deletes the test object.
-       77: 2671:  impl->os_stack_trace_getter()->UponLeavingGTest();
-       77: 2671-block  0
-       77: 2672:  internal::HandleExceptionsInMethodIfSupported(
+       78: 2671:  impl->os_stack_trace_getter()->UponLeavingGTest();
+       78: 2671-block  0
+       78: 2672:  internal::HandleExceptionsInMethodIfSupported(
         -: 2673:      test, &Test::DeleteSelf_, "the test fixture's destructor");
         -: 2674:
-       77: 2675:  result_.set_elapsed_time(internal::GetTimeInMillis() - start);
+       78: 2675:  result_.set_elapsed_time(internal::GetTimeInMillis() - start);
         -: 2676:
         -: 2677:  // Notifies the unit test event listener that a test has just finished.
-       77: 2678:  repeater->OnTestEnd(*this);
+       78: 2678:  repeater->OnTestEnd(*this);
         -: 2679:
         -: 2680:  // Tells UnitTest to stop associating assertion results to this
         -: 2681:  // test.
-       77: 2682:  impl->set_current_test_info(NULL);
+       78: 2682:  impl->set_current_test_info(NULL);
         -: 2683:}
         -: 2684:
         -: 2685:// class TestCase
@@ -4662,9 +4662,9 @@ _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_
         -: 2715:}
         -: 2716:
         -: 2717:// Gets the number of all tests.
-       91: 2718:int TestCase::total_test_count() const {
-       91: 2719:  return static_cast<int>(test_info_list_.size());
-       91: 2719-block  0
+       92: 2718:int TestCase::total_test_count() const {
+       92: 2719:  return static_cast<int>(test_info_list_.size());
+       92: 2719-block  0
         -: 2720:}
         -: 2721:
         -: 2722:// Creates a TestCase with the given name.
@@ -4734,23 +4734,23 @@ _ZN7testing8TestCaseD2Ev:
         -: 2754:
         -: 2755:// Returns the i-th test among all the tests. i can range from 0 to
         -: 2756:// total_test_count() - 1. If i is not in that range, returns NULL.
-       77: 2757:TestInfo* TestCase::GetMutableTestInfo(int i) {
-       77: 2758:  const int index = GetElementOr(test_indices_, i, -1);
-       77: 2758-block  0
-      77*: 2759:  return index < 0 ? NULL : test_info_list_[index];
-       77: 2759-block  0
+       78: 2757:TestInfo* TestCase::GetMutableTestInfo(int i) {
+       78: 2758:  const int index = GetElementOr(test_indices_, i, -1);
+       78: 2758-block  0
+      78*: 2759:  return index < 0 ? NULL : test_info_list_[index];
+       78: 2759-block  0
     %%%%%: 2759-block  1
-       77: 2759-block  2
+       78: 2759-block  2
         -: 2760:}
         -: 2761:
         -: 2762:// Adds a test to this test case.  Will delete the test upon
         -: 2763:// destruction of the TestCase object.
-       77: 2764:void TestCase::AddTestInfo(TestInfo * test_info) {
-       77: 2765:  test_info_list_.push_back(test_info);
-       77: 2765-block  0
-       77: 2766:  test_indices_.push_back(static_cast<int>(test_indices_.size()));
-       77: 2767:}
-       77: 2767-block  0
+       78: 2764:void TestCase::AddTestInfo(TestInfo * test_info) {
+       78: 2765:  test_info_list_.push_back(test_info);
+       78: 2765-block  0
+       78: 2766:  test_indices_.push_back(static_cast<int>(test_indices_.size()));
+       78: 2767:}
+       78: 2767-block  0
         -: 2768:
         -: 2769:// Runs every test in this TestCase.
        14: 2770:void TestCase::Run() {
@@ -4770,10 +4770,10 @@ _ZN7testing8TestCaseD2Ev:
         -: 2781:      this, &TestCase::RunSetUpTestCase, "SetUpTestCase()");
         -: 2782:
        14: 2783:  const internal::TimeInMillis start = internal::GetTimeInMillis();
-       91: 2784:  for (int i = 0; i < total_test_count(); i++) {
-       91: 2784-block  0
-       77: 2785:    GetMutableTestInfo(i)->Run();
-       77: 2785-block  0
+       92: 2784:  for (int i = 0; i < total_test_count(); i++) {
+       92: 2784-block  0
+       78: 2785:    GetMutableTestInfo(i)->Run();
+       78: 2785-block  0
         -: 2786:  }
        14: 2787:  elapsed_time_ = internal::GetTimeInMillis() - start;
        14: 2787-block  0
@@ -4801,11 +4801,11 @@ _ZN7testing8TestCaseD2Ev:
         -: 2807:
         -: 2808:// Restores the test order to before the first shuffle.
        14: 2809:void TestCase::UnshuffleTests() {
-       91: 2810:  for (size_t i = 0; i < test_indices_.size(); i++) {
+       92: 2810:  for (size_t i = 0; i < test_indices_.size(); i++) {
        14: 2810-block  0
-       91: 2810-block  1
-       77: 2811:    test_indices_[i] = static_cast<int>(i);
-       77: 2811-block  0
+       92: 2810-block  1
+       78: 2811:    test_indices_[i] = static_cast<int>(i);
+       78: 2811-block  0
         -: 2812:  }
        14: 2813:}
         -: 2814:
@@ -5058,17 +5058,17 @@ _ZN7testing8TestCaseD2Ev:
         -: 2995:// cannot simply emit special characters and have the terminal change colors.
         -: 2996:// This routine must actually emit the characters rather than return a string
         -: 2997:// that would be colored when printed, as can be done on Linux.
-      187: 2998:static void ColoredPrintf(GTestColor color, const char* fmt, ...) {
+      189: 2998:static void ColoredPrintf(GTestColor color, const char* fmt, ...) {
         -: 2999:  va_list args;
-      187: 3000:  va_start(args, fmt);
+      189: 3000:  va_start(args, fmt);
         -: 3001:
         -: 3002:#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_SYMBIAN || GTEST_OS_ZOS || \
         -: 3003:    GTEST_OS_IOS || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT
         -: 3004:  const bool use_color = AlwaysFalse();
         -: 3005:#else
         -: 3006:  static const bool in_color_mode =
-      187: 3007:      ShouldUseColor(posix::IsATTY(posix::FileNo(stdout)) != 0);
-      187: 3007-block  0
+      189: 3007:      ShouldUseColor(posix::IsATTY(posix::FileNo(stdout)) != 0);
+      189: 3007-block  0
         1: 3007-block  1
         1: 3007-block  2
         1: 3007-block  3
@@ -5077,21 +5077,21 @@ _ZN7testing8TestCaseD2Ev:
         1: 3007-block  6
     $$$$$: 3007-block  7
     $$$$$: 3007-block  8
-     187*: 3008:  const bool use_color = in_color_mode && (color != COLOR_DEFAULT);
-      187: 3008-block  0
+     189*: 3008:  const bool use_color = in_color_mode && (color != COLOR_DEFAULT);
+      189: 3008-block  0
     %%%%%: 3008-block  1
     %%%%%: 3008-block  2
-      187: 3008-block  3
+      189: 3008-block  3
         -: 3009:#endif  // GTEST_OS_WINDOWS_MOBILE || GTEST_OS_SYMBIAN || GTEST_OS_ZOS
         -: 3010:  // The '!= 0' comparison is necessary to satisfy MSVC 7.1.
         -: 3011:
-      187: 3012:  if (!use_color) {
-      187: 3012-block  0
-      187: 3013:    vprintf(fmt, args);
-      187: 3013-block  0
-      187: 3014:    va_end(args);
-      187: 3015:    return;
-      187: 3015-block  0
+      189: 3012:  if (!use_color) {
+      189: 3012-block  0
+      189: 3013:    vprintf(fmt, args);
+      189: 3013-block  0
+      189: 3014:    va_end(args);
+      189: 3015:    return;
+      189: 3015-block  0
         -: 3016:  }
         -: 3017:
         -: 3018:#if GTEST_OS_WINDOWS && !GTEST_OS_WINDOWS_MOBILE && \
@@ -5163,10 +5163,10 @@ _ZN7testing8TestCaseD2Ev:
         -: 3073: public:
         1: 3074:  PrettyUnitTestResultPrinter() {}
         1: 3074-block  0
-      154: 3075:  static void PrintTestName(const char * test_case, const char * test) {
-      154: 3076:    printf("%s.%s", test_case, test);
-      154: 3076-block  0
-      154: 3077:  }
+      156: 3075:  static void PrintTestName(const char * test_case, const char * test) {
+      156: 3076:    printf("%s.%s", test_case, test);
+      156: 3076-block  0
+      156: 3077:  }
         -: 3078:
         -: 3079:  // The following methods override what's in the TestEventListener class.
         1: 3080:  virtual void OnTestProgramStart(const UnitTest& /*unit_test*/) {}
@@ -5271,13 +5271,13 @@ _ZN7testing8TestCaseD2Ev:
        14: 3150-block  1
        14: 3151:}
         -: 3152:
-       77: 3153:void PrettyUnitTestResultPrinter::OnTestStart(const TestInfo& test_info) {
-       77: 3154:  ColoredPrintf(COLOR_GREEN,  "[ RUN      ] ");
-       77: 3154-block  0
-       77: 3155:  PrintTestName(test_info.test_case_name(), test_info.name());
-       77: 3156:  printf("\n");
-       77: 3157:  fflush(stdout);
-       77: 3158:}
+       78: 3153:void PrettyUnitTestResultPrinter::OnTestStart(const TestInfo& test_info) {
+       78: 3154:  ColoredPrintf(COLOR_GREEN,  "[ RUN      ] ");
+       78: 3154-block  0
+       78: 3155:  PrintTestName(test_info.test_case_name(), test_info.name());
+       78: 3156:  printf("\n");
+       78: 3157:  fflush(stdout);
+       78: 3158:}
         -: 3159:
         -: 3160:// Called after an assertion failure.
     #####: 3161:void PrettyUnitTestResultPrinter::OnTestPartResult(
@@ -5294,37 +5294,37 @@ _ZN7testing8TestCaseD2Ev:
     #####: 3169:  fflush(stdout);
         -: 3170:}
         -: 3171:
-       77: 3172:void PrettyUnitTestResultPrinter::OnTestEnd(const TestInfo& test_info) {
-       77: 3173:  if (test_info.result()->Passed()) {
-       77: 3173-block  0
-       77: 3174:    ColoredPrintf(COLOR_GREEN, "[       OK ] ");
-       77: 3174-block  0
+       78: 3172:void PrettyUnitTestResultPrinter::OnTestEnd(const TestInfo& test_info) {
+       78: 3173:  if (test_info.result()->Passed()) {
+       78: 3173-block  0
+       78: 3174:    ColoredPrintf(COLOR_GREEN, "[       OK ] ");
+       78: 3174-block  0
         -: 3175:  } else {
     #####: 3176:    ColoredPrintf(COLOR_RED, "[  FAILED  ] ");
     %%%%%: 3176-block  0
         -: 3177:  }
-       77: 3178:  PrintTestName(test_info.test_case_name(), test_info.name());
-       77: 3178-block  0
-       77: 3179:  if (test_info.result()->Failed())
+       78: 3178:  PrintTestName(test_info.test_case_name(), test_info.name());
+       78: 3178-block  0
+       78: 3179:  if (test_info.result()->Failed())
     #####: 3180:    PrintFullTestCommentIfPresent(test_info);
     %%%%%: 3180-block  0
         -: 3181:
-       77: 3182:  if (GTEST_FLAG(print_time)) {
-       77: 3182-block  0
-       77: 3183:    printf(" (%s ms)\n", internal::StreamableToString(
-       77: 3183-block  0
-       77: 3183-block  1
+       78: 3182:  if (GTEST_FLAG(print_time)) {
+       78: 3182-block  0
+       78: 3183:    printf(" (%s ms)\n", internal::StreamableToString(
+       78: 3183-block  0
+       78: 3183-block  1
     $$$$$: 3183-block  2
     $$$$$: 3183-block  3
-      154: 3184:           test_info.result()->elapsed_time()).c_str());
-       77: 3184-block  0
+      156: 3184:           test_info.result()->elapsed_time()).c_str());
+       78: 3184-block  0
         -: 3185:  } else {
     #####: 3186:    printf("\n");
     %%%%%: 3186-block  0
         -: 3187:  }
-       77: 3188:  fflush(stdout);
-       77: 3188-block  0
-       77: 3189:}
+       78: 3188:  fflush(stdout);
+       78: 3188-block  0
+       78: 3189:}
         -: 3190:
        14: 3191:void PrettyUnitTestResultPrinter::OnTestCaseEnd(const TestCase& test_case) {
       14*: 3192:  if (!GTEST_FLAG(print_time)) return;
@@ -5599,11 +5599,11 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
        14: 3357-block  1
        28: 3357-block  2
        14: 3357-block  3
-      154: 3358:GTEST_REPEATER_METHOD_(OnTestStart, TestInfo)
-       77: 3358-block  0
-       77: 3358-block  1
-      154: 3358-block  2
-       77: 3358-block  3
+      156: 3358:GTEST_REPEATER_METHOD_(OnTestStart, TestInfo)
+       78: 3358-block  0
+       78: 3358-block  1
+      156: 3358-block  2
+       78: 3358-block  3
     #####: 3359:GTEST_REPEATER_METHOD_(OnTestPartResult, TestPartResult)
     %%%%%: 3359-block  0
     %%%%%: 3359-block  1
@@ -5624,11 +5624,11 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
         1: 3362-block  1
         2: 3362-block  2
         1: 3362-block  3
-      154: 3363:GTEST_REVERSE_REPEATER_METHOD_(OnTestEnd, TestInfo)
-       77: 3363-block  0
-       77: 3363-block  1
-      154: 3363-block  2
-       77: 3363-block  3
+      156: 3363:GTEST_REVERSE_REPEATER_METHOD_(OnTestEnd, TestInfo)
+       78: 3363-block  0
+       78: 3363-block  1
+      156: 3363-block  2
+       78: 3363-block  3
        28: 3364:GTEST_REVERSE_REPEATER_METHOD_(OnTestCaseEnd, TestCase)
        14: 3364-block  0
        14: 3364-block  1
@@ -7483,7 +7483,7 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
     %%%%%: 4247-block  1
         -: 4248:}
         -: 4249:
-      413: 4250:void OsStackTraceGetter::UponLeavingGTest() {}
+      418: 4250:void OsStackTraceGetter::UponLeavingGTest() {}
         -: 4251:
         -: 4252:// A helper class that creates the premature-exit file in its
         -: 4253:// constructor and deletes the file in its destructor.
@@ -7575,8 +7575,8 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
         -: 4317:
         -: 4318:// Returns repeater that broadcasts the TestEventListener events to all
         -: 4319:// subscribers.
-       92: 4320:TestEventListener* TestEventListeners::repeater() { return repeater_; }
-       92: 4320-block  0
+       93: 4320:TestEventListener* TestEventListeners::repeater() { return repeater_; }
+       93: 4320-block  0
         -: 4321:
         -: 4322:// Sets the default_result_printer attribute to the provided listener.
         -: 4323:// The listener is also added to the listener list and previous
@@ -7641,7 +7641,7 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
         -: 4370:// We don't protect this under mutex_ as a user is not supposed to
         -: 4371:// call this before main() starts, from which point on the return
         -: 4372:// value will never change.
-      984: 4373:UnitTest* UnitTest::GetInstance() {
+      996: 4373:UnitTest* UnitTest::GetInstance() {
         -: 4374:  // When compiled with MSVC 7.1 in optimized mode, destroying the
         -: 4375:  // UnitTest object upon exiting the program messes up the exit code,
         -: 4376:  // causing successful tests to appear failed.  We have to use a
@@ -7657,16 +7657,16 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
         -: 4386:  static UnitTest* const instance = new UnitTest;
         -: 4387:  return instance;
         -: 4388:#else
-      984: 4389:  static UnitTest instance;
-      984: 4389-block  0
+      996: 4389:  static UnitTest instance;
+      996: 4389-block  0
         1: 4389-block  1
         1: 4389-block  2
         1: 4389-block  3
     $$$$$: 4389-block  4
     $$$$$: 4389-block  5
-      984: 4390:  return &instance;
-      984: 4390-block  0
-      984: 4390-block  1
+      996: 4390:  return &instance;
+      996: 4390-block  0
+      996: 4390-block  1
         -: 4391:#endif  // (_MSC_VER == 1310 && !defined(_DEBUG)) || defined(__BORLANDC__)
         -: 4392:}
         -: 4393:
@@ -7776,9 +7776,9 @@ _ZN7testing8internal17TestEventRepeaterD2Ev:
         -: 4479:
         -: 4480:// Returns the list of event listeners that can be used to track events
         -: 4481:// inside Google Test.
-       91: 4482:TestEventListeners& UnitTest::listeners() {
-       91: 4483:  return *impl()->listeners();
-       91: 4483-block  0
+       92: 4482:TestEventListeners& UnitTest::listeners() {
+       92: 4483:  return *impl()->listeners();
+       92: 4483-block  0
         -: 4484:}
         -: 4485:
         -: 4486:// Registers and returns a global test environment.  When a test
@@ -8369,18 +8369,18 @@ _ZN7testing8internal12UnitTestImplD2Ev:
         -: 4878:class TestCaseNameIs {
         -: 4879: public:
         -: 4880:  // Constructor.
-       77: 4881:  explicit TestCaseNameIs(const std::string& name)
-       77: 4882:      : name_(name) {}
-       77: 4882-block  0
+       78: 4881:  explicit TestCaseNameIs(const std::string& name)
+       78: 4882:      : name_(name) {}
+       78: 4882-block  0
         -: 4883:
         -: 4884:  // Returns true iff the name of test_case matches name_.
-      560: 4885:  bool operator()(const TestCase* test_case) const {
-      560: 4886:    return test_case != NULL && strcmp(test_case->name(), name_.c_str()) == 0;
-      560: 4886-block  0
-      560: 4886-block  1
-       63: 4886-block  2
-      497: 4886-block  3
-      560: 4886-block  4
+      562: 4885:  bool operator()(const TestCase* test_case) const {
+      562: 4886:    return test_case != NULL && strcmp(test_case->name(), name_.c_str()) == 0;
+      562: 4886-block  0
+      562: 4886-block  1
+       64: 4886-block  2
+      498: 4886-block  3
+      562: 4886-block  4
         -: 4887:  }
         -: 4888:
         -: 4889: private:
@@ -8399,26 +8399,26 @@ _ZN7testing8internal12UnitTestImplD2Ev:
         -: 4902://                   this is not a typed or a type-parameterized test case.
         -: 4903://   set_up_tc:      pointer to the function that sets up the test case
         -: 4904://   tear_down_tc:   pointer to the function that tears down the test case
-       77: 4905:TestCase* UnitTestImpl::GetTestCase(const char* test_case_name,
+       78: 4905:TestCase* UnitTestImpl::GetTestCase(const char* test_case_name,
         -: 4906:                                    const char* type_param,
         -: 4907:                                    Test::SetUpTestCaseFunc set_up_tc,
         -: 4908:                                    Test::TearDownTestCaseFunc tear_down_tc) {
         -: 4909:  // Can we find a TestCase with the given name?
         -: 4910:  const std::vector<TestCase*>::const_iterator test_case =
-       77: 4911:      std::find_if(test_cases_.begin(), test_cases_.end(),
-       77: 4912:                   TestCaseNameIs(test_case_name));
-       77: 4912-block  0
-       77: 4912-block  1
-       77: 4912-block  2
-       77: 4912-block  3
+       78: 4911:      std::find_if(test_cases_.begin(), test_cases_.end(),
+       78: 4912:                   TestCaseNameIs(test_case_name));
+       78: 4912-block  0
+       78: 4912-block  1
+       78: 4912-block  2
+       78: 4912-block  3
     $$$$$: 4912-block  4
     $$$$$: 4912-block  5
     $$$$$: 4912-block  6
     $$$$$: 4912-block  7
         -: 4913:
-       77: 4914:  if (test_case != test_cases_.end())
-       63: 4915:    return *test_case;
-       63: 4915-block  0
+       78: 4914:  if (test_case != test_cases_.end())
+       64: 4915:    return *test_case;
+       64: 4915-block  0
         -: 4916:
         -: 4917:  // No.  Let's create one.
         -: 4918:  TestCase* const new_test_case =
@@ -8874,65 +8874,65 @@ _ZN7testing8internal12UnitTestImplD2Ev:
     $$$$$: 5215-block  2
        14: 5216:    test_case->set_should_run(false);
         -: 5217:
-       91: 5218:    for (size_t j = 0; j < test_case->test_info_list().size(); j++) {
-       91: 5218-block  0
-       77: 5219:      TestInfo* const test_info = test_case->test_info_list()[j];
-       77: 5219-block  0
-      154: 5220:      const std::string test_name(test_info->name());
+       92: 5218:    for (size_t j = 0; j < test_case->test_info_list().size(); j++) {
+       92: 5218-block  0
+       78: 5219:      TestInfo* const test_info = test_case->test_info_list()[j];
+       78: 5219-block  0
+      156: 5220:      const std::string test_name(test_info->name());
     $$$$$: 5220-block  0
         -: 5221:      // A test is disabled if test case name or test name matches
         -: 5222:      // kDisableTestFilter.
         -: 5223:      const bool is_disabled =
-       77: 5224:          internal::UnitTestOptions::MatchesFilter(test_case_name,
-     154*: 5225:                                                   kDisableTestFilter) ||
-       77: 5225-block  0
+       78: 5224:          internal::UnitTestOptions::MatchesFilter(test_case_name,
+     156*: 5225:                                                   kDisableTestFilter) ||
+       78: 5225-block  0
     %%%%%: 5225-block  1
-       77: 5225-block  2
-       77: 5226:          internal::UnitTestOptions::MatchesFilter(test_name,
-       77: 5226-block  0
-       77: 5226-block  1
-       77: 5227:                                                   kDisableTestFilter);
-       77: 5228:      test_info->is_disabled_ = is_disabled;
+       78: 5225-block  2
+       78: 5226:          internal::UnitTestOptions::MatchesFilter(test_name,
+       78: 5226-block  0
+       78: 5226-block  1
+       78: 5227:                                                   kDisableTestFilter);
+       78: 5228:      test_info->is_disabled_ = is_disabled;
         -: 5229:
         -: 5230:      const bool matches_filter =
-       77: 5231:          internal::UnitTestOptions::FilterMatchesTest(test_case_name,
-       77: 5231-block  0
+       78: 5231:          internal::UnitTestOptions::FilterMatchesTest(test_case_name,
+       78: 5231-block  0
         -: 5232:                                                       test_name);
-       77: 5233:      test_info->matches_filter_ = matches_filter;
+       78: 5233:      test_info->matches_filter_ = matches_filter;
         -: 5234:
-       77: 5235:      const bool is_runnable =
-      77*: 5236:          (GTEST_FLAG(also_run_disabled_tests) || !is_disabled) &&
-       77: 5236-block  0
-       77: 5236-block  1
-       77: 5236-block  2
-       77: 5236-block  3
+       78: 5235:      const bool is_runnable =
+      78*: 5236:          (GTEST_FLAG(also_run_disabled_tests) || !is_disabled) &&
+       78: 5236-block  0
+       78: 5236-block  1
+       78: 5236-block  2
+       78: 5236-block  3
     %%%%%: 5236-block  4
         -: 5237:          matches_filter;
         -: 5238:
         -: 5239:      const bool is_in_another_shard =
-      77*: 5240:          shard_tests != IGNORE_SHARDING_PROTOCOL &&
-       77: 5240-block  0
+      78*: 5240:          shard_tests != IGNORE_SHARDING_PROTOCOL &&
+       78: 5240-block  0
     %%%%%: 5240-block  1
-       77: 5240-block  2
+       78: 5240-block  2
     #####: 5241:          !ShouldRunTestOnShard(total_shards, shard_index, num_runnable_tests);
     %%%%%: 5241-block  0
-       77: 5242:      test_info->is_in_another_shard_ = is_in_another_shard;
-      77*: 5243:      const bool is_selected = is_runnable && !is_in_another_shard;
-       77: 5243-block  0
-       77: 5243-block  1
-       77: 5243-block  2
+       78: 5242:      test_info->is_in_another_shard_ = is_in_another_shard;
+      78*: 5243:      const bool is_selected = is_runnable && !is_in_another_shard;
+       78: 5243-block  0
+       78: 5243-block  1
+       78: 5243-block  2
     %%%%%: 5243-block  3
         -: 5244:
-       77: 5245:      num_runnable_tests += is_runnable;
-       77: 5246:      num_selected_tests += is_selected;
+       78: 5245:      num_runnable_tests += is_runnable;
+       78: 5246:      num_selected_tests += is_selected;
         -: 5247:
-       77: 5248:      test_info->should_run_ = is_selected;
-      77*: 5249:      test_case->set_should_run(test_case->should_run() || is_selected);
-       77: 5249-block  0
+       78: 5248:      test_info->should_run_ = is_selected;
+      78*: 5249:      test_case->set_should_run(test_case->should_run() || is_selected);
+       78: 5249-block  0
        14: 5249-block  1
-       77: 5249-block  2
+       78: 5249-block  2
     %%%%%: 5249-block  3
-       77: 5249-block  4
+       78: 5249-block  4
         -: 5250:    }
         -: 5251:  }
         1: 5252:  return num_selected_tests;
@@ -9044,9 +9044,9 @@ _ZN7testing8internal12UnitTestImplD2Ev:
         -: 5328:// Returns the current OS stack trace getter if it is not NULL;
         -: 5329:// otherwise, creates an OsStackTraceGetter, makes it the current
         -: 5330:// getter, and returns it.
-      413: 5331:OsStackTraceGetterInterface* UnitTestImpl::os_stack_trace_getter() {
-      413: 5332:  if (os_stack_trace_getter_ == NULL) {
-      413: 5332-block  0
+      418: 5331:OsStackTraceGetterInterface* UnitTestImpl::os_stack_trace_getter() {
+      418: 5332:  if (os_stack_trace_getter_ == NULL) {
+      418: 5332-block  0
         -: 5333:#ifdef GTEST_OS_STACK_TRACE_GETTER_
         -: 5334:    os_stack_trace_getter_ = new GTEST_OS_STACK_TRACE_GETTER_;
         -: 5335:#else
@@ -9055,19 +9055,19 @@ _ZN7testing8internal12UnitTestImplD2Ev:
         -: 5337:#endif  // GTEST_OS_STACK_TRACE_GETTER_
         -: 5338:  }
         -: 5339:
-      413: 5340:  return os_stack_trace_getter_;
-      413: 5340-block  0
+      418: 5340:  return os_stack_trace_getter_;
+      418: 5340-block  0
         -: 5341:}
         -: 5342:
         -: 5343:// Returns the TestResult for the test that's currently running, or
         -: 5344:// the TestResult for the ad hoc test if no test is running.
-      155: 5345:TestResult* UnitTestImpl::current_test_result() {
-      155: 5346:  return current_test_info_ ?
-      155: 5346-block  0
+      157: 5345:TestResult* UnitTestImpl::current_test_result() {
+      157: 5346:  return current_test_info_ ?
+      157: 5346-block  0
         1: 5346-block  1
-      155: 5347:      &(current_test_info_->result_) : &ad_hoc_test_result_;
-      154: 5347-block  0
-      155: 5347-block  1
+      157: 5347:      &(current_test_info_->result_) : &ad_hoc_test_result_;
+      156: 5347-block  0
+      157: 5347-block  1
         -: 5348:}
         -: 5349:
         -: 5350:// Shuffles all test cases, and the tests within each test case,
@@ -9126,8 +9126,8 @@ _ZN7testing8internal12UnitTestImplD2Ev:
         -: 5396:class ClassUniqueToAlwaysTrue {};
         -: 5397:}
         -: 5398:
-      240: 5399:bool IsTrue(bool condition) { return condition; }
-      240: 5399-block  0
+      242: 5399:bool IsTrue(bool condition) { return condition; }
+      242: 5399-block  0
         -: 5400:
     #####: 5401:bool AlwaysTrue() {
         -: 5402:#if GTEST_HAS_EXCEPTIONS

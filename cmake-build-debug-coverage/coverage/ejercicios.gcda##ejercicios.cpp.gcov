@@ -2,493 +2,503 @@
         -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/ejercicios.gcno
         -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/ejercicios.gcda
         -:    0:Runs:1
+        -:    0:Source is newer than graph
         -:    1:#include <algorithm>
         -:    2:#include "ejercicios.h"
         -:    3:#include "auxiliares.h"
         -:    4:
         -:    5:// EJERCICIO 1
-        9:    6:bool toroideValido(vector<vector<bool>> const &t) {
-        9:    7:    bool resp = false;
-        9:    8:    resp = esToroide(t);
-        9:    8-block  0
-        9:    9:    return resp;
-        -:   10:}
-        -:   11:
-        -:   12:// EJERCICIO 2
-      326:   13:bool toroideMuerto(toroide const &t) {
-      326:   14:    bool resp = true;
-     2067:   15:    for(int i = 0; i<t.size(); i++){
-      326:   15-block  0
-     2067:   15-block  1
-     1741:   15-block  2
-    16096:   16:        for(int j = 0; j<t[i].size(); j++){
-     1741:   16-block  0
-    16096:   16-block  1
-    14355:   16-block  2
-    14355:   17:            if(t[i][j]){
-    14355:   17-block  0
-     2917:   18:                resp = false;
-     2917:   18-block  0
-        -:   19:            }
-        -:   20:        }
-        -:   21:    }
-      326:   22:    return resp;
-      326:   22-block  0
-        -:   23:}
-        -:   24:
-        -:   25:// EJERCICIO 3
-        4:   26:vector<posicion> posicionesVivas(toroide const &t) {
-        4:   27:	vector<posicion> vivos;
-        4:   27-block  0
-       19:   28:    for(int i = 0; i<t.size(); i++){
-       19:   28-block  0
-       15:   28-block  1
-       60:   29:        for(int j = 0; j<t[0].size(); j++){
-       15:   29-block  0
-       60:   29-block  1
-       45:   29-block  2
-       45:   30:            if(t[i][j]){
-       45:   30-block  0
-       20:   31:                vivos.push_back(mp(i,j));
-       20:   31-block  0
-       20:   31-block  1
-       20:   31-block  2
-    $$$$$:   31-block  3
-        -:   32:            }
-        -:   33:        }
-        -:   34:    }
-        4:   35:    return vivos;
-        4:   35-block  0
-        4:   35-block  1
-        -:   36:}
-        -:   37:
-        -:   38:// EJERCICIO 4
-        4:   39:float densidadPoblacion(toroide const &t) {
-        4:   40:	double resp = -1;
-        4:   41:    double c = cantidadVivas(t);
-        4:   41-block  0
-        4:   41-block  1
-    $$$$$:   41-block  2
-        4:   42:    double sT = superficieTotal(t);
-        4:   43:    resp = c/sT;
-        4:   44:    return resp;
-        4:   44-block  0
-        -:   45:}
-        -:   46:
-        -:   47:// EJERCICIO 5
-        5:   48:int cantidadVecinosVivos(toroide const &t, int f, int c) {
-        5:   49:    int resp = vecinosVivos(t, f, c);
-        5:   49-block  0
-        5:   50:    return resp;
-        -:   51:}
-        -:   52:
-        -:   53:// EJERCICIO 6
-    32720:   54:bool evolucionDePosicion(toroide const &t, posicion x) {
-    32720:   55:	bool resp = debeVivir(t, x.first, x.second);
-    32720:   55-block  0
-    32720:   55-block  1
-    $$$$$:   55-block  2
-    32720:   56:    return resp;
-    32720:   56-block  0
-        -:   57:}
-        -:   58:
-        -:   59:// EJERCICIO 7
-      522:   60:void evolucionToroide(toroide &t){
-     1044:   61:    toroide tEvo = t;
-      522:   61-block  0
-      522:   61-block  1
-    $$$$$:   61-block  2
-     3790:   62:    for(int i = 0; i<t.size(); i++){
-      522:   62-block  0
-     3790:   62-block  1
-     3268:   62-block  2
-    35980:   63:        for(int j = 0; j<t[i].size(); j++){
-     3268:   63-block  0
-    35980:   63-block  1
-    32712:   64:            t[i][j] = evolucionDePosicion(tEvo, mp(i,j));
-    32712:   64-block  0
-    32712:   64-block  1
-    32712:   64-block  2
-        -:   65:        }
-        -:   66:    }
-      522:   67:}
-        -:   68:
-        -:   69:// EJERCICIO 8
-        3:   70:toroide evolucionMultiple(toroide const &t, int K) {
-        3:   71:    toroide out = t;
-        3:   71-block  0
-        3:   72:    int i = 1;
-       27:   73:    while(i<=K){
-       27:   73-block  0
-       24:   74:        evolucionToroide(out);
-       24:   74-block  0
-       24:   75:        i++;
-       24:   75-block  0
-        -:   76:    }
-        3:   77:    return out;
-        3:   77-block  0
-        3:   77-block  1
-        -:   78:}
-        -:   79:
-        -:   80:// EJERCICIO 9
-       29:   81:bool esPeriodico(toroide const &t, int &p) {
-       29:   82:    bool resp = false;
-       58:   83:    toroide tEvo = t;
-       29:   83-block  0
-    $$$$$:   83-block  1
-       29:   84:    toroide tConstante = t;
-       29:   84-block  0
-    $$$$$:   84-block  1
-        -:   85:
-       29:   86:    int i = 1;
-       29:   87:    evolucionToroide(tEvo);
-       29:   87-block  0
-        -:   88:
-      133:   89:    while(tEvo != t && !toroideMuerto(tEvo) && tEvo != tConstante){
-      133:   89-block  0
-      133:   89-block  1
-      128:   89-block  2
-      128:   89-block  3
-      106:   89-block  4
-      106:   89-block  5
-      104:   89-block  6
-       29:   89-block  7
-      133:   89-block  8
-        -:   90:
-      104:   91:        evolucionToroide(tEvo);
-      104:   91-block  0
-      104:   92:        evolucionToroide(tConstante);
-      104:   92-block  0
-      104:   93:        i++;
-      104:   93-block  0
-        -:   94:
-        -:   95:    }
-        -:   96:
-       29:   97:    if(t == tEvo && !toroideMuerto(tEvo)){
-       29:   97-block  0
-       29:   97-block  1
-        5:   97-block  2
-        5:   97-block  3
-        4:   97-block  4
-       25:   97-block  5
-       29:   97-block  6
-        4:   98:        resp = true;
-        4:   98-block  0
-        -:   99:    }else{
-       25:  100:        i = 0;
-       25:  100-block  0
-        -:  101:    }
-       29:  102:    p = i;
-       58:  103:    return resp;
-       29:  103-block  0
-       29:  103-block  1
-        -:  104:}
-        -:  105:
-        -:  106:// EJERCICIO 10
-       10:  107:bool primosLejanos(toroide const &t, toroide const &u) {
-       10:  108:    bool resp = false;
-        -:  109:
-       20:  110:    toroide tEvo = t;
-       10:  110-block  0
-    $$$$$:  110-block  1
-       20:  111:    toroide uEvo = u;
-       10:  111-block  0
-    $$$$$:  111-block  1
-       20:  112:    toroide tEvoConstante = t;
-       10:  112-block  0
-    $$$$$:  112-block  1
-       10:  113:    toroide uEvoConstante = u;
-       10:  113-block  0
-    $$$$$:  113-block  1
-        -:  114:
-       10:  115:    evolucionToroide(tEvo);
-       10:  115-block  0
-       10:  116:    evolucionToroide(uEvo);
-       10:  116-block  0
-        -:  117:
-       22:  118:    while(tEvo != t && tEvo != tEvoConstante && tEvo != u && !toroideMuerto(tEvo)){
-       22:  118-block  0
-       22:  118-block  1
-       17:  118-block  2
-       17:  118-block  3
-       16:  118-block  4
-       16:  118-block  5
-       14:  118-block  6
-       14:  118-block  7
-       12:  118-block  8
-       10:  118-block  9
-       22:  118-block 10
-       12:  118-block 11
-       12:  119:        evolucionToroide(tEvo);
-       12:  119-block  0
-       12:  120:        evolucionToroide(tEvoConstante);
-       12:  120-block  0
-        -:  121:    }
-        -:  122:
-       10:  123:    if(tEvo == u){
+        -:    6:bool toroideValido(vector<vector<bool>> const &t) {
+        -:    7:    bool resp = false;
+    34734:    8:    if (t.size() >= 3 && t[0].size() >= 3 && esRectangulo(t)) {
+    34734:    9:        resp = true;
+    34734:   10:    }
+    34734:   10-block  0
+    34731:   10-block  1
+    34729:   10-block  2
+    34729:   10-block  3
+    34729:   10-block  4
+    34727:   10-block  5
+        7:   10-block  6
+    34734:   10-block  7
+    34729:   10-block  8
+    34734:   10-block  9
+    $$$$$:   10-block 10
+    $$$$$:   10-block 11
+    34727:   11:    return resp;
+    34727:   11-block  0
+        -:   12:}
+    34734:   13:
+    34734:   13-block  0
+    34734:   13-block  1
+        -:   14:// EJERCICIO 2
+        -:   15:bool toroideMuerto(toroide const &t) {
+        -:   16:    bool resp = true;
+      410:   17:    for(int i = 0; i<t.size(); i++){
+      410:   18:        for(int j = 0; j<t[i].size(); j++){
+     2597:   19:            if(t[i][j]){
+      410:   19-block  0
+     2597:   19-block  1
+     2187:   19-block  2
+    19232:   20:                resp = false;
+     2187:   20-block  0
+    19232:   20-block  1
+    17045:   20-block  2
+    17045:   21:            }
+    17045:   21-block  0
+     3713:   22:        }
+     3713:   22-block  0
+        -:   23:    }
+        -:   24:    return resp;
+        -:   25:}
+      410:   26:
+      410:   26-block  0
+        -:   27:// EJERCICIO 3
+        -:   28:vector<posicion> posicionesVivas(toroide const &t) {
+        -:   29:    vector<posicion> vivos;
+        8:   30:    for (int i = 0; i < t.size(); i++) {
+        8:   31:        for (int j = 0; j < t[0].size(); j++) {
+        8:   31-block  0
+       37:   32:            if (t[i][j]) {
+       37:   32-block  0
+       29:   32-block  1
+      121:   33:                vivos.push_back(mp(i, j));
+       29:   33-block  0
+      121:   33-block  1
+       92:   33-block  2
+       92:   34:            }
+       92:   34-block  0
+       50:   35:        }
+       50:   35-block  0
+       50:   35-block  1
+       50:   35-block  2
+    $$$$$:   35-block  3
+        -:   36:    }
+        -:   37:    return vivos;
+        -:   38:}
+        8:   39:
+        8:   39-block  0
+        8:   39-block  1
+        -:   40:// EJERCICIO 4
+        -:   41:float densidadPoblacion(toroide const &t) {
+        -:   42:    float resp = 0;
+        4:   43:    int vivas = posicionesVivas(t).size();
+        4:   44:    if (vivas > 0) {
+        4:   45:        resp = vivas / (t.size() * t[0].size());
+        4:   45-block  0
+        4:   46:    }
+        3:   47:    return resp;
+        3:   47-block  0
+        -:   48:}
+        4:   49:
+        4:   49-block  0
+        -:   50:// EJERCICIO 5
+        -:   51:int cantidadVecinosVivos(toroide const &t, int f, int c) {
+        -:   52:    int resp = vecinosVivos(t, f, c);
+    34729:   53:    return resp;
+    34729:   54:}
+    34729:   54-block  0
+    34729:   55:
+        -:   56:// EJERCICIO 6
+        -:   57:bool evolucionDePosicion(toroide const &t, posicion x) {
+        -:   58:    bool resp = false;
+    34726:   59:    bool enRango = (x.first >= 0 && x.first < t.size()) && (x.second >= 0 && x.second < t[0].size());
+    34726:   60:    if (toroideValido(t) && enRango) {
+    34726:   61:        int vecinosVivos = cantidadVecinosVivos(t, x.first, x.second);
+    34726:   61-block  0
+    34725:   61-block  1
+    34724:   61-block  2
+    34724:   61-block  3
+    34724:   61-block  4
+        2:   61-block  5
+    34726:   62:        if (t[x.first][x.second] && vecinosVivos >= 2 && vecinosVivos <= 3) {
+    34726:   62-block  0
+    34726:   62-block  1
+    34724:   62-block  2
+        2:   62-block  3
+    34726:   62-block  4
+    34724:   63:            resp = true;
+    34724:   63-block  0
+    34724:   64:        }
+     7124:   64-block  0
+     6255:   64-block  1
+     3525:   64-block  2
+    31199:   64-block  3
+    34724:   64-block  4
+     3525:   65:        if (!t[x.first][x.second] && vecinosVivos == 3) {
+     3525:   65-block  0
+        -:   66:            resp = true;
+    34724:   67:        }
+    34724:   67-block  0
+    27600:   67-block  1
+     2900:   67-block  2
+    31824:   67-block  3
+    34724:   67-block  4
+     2900:   68:    }
+     2900:   68-block  0
+        -:   69:    return resp;
+        -:   70:}
+    34726:   71:
+    34726:   71-block  0
+        -:   72:// EJERCICIO 7
+        -:   73:void evolucionToroide(toroide &t){
+        -:   74:    toroide tEvo = t;
+      581:   75:    for(int i = 0; i<t.size(); i++){
+     1162:   76:        for(int j = 0; j<t[i].size(); j++){
+      581:   76-block  0
+      581:   76-block  1
+    $$$$$:   76-block  2
+     4192:   77:            t[i][j] = evolucionDePosicion(tEvo, mp(i,j));
+      581:   77-block  0
+     4192:   77-block  1
+     3611:   77-block  2
+    38329:   78:        }
+     3611:   78-block  0
+    38329:   78-block  1
+    34718:   79:    }
+    34718:   79-block  0
+    34718:   79-block  1
+    34718:   79-block  2
+        -:   80:}
+        -:   81:
+      581:   82:// EJERCICIO 8
+        -:   83:toroide evolucionMultiple(toroide const &t, int K) {
+        -:   84:    toroide out = t;
+        5:   85:    int i = 1;
+        5:   86:    while(i<=K){
+        5:   86-block  0
+        5:   87:        evolucionToroide(out);
+       53:   88:        i++;
+       53:   88-block  0
+       48:   89:    }
+       48:   89-block  0
+       48:   90:    return out;
+       48:   90-block  0
+        -:   91:}
+        5:   92:
+        5:   92-block  0
+        5:   92-block  1
+        -:   93:// EJERCICIO 9
+        -:   94:bool esPeriodico(toroide const &t, int &p) {
+        -:   95:    bool resp = false;
+       37:   96:    toroide tEvo = t;
+       37:   97:    toroide tConstante = t;
+       74:   98:    int i = 1;
+       37:   98-block  0
+    $$$$$:   98-block  1
+       37:   99:    evolucionToroide(tEvo);
+       37:   99-block  0
+    $$$$$:   99-block  1
+       37:  100:    while(tEvo != t && !toroideMuerto(tEvo) && tEvo != tConstante){
+       37:  101:        evolucionToroide(tEvo);
+       37:  101-block  0
+      181:  102:        evolucionToroide(tConstante);
+      181:  102-block  0
+      181:  102-block  1
+      175:  102-block  2
+      175:  102-block  3
+      146:  102-block  4
+      146:  102-block  5
+      144:  102-block  6
+       37:  102-block  7
+      181:  102-block  8
+      144:  103:        i++;
+      144:  103-block  0
+      144:  104:    }
+      144:  104-block  0
+      144:  105:    if(t == tEvo && !toroideMuerto(tEvo)){
+      144:  105-block  0
+        -:  106:        resp = true;
+       37:  107:    }else{
+       37:  107-block  0
+       37:  107-block  1
+        6:  107-block  2
+        6:  107-block  3
+        4:  107-block  4
+       33:  107-block  5
+       37:  107-block  6
+        4:  108:        i = 0;
+        4:  108-block  0
+        -:  109:    }
+       33:  110:    p = i;
+       33:  110-block  0
+        -:  111:    return resp;
+       37:  112:}
+       74:  113:
+       37:  113-block  0
+       37:  113-block  1
+        -:  114:// EJERCICIO 10
+        -:  115:bool primosLejanos(toroide const &t, toroide const &u) {
+        -:  116:    bool resp = false;
+       10:  117:
+       10:  118:    toroide tEvo = t;
+        -:  119:    toroide uEvo = u;
+       20:  120:    toroide tEvoConstante = t;
+       10:  120-block  0
+    $$$$$:  120-block  1
+       20:  121:    toroide uEvoConstante = u;
+       10:  121-block  0
+    $$$$$:  121-block  1
+       20:  122:
+       10:  122-block  0
+    $$$$$:  122-block  1
+       10:  123:    evolucionToroide(tEvo);
        10:  123-block  0
-       10:  123-block  1
-        4:  124:        resp = true;
-        4:  124-block  0
-        -:  125:    }
-        -:  126:
-       22:  127:    while(uEvo != u && uEvo != t && uEvo != uEvoConstante && !toroideMuerto(uEvo) && !resp){
-       22:  127-block  0
-       22:  127-block  1
-       17:  127-block  2
-       17:  127-block  3
-       15:  127-block  4
-       15:  127-block  5
-       14:  127-block  6
-       14:  127-block  7
-       12:  127-block  8
-       12:  127-block  9
-       10:  127-block 10
-       22:  127-block 11
-       12:  127-block 12
-       12:  128:        evolucionToroide(uEvo);
-       12:  128-block  0
-       12:  129:        evolucionToroide(uEvoConstante);
+    $$$$$:  123-block  1
+        -:  124:    evolucionToroide(uEvo);
+       10:  125:
+       10:  125-block  0
+       10:  126:    while(tEvo != t && tEvo != tEvoConstante && tEvo != u && !toroideMuerto(tEvo)){
+       10:  126-block  0
+        -:  127:        evolucionToroide(tEvo);
+       22:  128:        evolucionToroide(tEvoConstante);
+       22:  128-block  0
+       22:  128-block  1
+       17:  128-block  2
+       17:  128-block  3
+       16:  128-block  4
+       16:  128-block  5
+       14:  128-block  6
+       14:  128-block  7
+       12:  128-block  8
+       10:  128-block  9
+       22:  128-block 10
+       12:  128-block 11
+       12:  129:    }
        12:  129-block  0
-        -:  130:    }
-        -:  131:
-       10:  132:    if(uEvo == t){
-       10:  132-block  0
-       10:  132-block  1
-        4:  133:        resp = true;
-        4:  133-block  0
-        -:  134:    }
-        -:  135:    
-       20:  136:    return resp;
-       10:  136-block  0
-       10:  136-block  1
-        -:  137:}
-        -:  138:
-        -:  139:// EJERCICIO 11
-        6:  140:int seleccionNatural(vector <toroide> ts) {
-        6:  141:    int resp = -1;
-        6:  142:    int mayorTicks = 0;
-        6:  143:    int muerteTicks = 0;
-        6:  144:    bool esInmortal = false;
-        -:  145:    
-       35:  146:    for(int i = 0; i<ts.size() && !esInmortal;i++){
-        6:  146-block  0
-       35:  146-block  1
-       31:  146-block  2
-       29:  146-block  3
-        6:  146-block  4
-       35:  146-block  5
-       58:  147:        toroide t = ts[i];
-       29:  147-block  0
-    $$$$$:  147-block  1
-       58:  148:        toroide tPrev = ts[i];
-       29:  148-block  0
-       29:  148-block  1
-    $$$$$:  148-block  2
-        -:  149:
-       29:  150:        if(!toroideMuerto(t)){
-       29:  150-block  0
-       29:  150-block  1
-       22:  151:            int dead = 0;
-       22:  152:            bool estaMuerto = toroideMuerto(t);
-       22:  152-block  0
-       22:  153:            bool periodico = esPeriodico(t, dead);
-       22:  153-block  0
-        -:  154:
-       22:  155:            if(!periodico){
-       22:  155-block  0
-       21:  156:                evolucionToroide(t);
-       21:  156-block  0
-       21:  157:                muerteTicks = 1;
-       21:  157-block  0
-        -:  158:
-      105:  159:                while(!estaMuerto && t != tPrev){
-      105:  159-block  0
-       85:  159-block  1
-       85:  159-block  2
-       84:  159-block  3
-       21:  159-block  4
-      105:  159-block  5
-       84:  160:                    evolucionToroide(t);
-       84:  160-block  0
-       84:  161:                    evolucionToroide(tPrev);
-       84:  161-block  0
-       84:  162:                    if(toroideMuerto(t)){
-       84:  162-block  0
-       84:  162-block  1
-       20:  163:                        estaMuerto = true;
-       20:  163-block  0
-        -:  164:                    }
-       84:  165:                    muerteTicks++;
-       84:  165-block  0
-        -:  166:                }
-        -:  167:
-       21:  168:                bool prevMuerto = toroideMuerto(tPrev);
-       21:  168-block  0
-        -:  169:
-       21:  170:                if(t == tPrev && !prevMuerto){
-       21:  170-block  0
-       21:  170-block  1
-       11:  170-block  2
-        1:  170-block  3
-       20:  170-block  4
-       21:  170-block  5
-        1:  171:                    resp = i;
-        1:  172:                    esInmortal = true;
-        1:  172-block  0
-        -:  173:                }
-       21:  174:                if(muerteTicks > mayorTicks){
-       21:  174-block  0
-        8:  175:                    mayorTicks = muerteTicks;
-        8:  176:                    resp = i;
-        8:  176-block  0
-        -:  177:                }
-       21:  178:                muerteTicks = 0;
-       21:  178-block  0
-        -:  179:
-        -:  180:            } else {
-        1:  181:                resp = i;
-        1:  182:                esInmortal = true;
-        1:  182-block  0
-        -:  183:            }
-        -:  184:        }
-        -:  185:    }
-        6:  186:    return resp;
-        6:  186-block  0
-        6:  186-block  1
-        -:  187:}
-        -:  188:
-        -:  189:// EJERCICIO 12
-        7:  190:toroide fusionar(toroide const &t, toroide const &u) {
-       14:  191:    toroide out(t.size(), vector<bool>(t[0].size(), false));
-        7:  191-block  0
-        7:  191-block  1
-    $$$$$:  191-block  2
-    $$$$$:  191-block  3
-       36:  192:    for(int i = 0; i<t.size(); i++){
-       36:  192-block  0
-       29:  192-block  1
-      170:  193:        for(int j = 0; j<t[i].size(); j++){
-       29:  193-block  0
-      170:  193-block  1
-      141:  193-block  2
-      141:  194:            if(t[i][j] && u[i][j]){
-      141:  194-block  0
-       83:  194-block  1
-       40:  194-block  2
-      101:  194-block  3
-      141:  194-block  4
-       40:  195:                out[i][j] = true;
-       40:  195-block  0
-        -:  196:            }
-        -:  197:        }
-        -:  198:    }
-        7:  199:    return out;
-        7:  199-block  0
-        7:  199-block  1
-        -:  200:}
-        -:  201:
-        -:  202:// EJERCICIO 13
-        6:  203:bool vistaTrasladada(toroide const &t, toroide const &u){
-        6:  204:	bool resp = false;
-        6:  205:    toroide tTraslado = t;
-        6:  205-block  0
-    $$$$$:  205-block  1
-        6:  206:    int x = 0;
-        6:  206-block  0
-       21:  207:    while(x < t.size() && !resp){
-       21:  207-block  0
-       18:  207-block  1
-       15:  207-block  2
-        6:  207-block  3
-       21:  207-block  4
-       15:  208:        int y = 0;
-       15:  208-block  0
-       62:  209:        while(y < t[0].size() && !resp){
-       62:  209-block  0
-       49:  209-block  1
-       47:  209-block  2
-       15:  209-block  3
-       62:  209-block  4
-       47:  210:            if(!resp){
-       47:  210-block  0
-       47:  211:                tTraslado = trasladarToroide(t, x, y);
-       47:  211-block  0
-       47:  211-block  1
-       47:  211-block  2
-    $$$$$:  211-block  3
-    $$$$$:  211-block  4
-       47:  212:                if(tTraslado == u){
-       47:  212-block  0
-        4:  213:                    resp = true;
-        4:  213-block  0
-        -:  214:                }
-        -:  215:            }
-       47:  216:            y++;
-       47:  216-block  0
-        -:  217:        }
-       15:  218:        x++;
-       15:  218-block  0
-        -:  219:    }
-       12:  220:    return resp;
-        6:  220-block  0
-        6:  220-block  1
-        -:  221:}
-        -:  222:
-        -:  223:// EJERCICIO 14
-        5:  224:int menorSuperficieViva(toroide const &t){
-        5:  225:    int resp = 0;
-        5:  226:    vector<toroide> toroideLista;
-        5:  226-block  0
-    $$$$$:  226-block  1
-        5:  227:    bool estaMuerto = toroideMuerto(t);
-        5:  228:    if(!estaMuerto){
-        5:  228-block  0
-       20:  229:        for(int i = 0; i<t.size(); i++){
-        4:  229-block  0
-       20:  229-block  1
-       16:  229-block  2
-       92:  230:            for(int j = 0; j<t[i].size();j++){
-       16:  230-block  0
-       92:  230-block  1
-       76:  231:                toroideLista.push_back(trasladarToroide(t, i, j));
+       12:  130:
+       12:  130-block  0
+        -:  131:    if(tEvo == u){
+        -:  132:        resp = true;
+       10:  133:    }
+       10:  133-block  0
+       10:  133-block  1
+        4:  134:
+        4:  134-block  0
+        -:  135:    while(uEvo != u && uEvo != t && uEvo != uEvoConstante && !toroideMuerto(uEvo) && !resp){
+        -:  136:        evolucionToroide(uEvo);
+       22:  137:        evolucionToroide(uEvoConstante);
+       22:  137-block  0
+       22:  137-block  1
+       17:  137-block  2
+       17:  137-block  3
+       15:  137-block  4
+       15:  137-block  5
+       14:  137-block  6
+       14:  137-block  7
+       12:  137-block  8
+       12:  137-block  9
+       10:  137-block 10
+       22:  137-block 11
+       12:  137-block 12
+       12:  138:    }
+       12:  138-block  0
+       12:  139:
+       12:  139-block  0
+        -:  140:    if(uEvo == t){
+        -:  141:        resp = true;
+       10:  142:    }
+       10:  142-block  0
+       10:  142-block  1
+        4:  143:    
+        4:  143-block  0
+        -:  144:    return resp;
+        -:  145:}
+       20:  146:
+       10:  146-block  0
+       10:  146-block  1
+        -:  147:// EJERCICIO 11
+        -:  148:int seleccionNatural(vector<toroide> ts) {
+        -:  149:    int resp = -1;
+        5:  150:    int ticksEnMorir = 0;
+        5:  151:    bool hayPeriodico = false;
+        5:  152:    for (int i = 0; i < ts.size() && !hayPeriodico; i++){
+        5:  153:        int inmortal;
+       34:  154:        int muereEn = 0;
+        5:  154-block  0
+       34:  154-block  1
+       30:  154-block  2
+       29:  154-block  3
+        5:  154-block  4
+       34:  154-block  5
+       29:  154-block  6
+        -:  155:        hayPeriodico = esPeriodico(ts[i],inmortal);
+       29:  156:        if(hayPeriodico){
+       29:  157:            resp = -1;
+       29:  157-block  0
+       29:  158:        }
+       29:  158-block  0
+        1:  159:        if (!toroideMuerto(ts[i]) && (!hayPeriodico)) {
+        1:  159-block  0
+        -:  160:            while (!toroideMuerto(ts[i])) {
+       29:  161:                evolucionToroide(ts[i]);
+       29:  161-block  0
+       29:  161-block  1
+       28:  161-block  2
+       27:  161-block  3
+        2:  161-block  4
+       29:  161-block  5
+      163:  162:                muereEn++;
+      163:  162-block  0
+      163:  162-block  1
+      136:  163:            }
+      136:  163-block  0
+      136:  164:            if(muereEn > ticksEnMorir){
+      136:  164-block  0
+        -:  165:                resp = i;
+       27:  166:                ticksEnMorir = muereEn;
+       27:  166-block  0
+        8:  167:            }
+        8:  168:        }
+        8:  168-block  0
+        -:  169:    }
+        -:  170:    return resp;
+        -:  171:}
+        5:  172:
+        5:  172-block  0
+        5:  172-block  1
+        -:  173:// EJERCICIO 12
+        -:  174:toroide fusionar(toroide const &t, toroide const &u) {
+        -:  175:    toroide out;
+        7:  176:    if (t.size() == u.size() && t[0].size() == u[0].size()) {
+        7:  177:        vector<bool> fila;
+        7:  177-block  0
+       7*:  178:        for (int i = 0; i < u.size(); i++) {
+        7:  178-block  0
+        7:  178-block  1
+    %%%%%:  178-block  2
+        7:  178-block  3
+       14:  179:            for (int j = 0; j < u[0].size(); j++) {
+        7:  179-block  0
+        7:  179-block  1
+    $$$$$:  179-block  2
+       36:  180:                if (u[i][j] && t[i][j]) {
+       36:  180-block  0
+      170:  181:                    fila.push_back(true);
+       29:  181-block  0
+      170:  181-block  1
+      141:  181-block  2
+      141:  182:                } else {
+      141:  182-block  0
+       71:  182-block  1
+       40:  182-block  2
+      101:  182-block  3
+      141:  182-block  4
+       40:  183:                    fila.push_back(false);
+       40:  183-block  0
+        -:  184:                }
+      101:  185:            }
+      101:  185-block  0
+        -:  186:            out.push_back(fila);
+        -:  187:            fila.clear();
+       29:  188:        }
+       29:  188-block  0
+       29:  189:    }
+       29:  189-block  0
+        -:  190:    return out;
+        -:  191:}
+        7:  192:
+        7:  192-block  0
+        7:  192-block  1
+        -:  193:// EJERCICIO 13
+        -:  194:bool vistaTrasladada(toroide const &t, toroide const &u){
+        -:  195:	bool resp = false;
+        6:  196:    toroide tTraslado = t;
+        6:  197:    int x = 0;
+        6:  198:    while(x < t.size() && !resp){
+        6:  198-block  0
+    $$$$$:  198-block  1
+        6:  199:        int y = 0;
+        6:  199-block  0
+       21:  200:        while(y < t[0].size() && !resp){
+       21:  200-block  0
+       18:  200-block  1
+       15:  200-block  2
+        6:  200-block  3
+       21:  200-block  4
+       15:  201:            if(!resp){
+       15:  201-block  0
+       62:  202:                tTraslado = trasladarToroide(t, x, y);
+       62:  202-block  0
+       49:  202-block  1
+       47:  202-block  2
+       15:  202-block  3
+       62:  202-block  4
+       47:  203:                if(tTraslado == u){
+       47:  203-block  0
+       47:  204:                    resp = true;
+       47:  204-block  0
+       47:  204-block  1
+       47:  204-block  2
+    $$$$$:  204-block  3
+    $$$$$:  204-block  4
+       47:  205:                }
+       47:  205-block  0
+        4:  206:            }
+        4:  206-block  0
+        -:  207:            y++;
+        -:  208:        }
+       47:  209:        x++;
+       47:  209-block  0
+        -:  210:    }
+       15:  211:    return resp;
+       15:  211-block  0
+        -:  212:}
+       12:  213:
+        6:  213-block  0
+        6:  213-block  1
+        -:  214:// EJERCICIO 14
+        -:  215:int menorSuperficieViva(toroide const &t){
+        -:  216:    int resp = 0;
+        5:  217:    vector<toroide> toroideLista;
+        5:  218:    bool estaMuerto = toroideMuerto(t);
+        5:  219:    if(!estaMuerto){
+        5:  219-block  0
+    $$$$$:  219-block  1
+        5:  220:        for(int i = 0; i<t.size(); i++){
+        5:  221:            for(int j = 0; j<t[i].size();j++){
+        5:  221-block  0
+       20:  222:                toroideLista.push_back(trasladarToroide(t, i, j));
+        4:  222-block  0
+       20:  222-block  1
+       16:  222-block  2
+       92:  223:            }
+       16:  223-block  0
+       92:  223-block  1
+       76:  224:        }
+       76:  224-block  0
+       76:  224-block  1
+       76:  224-block  2
+       76:  224-block  3
+    $$$$$:  224-block  4
+    $$$$$:  224-block  5
+    $$$$$:  224-block  6
+    $$$$$:  224-block  7
+        -:  225:        int f= filas(t);
+        -:  226:        int c = columnas(t);
+        4:  227:        int superficieMasChica = f * c;
+        4:  227-block  0
+        4:  228:        for(int i = 0; i<toroideLista.size(); i++){
+        4:  228-block  0
+        4:  228-block  1
+        4:  228-block  2
+    $$$$$:  228-block  3
+    $$$$$:  228-block  4
+        4:  229:            int superficie = superficieVivas(toroideLista[i]);
+       80:  230:            if(superficie < superficieMasChica){
+       80:  230-block  0
+       76:  230-block  1
+       76:  231:                superficieMasChica = superficie;
        76:  231-block  0
        76:  231-block  1
        76:  231-block  2
-       76:  231-block  3
+    $$$$$:  231-block  3
     $$$$$:  231-block  4
-    $$$$$:  231-block  5
-    $$$$$:  231-block  6
-    $$$$$:  231-block  7
-        -:  232:            }
-        -:  233:        }
-        4:  234:        int f= filas(t);
-        4:  234-block  0
-        4:  235:        int c = columnas(t);
-        4:  235-block  0
-        4:  235-block  1
-        4:  235-block  2
-    $$$$$:  235-block  3
-    $$$$$:  235-block  4
-        4:  236:        int superficieMasChica = f * c;
-       80:  237:        for(int i = 0; i<toroideLista.size(); i++){
-       80:  237-block  0
-       76:  237-block  1
-       76:  238:            int superficie = superficieVivas(toroideLista[i]);
-       76:  238-block  0
-       76:  238-block  1
-       76:  238-block  2
-    $$$$$:  238-block  3
-    $$$$$:  238-block  4
-       76:  239:            if(superficie < superficieMasChica){
-        5:  240:                superficieMasChica = superficie;
-        5:  240-block  0
-        -:  241:            }
-        -:  242:        }
-        4:  243:        resp = superficieMasChica;
-        4:  243-block  0
-        -:  244:    }
-       10:  245:    return resp;
-        5:  245-block  0
-        5:  245-block  1
-        -:  246:}
+       76:  232:            }
+        5:  233:        }
+        5:  233-block  0
+        -:  234:        resp = superficieMasChica;
+        -:  235:    }
+        4:  236:    return resp;
+        4:  236-block  0
+        -:  237:}

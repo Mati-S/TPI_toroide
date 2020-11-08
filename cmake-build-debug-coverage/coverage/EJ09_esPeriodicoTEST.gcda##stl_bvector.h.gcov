@@ -749,12 +749,18 @@
         -:  708:      }
         -:  709:
     #####:  710:      vector(initializer_list<bool> __l,
-        1:  711:	     const allocator_type& __a = allocator_type())
+        2:  711:	     const allocator_type& __a = allocator_type())
     $$$$$:  711-block  0
     $$$$$:  711-block  1
     $$$$$:  711-block  2
     $$$$$:  711-block  3
     $$$$$:  711-block  4
+    $$$$$:  711-block  5
+    $$$$$:  711-block  6
+    $$$$$:  711-block  7
+    $$$$$:  711-block  8
+    $$$$$:  711-block  9
+    $$$$$:  711-block 10
     #####:  712:      : _Base(__a)
     %%%%%:  712-block  0
     $$$$$:  712-block  1

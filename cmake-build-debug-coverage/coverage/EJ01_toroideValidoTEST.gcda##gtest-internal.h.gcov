@@ -456,7 +456,7 @@
         -:  452:  virtual Test* CreateTest() = 0;
         -:  453:
         -:  454: protected:
-       77:  455:  TestFactoryBase() {}
+       78:  455:  TestFactoryBase() {}
         -:  456:
         -:  457: private:
         -:  458:  GTEST_DISALLOW_COPY_AND_ASSIGN_(TestFactoryBase);
@@ -467,7 +467,7 @@
         -:  463:template <class TestClass>
         -:  464:class TestFactoryImpl : public TestFactoryBase {
         -:  465: public:
-        9:  466:  virtual Test* CreateTest() { return new TestClass; }
+        8:  466:  virtual Test* CreateTest() { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI35toroideValidoTEST_toroideVacio_TestE10CreateTestEv:
         1:  466:  virtual Test* CreateTest() { return new TestClass; }
@@ -518,13 +518,6 @@ _ZN7testing8internal15TestFactoryImplI40toroideValidoTEST_toroide2Comlumnas_Test
         1:  466-block  2
     $$$$$:  466-block  3
 ------------------
-_ZN7testing8internal15TestFactoryImplI39toroideValidoTEST_toroidePeriodico_TestE10CreateTestEv:
-        1:  466:  virtual Test* CreateTest() { return new TestClass; }
-        1:  466-block  0
-        1:  466-block  1
-        1:  466-block  2
-    $$$$$:  466-block  3
-------------------
 _ZN7testing8internal15TestFactoryImplI43toroideValidoTEST_toroideNoRectangular_TestE10CreateTestEv:
         1:  466:  virtual Test* CreateTest() { return new TestClass; }
         1:  466-block  0
@@ -552,9 +545,9 @@ _ZN7testing8internal15TestFactoryImplI43toroideValidoTEST_toroideNoRectangular_T
         -:  484:typedef void (*TearDownTestCaseFunc)();
         -:  485:
         -:  486:struct CodeLocation {
-       77:  487:  CodeLocation(const std::string& a_file, int a_line)
-       77:  488:      : file(a_file), line(a_line) {}
-       77:  488-block  0
+       78:  487:  CodeLocation(const std::string& a_file, int a_line)
+       78:  488:      : file(a_file), line(a_line) {}
+       78:  488-block  0
         -:  489:
         -:  490:  std::string file;
         -:  491:  int line;
