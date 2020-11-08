@@ -1,0 +1,181 @@
+        -:    0:Source:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/tests/EJ02_toroideMuertoTEST.cpp
+        -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/tests/EJ02_toroideMuertoTEST.gcno
+        -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/tests/EJ02_toroideMuertoTEST.gcda
+        -:    0:Runs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include <algorithm>
+        -:    4:#include "../toroidesparaTest.h"
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        2:    8:TEST(toroideMuertoTEST, toroideDiagonalVivas){
+        -:    9:    toroide t = {
+        -:   10:            {true, false, false},
+        -:   11:            {false, true, false},
+        -:   12:            {false, false, true},
+        -:   13:            {true, false, false},
+        -:   14:            {false, true, false},
+       10:   15:            {false, false, true}};
+        -:   16:
+       1*:   17:    EXPECT_FALSE(toroideMuerto(t));
+        1:   18:}
+------------------
+_ZN43toroideMuertoTEST_toroideDiagonalVivas_Test8TestBodyEv:
+        1:    8:TEST(toroideMuertoTEST, toroideDiagonalVivas){
+        -:    9:    toroide t = {
+        -:   10:            {true, false, false},
+        -:   11:            {false, true, false},
+        -:   12:            {false, false, true},
+        -:   13:            {true, false, false},
+        -:   14:            {false, true, false},
+       10:   15:            {false, false, true}};
+        1:   15-block  0
+        1:   15-block  1
+        1:   15-block  2
+        1:   15-block  3
+        1:   15-block  4
+        1:   15-block  5
+        1:   15-block  6
+        6:   15-block  7
+        1:   15-block  8
+    $$$$$:   15-block  9
+    $$$$$:   15-block 10
+    $$$$$:   15-block 11
+    $$$$$:   15-block 12
+    $$$$$:   15-block 13
+    $$$$$:   15-block 14
+    $$$$$:   15-block 15
+    $$$$$:   15-block 16
+    $$$$$:   15-block 17
+    $$$$$:   15-block 18
+        -:   16:
+       1*:   17:    EXPECT_FALSE(toroideMuerto(t));
+        1:   17-block  0
+        1:   17-block  1
+    %%%%%:   17-block  2
+    %%%%%:   17-block  3
+    %%%%%:   17-block  4
+    %%%%%:   17-block  5
+    %%%%%:   17-block  6
+        1:   17-block  7
+    $$$$$:   17-block  8
+    $$$$$:   17-block  9
+    $$$$$:   17-block 10
+    $$$$$:   17-block 11
+    $$$$$:   17-block 12
+    $$$$$:   17-block 13
+    $$$$$:   17-block 14
+    $$$$$:   17-block 15
+        1:   18:}
+------------------
+_ZN43toroideMuertoTEST_toroideDiagonalVivas_TestC1Ev:
+        1:    8:TEST(toroideMuertoTEST, toroideDiagonalVivas){
+        1:    8-block  0
+------------------
+        -:   19:
+        2:   20:TEST(toroideMuertoTEST, toroideVivo){
+        2:   21:    toroide t2 = tVivo;
+       1*:   22:    EXPECT_FALSE(toroideMuerto(t2));
+        1:   23:}
+------------------
+_ZN34toroideMuertoTEST_toroideVivo_Test8TestBodyEv:
+        1:   20:TEST(toroideMuertoTEST, toroideVivo){
+        2:   21:    toroide t2 = tVivo;
+        1:   21-block  0
+    $$$$$:   21-block  1
+       1*:   22:    EXPECT_FALSE(toroideMuerto(t2));
+        1:   22-block  0
+        1:   22-block  1
+        1:   22-block  2
+    %%%%%:   22-block  3
+    %%%%%:   22-block  4
+    %%%%%:   22-block  5
+    %%%%%:   22-block  6
+    %%%%%:   22-block  7
+        1:   22-block  8
+    $$$$$:   22-block  9
+    $$$$$:   22-block 10
+    $$$$$:   22-block 11
+    $$$$$:   22-block 12
+    $$$$$:   22-block 13
+    $$$$$:   22-block 14
+    $$$$$:   22-block 15
+    $$$$$:   22-block 16
+        1:   23:}
+------------------
+_ZN34toroideMuertoTEST_toroideVivo_TestC1Ev:
+        1:   20:TEST(toroideMuertoTEST, toroideVivo){
+        1:   20-block  0
+------------------
+        -:   24:
+        -:   25:
+        2:   26:TEST(toroideMuertoTEST, UltimoHombreEnPie){
+        2:   27:    toroide t4 = tUnoVivo;
+       1*:   28:    EXPECT_FALSE(toroideMuerto(t4));
+        1:   29:}
+------------------
+_ZN40toroideMuertoTEST_UltimoHombreEnPie_Test8TestBodyEv:
+        1:   26:TEST(toroideMuertoTEST, UltimoHombreEnPie){
+        2:   27:    toroide t4 = tUnoVivo;
+        1:   27-block  0
+    $$$$$:   27-block  1
+       1*:   28:    EXPECT_FALSE(toroideMuerto(t4));
+        1:   28-block  0
+        1:   28-block  1
+        1:   28-block  2
+    %%%%%:   28-block  3
+    %%%%%:   28-block  4
+    %%%%%:   28-block  5
+    %%%%%:   28-block  6
+    %%%%%:   28-block  7
+        1:   28-block  8
+    $$$$$:   28-block  9
+    $$$$$:   28-block 10
+    $$$$$:   28-block 11
+    $$$$$:   28-block 12
+    $$$$$:   28-block 13
+    $$$$$:   28-block 14
+    $$$$$:   28-block 15
+    $$$$$:   28-block 16
+        1:   29:}
+------------------
+_ZN40toroideMuertoTEST_UltimoHombreEnPie_TestC1Ev:
+        1:   26:TEST(toroideMuertoTEST, UltimoHombreEnPie){
+        1:   26-block  0
+------------------
+        -:   30:
+        2:   31:TEST(toroideMuertoTEST, torMuerto){
+        2:   32:    toroide t3 = tMuerto;
+       1*:   33:    EXPECT_TRUE(toroideMuerto(t3));
+        1:   34:}
+------------------
+_ZN32toroideMuertoTEST_torMuerto_Test8TestBodyEv:
+        1:   31:TEST(toroideMuertoTEST, torMuerto){
+        2:   32:    toroide t3 = tMuerto;
+        1:   32-block  0
+    $$$$$:   32-block  1
+       1*:   33:    EXPECT_TRUE(toroideMuerto(t3));
+        1:   33-block  0
+        1:   33-block  1
+        1:   33-block  2
+    %%%%%:   33-block  3
+    %%%%%:   33-block  4
+    %%%%%:   33-block  5
+    %%%%%:   33-block  6
+    %%%%%:   33-block  7
+        1:   33-block  8
+    $$$$$:   33-block  9
+    $$$$$:   33-block 10
+    $$$$$:   33-block 11
+    $$$$$:   33-block 12
+    $$$$$:   33-block 13
+    $$$$$:   33-block 14
+    $$$$$:   33-block 15
+    $$$$$:   33-block 16
+        1:   34:}
+------------------
+_ZN32toroideMuertoTEST_torMuerto_TestC1Ev:
+        1:   31:TEST(toroideMuertoTEST, torMuerto){
+        1:   31-block  0
+------------------

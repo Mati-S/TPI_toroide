@@ -3,7 +3,6 @@
 #include <algorithm>
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 TEST(primosLejanosTEST, toroideHorizontalPeriodico2){
@@ -46,6 +45,15 @@ TEST(primosLejanosTEST, toroidePeriodicoMuerto){
 TEST(primosLejanosTEST, toroidesNoPrimos){
     toroide t1 = tPeriodico;
     toroide t2 = tMuereEnKMenos1;
+    bool res = primosLejanos(t1, t2);
+    EXPECT_FALSE(res);
+    res = primosLejanos(t2, t1);
+    EXPECT_FALSE(res);
+}
+
+TEST(primosLejanosTEST, rubikCubeNoPrimos){
+    toroide t1 = rubikA;
+    toroide t2 = rubikB;
     bool res = primosLejanos(t1, t2);
     EXPECT_FALSE(res);
     res = primosLejanos(t2, t1);

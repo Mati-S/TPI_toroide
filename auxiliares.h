@@ -11,11 +11,17 @@ using namespace std;
 pair<int,int> mp(int a, int b);
 vector<posicion> ordenar(vector<posicion> &v);
 int mod (int a, int b);
-bool esMatriz(vector<vector<bool>> const &t);
-bool sonIguales(toroide t, toroide tEvo);
-toroide trasladoVertical(toroide t);
-toroide trasladoHorizontal(toroide t);
-int menorSuperficie(vector<posicion> pos);
-int menor (vector<int> superficies);
+
+int filas(const rectangulo& t);
+int columnas(rectangulo t);
+bool esRectangulo(rectangulo r);
+
+int filaToroide(int f, toroide t);
+int columnaToroide(int c, toroide t);
+bool estaEnRango(const toroide& t, int f, int c);
+int vecinosVivos(const toroide& t, int f, int c);
+
+toroide trasladarToroide(toroide t, int x, int y);
+int superficieVivas(toroide t);
 
 #endif //REUNIONESREMOTAS_AUXILIARES_H

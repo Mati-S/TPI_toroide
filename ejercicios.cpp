@@ -5,7 +5,7 @@
 // EJERCICIO 1
 bool toroideValido(vector<vector<bool>> const &t) {
     bool resp = false;
-    if (t.size() >= 3 && t[0].size() >= 3 && esMatriz(t)) {
+    if (t.size() >= 3 && t[0].size() >= 3 && esRectangulo(t)) {
         resp = true;
     }
     return resp;
@@ -14,10 +14,10 @@ bool toroideValido(vector<vector<bool>> const &t) {
 // EJERCICIO 2
 bool toroideMuerto(toroide const &t) {
     bool resp = true;
-    if (toroideValido(t)) {
-        for (int i = 0; i < t.size(); i++) {
-            for (int j = 0; j < t[0].size(); j++) {
-                resp = resp && !t[i][j];
+    for(int i = 0; i<t.size(); i++){
+        for(int j = 0; j<t[i].size(); j++){
+            if(t[i][j]){
+                resp = false;
             }
         }
     }
@@ -30,7 +30,7 @@ vector<posicion> posicionesVivas(toroide const &t) {
     for (int i = 0; i < t.size(); i++) {
         for (int j = 0; j < t[0].size(); j++) {
             if (t[i][j]) {
-                vivos.push_back(make_pair(i, j));
+                vivos.push_back(mp(i, j));
             }
         }
     }
@@ -49,17 +49,7 @@ float densidadPoblacion(toroide const &t) {
 
 // EJERCICIO 5
 int cantidadVecinosVivos(toroide const &t, int f, int c) {
-    float resp = 0;
-    bool enRango = f >= 0 && f < t.size() && c >= 0 && c < t[0].size();
-    if (enRango){
-        for (int i = -1; i <= 1; i++) {
-            for (int j = -1; j <= 1; j++) {
-                if (t[mod(f + i, t.size())][mod(c + j, t.size())] && (i != 0 || j != 0)) {
-                    resp++;
-                }
-            }
-        }
-    }
+    int resp = vecinosVivos(t, f, c);
     return resp;
 }
 
@@ -80,28 +70,22 @@ bool evolucionDePosicion(toroide const &t, posicion x) {
 }
 
 // EJERCICIO 7
-void evolucionToroide(toroide &t) {
+void evolucionToroide(toroide &t){
     toroide tEvo = t;
-    if (toroideValido(t)) {
-        for (int i = 0; i < t.size(); i++) {
-            for (int j = 0; j < t[0].size(); j++) {
-                tEvo[i][j] = evolucionDePosicion(t, mp(i, j));
-            }
+    for(int i = 0; i<t.size(); i++){
+        for(int j = 0; j<t[i].size(); j++){
+            t[i][j] = evolucionDePosicion(tEvo, mp(i,j));
         }
     }
-    t = tEvo;
-    return;
 }
 
 // EJERCICIO 8
 toroide evolucionMultiple(toroide const &t, int K) {
-    toroide out;
-    out = t;
-    if (toroideValido(t) && K > 0) {
-        while (K > 0) {
-            evolucionToroide(out);
-            K--;
-        }
+    toroide out = t;
+    int i = 1;
+    while(i<=K){
+        evolucionToroide(out);
+        i++;
     }
     return out;
 }
@@ -109,51 +93,59 @@ toroide evolucionMultiple(toroide const &t, int K) {
 // EJERCICIO 9
 bool esPeriodico(toroide const &t, int &p) {
     bool resp = false;
-    bool esConstante = false;
     toroide tEvo = t;
     toroide tConstante = t;
-    p = 1;
+
+    int i = 1;
     evolucionToroide(tEvo);
-    while(!toroideMuerto(tEvo) && !resp && !esConstante){
+
+    while(tEvo != t && !toroideMuerto(tEvo) && tEvo != tConstante){
+
         evolucionToroide(tEvo);
         evolucionToroide(tConstante);
-        p++;
-        if(sonIguales(t, tEvo)){
-            resp = true;
-        }if(tEvo == tConstante){
-            esConstante = true;
-            p = 0;
-        }
-    }if(toroideMuerto(tEvo)){
-        p = 0;
+        i++;
+
     }
+
+    if(t == tEvo && !toroideMuerto(tEvo)){
+        resp = true;
+    }else{
+        i = 0;
+    }
+    p = i;
     return resp;
 }
 
 // EJERCICIO 10
 bool primosLejanos(toroide const &t, toroide const &u) {
-    bool mismasDimenciones = t.size() == u.size() && t[0].size() == t[0].size();
     bool resp = false;
+
     toroide tEvo = t;
-    toroide tConstante = t;
-    bool seRepite = false;
-    bool esConstante = false;
-    if(mismasDimenciones) {
+    toroide uEvo = u;
+    toroide tEvoConstante = t;
+    toroide uEvoConstante = u;
+
+    evolucionToroide(tEvo);
+    evolucionToroide(uEvo);
+
+    while(tEvo != t && tEvo != tEvoConstante && tEvo != u && !toroideMuerto(tEvo)){
         evolucionToroide(tEvo);
-        while (!seRepite && !resp && !esConstante){
-            if (toroideMuerto(tEvo) && !sonIguales(tEvo, u)) {
-                break;
-            }else if (sonIguales(tEvo, u)) {
-                resp = true;
-            }else if (sonIguales(tEvo, tConstante)){
-                esConstante = true;
-            }else{
-                evolucionToroide(tEvo);
-                evolucionToroide(tConstante);
-                seRepite = sonIguales(t, tEvo);
-            }
-        }
+        evolucionToroide(tEvoConstante);
     }
+
+    if(tEvo == u){
+        resp = true;
+    }
+
+    while(uEvo != u && uEvo != t && uEvo != uEvoConstante && !toroideMuerto(uEvo) && !resp){
+        evolucionToroide(uEvo);
+        evolucionToroide(uEvoConstante);
+    }
+
+    if(uEvo == t){
+        resp = true;
+    }
+    
     return resp;
 }
 
@@ -161,25 +153,25 @@ bool primosLejanos(toroide const &t, toroide const &u) {
 int seleccionNatural(vector<toroide> ts) {
     int resp = -1;
     int ticksEnMorir = 0;
-    for (int i = 0; i < ts.size(); i++){
+    bool hayPeriodico = false;
+    for (int i = 0; i < ts.size() && !hayPeriodico; i++){
         int inmortal;
         int muereEn = 0;
-        bool hayPeriodico = esPeriodico(ts[i],inmortal);
+        hayPeriodico = esPeriodico(ts[i],inmortal);
         if(hayPeriodico){
             resp = -1;
-            break;
-        }if (!toroideMuerto(ts[i])) {
+        }
+        if (!toroideMuerto(ts[i]) && !hayPeriodico) {
             while (!toroideMuerto(ts[i])) {
                 evolucionToroide(ts[i]);
                 muereEn++;
-            }if(muereEn > ticksEnMorir){
+            }
+            if(muereEn > ticksEnMorir){
                 resp = i;
                 ticksEnMorir = muereEn;
             }
-        }if(toroideMuerto(ts[i]) && resp == -1){
-            resp = i;
         }
-     }
+    }
     return resp;
 }
 
@@ -204,48 +196,47 @@ toroide fusionar(toroide const &t, toroide const &u) {
 }
 
 // EJERCICIO 13
-bool vistaTrasladada(toroide const &t, toroide const &u) {
-    bool resp = false;
-    toroide tTrasladado;
-    tTrasladado = t;
-    for(int i = 0; i <= t.size(); i++){
-        tTrasladado = trasladoVertical(tTrasladado);
-        if(sonIguales(tTrasladado, u)){
-            resp = true;
-            break;
-        }for(int j = 0; j <= t[0].size(); j++) {
-            tTrasladado = trasladoHorizontal(tTrasladado);
-            if (sonIguales(tTrasladado, u)) {
-                resp = true;
-                break;
+bool vistaTrasladada(toroide const &t, toroide const &u){
+	bool resp = false;
+    toroide tTraslado = t;
+    int x = 0;
+    while(x < t.size() && !resp){
+        int y = 0;
+        while(y < t[0].size() && !resp){
+            if(!resp){
+                tTraslado = trasladarToroide(t, x, y);
+                if(tTraslado == u){
+                    resp = true;
+                }
             }
+            y++;
         }
+        x++;
     }
     return resp;
 }
 
 // EJERCICIO 14
-int menorSuperficieViva(toroide const &t) {
-    int resp = -1;
-    toroide tTrasladado = t;
-    vector<posicion> posiciones;
-    vector<int> superficies;
-    if(toroideMuerto(t)){
-        resp = 0;
-    }else{
-        for (int i = 0; i <= t.size(); i++) {
-            tTrasladado = trasladoVertical(tTrasladado);
-            posiciones = posicionesVivas(tTrasladado);
-            superficies.push_back(menorSuperficie(posiciones));
-            posiciones.clear();
-            for (int j = 0; j <= t[0].size(); j++) {
-                tTrasladado = trasladoHorizontal(tTrasladado);
-                posiciones = posicionesVivas(tTrasladado);
-                superficies.push_back(menorSuperficie(posiciones));
-                posiciones.clear();
+int menorSuperficieViva(toroide const &t){
+    int resp = 0;
+    vector<toroide> toroideLista;
+    bool estaMuerto = toroideMuerto(t);
+    if(!estaMuerto){
+        for(int i = 0; i<t.size(); i++){
+            for(int j = 0; j<t[i].size();j++){
+                toroideLista.push_back(trasladarToroide(t, i, j));
             }
         }
-        resp = menor(superficies);
+        int f= filas(t);
+        int c = columnas(t);
+        int superficieMasChica = f * c;
+        for(int i = 0; i<toroideLista.size(); i++){
+            int superficie = superficieVivas(toroideLista[i]);
+            if(superficie < superficieMasChica){
+                superficieMasChica = superficie;
+            }
+        }
+        resp = superficieMasChica;
     }
     return resp;
 }

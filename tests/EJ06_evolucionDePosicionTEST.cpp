@@ -2,7 +2,6 @@
 #include "gtest/gtest.h"
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 TEST(evolucionDePosicionTEST, toroideDiagonalTresPorTres){
@@ -33,4 +32,14 @@ TEST(evolucionDePosicionTEST, toroidePeriodico){
 TEST(evolucionDePosicionTEST, toroidePeriodicoEnRango){
     toroide t5 = tPeriodico;
     EXPECT_FALSE(evolucionDePosicion(t5, make_pair(3,1)));
+}
+
+TEST(evolucionDePosicionTEST, posicionInvalida){
+    toroide t = tNoCoinciden2;
+    EXPECT_FALSE(evolucionDePosicion(t, make_pair(4,4)));
+}
+
+TEST(evolucionDePosicionTEST, aRevivir){
+    toroide t = tPeriodico;
+    EXPECT_TRUE(evolucionDePosicion(t, make_pair(1,3)));
 }

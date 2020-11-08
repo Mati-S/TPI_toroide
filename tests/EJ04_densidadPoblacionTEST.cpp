@@ -10,7 +10,6 @@ TEST(densidadPoblacionTEST, toroideDiagonal){
     EXPECT_NEAR(densidadPoblacion(t), 1.0, 0.01);
 }
 
-
 TEST(densidadPoblacionTEST, torVivo){
     toroide t2 = tVivo;
     EXPECT_NEAR(densidadPoblacion(t2), 1.0, 0.01);
@@ -25,5 +24,5 @@ TEST(densidadPoblacionTEST, torMuerto){
 
 TEST(densidadPoblacionTEST, toroideUltimoSuperviviente){
     toroide t4 = tUnoVivo;
-    EXPECT_NEAR(densidadPoblacion(t4), 0.01, 0.01);
+    EXPECT_NEAR(densidadPoblacion(t4), 0.1, 0.1);
 }

@@ -3,7 +3,6 @@
 #include <algorithm>
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresUnPaso){
@@ -35,4 +34,22 @@ TEST(evolucionMultipleTEST, toroidePeriodico){
 
     toroide res = evolucionMultiple(t3, 2);
     EXPECT_EQ(res, t3);
+}
+
+TEST(evolucionMultipleTEST, unToroideGrande){
+    toroide t = jorgitoTriple;
+
+    toroide evo_t = jorgitoTripleEvolucionado;
+
+    toroide res = evolucionMultiple(t, 20);
+    EXPECT_EQ(res, evo_t);
+}
+
+TEST(evolucionMultipleTEST, toroideEspada){
+    toroide t = unaEspada;
+
+    toroide evo_t = unaEspadaEvolucionado;
+
+    toroide res = evolucionMultiple(t, 3);
+    EXPECT_EQ(res, evo_t);
 }

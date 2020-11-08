@@ -3,7 +3,6 @@
 #include <algorithm>
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 
@@ -45,8 +44,22 @@ TEST(seleccionNaturalTEST, seleccionConPeriodico){
     EXPECT_EQ(res, -1);
 }
 
+TEST(seleccionNaturalTEST, bosqueDeToroides){
+    toroide t1 = tVivo; 
+
+    vector<toroide> ts;
+    ts.push_back(t1);
+    ts.push_back(t1);
+    ts.push_back(t1);
+    ts.push_back(t1);
+    ts.push_back(t1);
+    ts.push_back(t1);
+    int res = seleccionNatural(ts);
+    EXPECT_EQ(res, 0);
+}
+
 TEST(seleccionNaturalTEST, seleccionNormal){
-    toroide t1 = tNoCoinciden2; 
+    toroide t1 = tNoCoinciden2;
     toroide t2 = tMuerto;
     toroide t3 = tVivo;
     toroide t4 = tDadoCinco;
@@ -62,30 +75,9 @@ TEST(seleccionNaturalTEST, seleccionNormal){
     EXPECT_EQ(res, 4);
 }
 
-TEST(seleccionNaturalTEST, cementerioDeToroides){
-    toroide t1 = tMuerto; 
+TEST(seleccionNaturalTEST, prueba_multiple){
+    vector<toroide> ts = listaT1;
 
-    vector<toroide> ts;
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
     int res = seleccionNatural(ts);
-    EXPECT_EQ(res, 0);
-}
-
-TEST(seleccionNaturalTEST, bosqueDeToroides){
-    toroide t1 = tVivo; 
-
-    vector<toroide> ts;
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    ts.push_back(t1);
-    int res = seleccionNatural(ts);
-    EXPECT_EQ(res, 0);
+    EXPECT_EQ(res, 6);
 }

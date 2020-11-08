@@ -1,0 +1,36 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_6250e/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_6250e.dir/build.make CMakeFiles/cmTC_6250e.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake[1]: *** No rule to make target '/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/share/cmake-3.17.3/Modules/CMakeCCompilerABI.c', needed by 'CMakeFiles/cmTC_6250e.dir/CMakeCCompilerABI.c.o'.  Stop.
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:141: cmTC_6250e/fast] Error 2
+
+
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_29622/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_29622.dir/build.make CMakeFiles/cmTC_29622.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake[1]: *** No rule to make target '/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/share/cmake-3.17.3/Modules/CMakeCCompilerABI.c', needed by 'CMakeFiles/cmTC_29622.dir/CMakeCCompilerABI.c.o'.  Stop.
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:141: cmTC_29622/fast] Error 2
+
+
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_79c5e/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_79c5e.dir/build.make CMakeFiles/cmTC_79c5e.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake[1]: *** No rule to make target '/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/share/cmake-3.17.3/Modules/CMakeCXXCompilerABI.cpp', needed by 'CMakeFiles/cmTC_79c5e.dir/CMakeCXXCompilerABI.cpp.o'.  Stop.
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:141: cmTC_79c5e/fast] Error 2
+
+
+
+

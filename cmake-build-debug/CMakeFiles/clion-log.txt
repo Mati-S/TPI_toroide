@@ -1,0 +1,32 @@
+C:\Users\vAsmad\AppData\Local\JetBrains\CLion2020.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide
+-- The C compiler identification is GNU 10.2.0
+-- The CXX compiler identification is GNU 10.2.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++.exe
+-- Check for working CXX compiler: /usr/bin/c++.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) at /cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/share/cmake-3.17.3/Modules/GNUInstallDirs.cmake:225 (message):
+  Unable to determine default CMAKE_INSTALL_LIBDIR directory because no
+  target architecture is known.  Please enable at least one language before
+  including GNUInstallDirs.
+Call Stack (most recent call first):
+  lib/googletest-master/CMakeLists.txt:18 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /cygdrive/c/Users/vAsmad/AppData/Local/Programs/Python/Python39/python.exe (found version "3.9") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug

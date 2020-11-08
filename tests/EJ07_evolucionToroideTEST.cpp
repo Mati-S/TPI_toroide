@@ -3,7 +3,6 @@
 #include <algorithm>
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 TEST(evolucionToroideTEST, toroideDiagonalTresPorTresUnPaso){
@@ -32,9 +31,14 @@ TEST(evolucionToroideTEST, toroideMuertoYVivo){
 
 TEST(evolucionToroideTEST, toroidePorRevivirYVivo){
     toroide t = tPorRevivir;
-
     toroide evo_t = tVivo;
+    evolucionToroide(t);
+    EXPECT_EQ(t, evo_t);
+}
 
+TEST(evolucionToroideTEST, luzDeTrafico){
+    toroide t = semaforo;
+    toroide evo_t = semaforoEvolucion;
     evolucionToroide(t);
     EXPECT_EQ(t, evo_t);
 }

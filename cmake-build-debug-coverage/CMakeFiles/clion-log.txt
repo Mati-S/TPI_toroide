@@ -1,0 +1,4 @@
+C:\Users\vAsmad\AppData\Local\JetBrains\CLion2020.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage

@@ -3,7 +3,6 @@
 #include <algorithm>
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 TEST(esPeriodicoTEST, toroideHorizontalPeriodico2){
@@ -54,4 +53,18 @@ TEST(esPeriodicoTEST, toroideVivo){
     res5 = esPeriodico(t5, p5);
     EXPECT_FALSE(res5);
     EXPECT_EQ(p5, 0);
+}
+
+TEST(esPeriodicoTEST, constante){
+    toroide t = naveEspacial;
+    int p;
+    bool res = esPeriodico(t, p);
+    EXPECT_TRUE(res);
+}
+
+TEST(esPeriodicoTEST, elKDeEspadas){
+    toroide t = jorgitoTriple;
+    int p;
+    bool res = esPeriodico(t, p);
+    EXPECT_FALSE(res);
 }

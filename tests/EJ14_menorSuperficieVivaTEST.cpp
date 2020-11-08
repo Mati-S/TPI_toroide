@@ -2,7 +2,6 @@
 #include "gtest/gtest.h"
 #include "../toroidesparaTest.h"
 
-
 using namespace std;
 
 TEST(menorSuperficieVivaTEST, enunciado){
@@ -18,7 +17,6 @@ TEST(menorSuperficieVivaTEST, enunciado){
 
 TEST(menorSuperficieVivaTEST, torMuerto){
     toroide t = tMuerto;
-
     int res = menorSuperficieViva(t);
     EXPECT_EQ(res, 0);
 }
@@ -35,4 +33,10 @@ TEST(menorSuperficieVivaTEST, toroidePeriodico){
 
     int res = menorSuperficieViva(t);
     EXPECT_EQ(res, 3);
+}
+TEST(menorSuperficieVivaTEST, tetris){
+    toroide t = tetris;
+
+    int res = menorSuperficieViva(t);
+    EXPECT_EQ(res, 12);
 }

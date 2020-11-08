@@ -42,9 +42,9 @@ TEST(toroideValidoTEST, toroideFilaIncompleta){
 TEST(toroideValidoTEST, toroide2Comlumnas){
     toroide t4 = tDosColumnas;
     EXPECT_FALSE(toroideValido(t4));
-}   
+}
 
-TEST(toroideValidoTEST, toroidePeriodico) {
-    toroide t5 = tPeriodico;
-    EXPECT_TRUE(toroideValido(t5));
+TEST(toroideValidoTEST, toroideNoRectangular) {
+    toroide t = toroideNoRectangular;
+    EXPECT_FALSE(toroideValido(t));
 }

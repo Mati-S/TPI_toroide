@@ -16,96 +16,109 @@ vector<posicion> ordenar(vector<posicion> &v) {
 }
 
 int mod (int a, int b){
-    if(b < 0){
-        return -mod(-a, -b);
-    }int ret = a % b;
+    int ret = a % b;
     if(ret < 0){
         ret+=b;
     }
     return ret;
 }
 
-bool esMatriz(vector<vector<bool>> const &t) {
-    bool resp = true;
-    for (int i = 0; i < t.size(); i++) {
-        if(t[i].size() != t[0].size()){
-            resp = false;
-        }
-    }
-    return resp;
+int filas(const rectangulo& t){
+    return t.size();
 }
 
-bool sonIguales(toroide t, toroide tEvo) {
-    bool resp = true;
-    for (int i = 0; i < t.size(); i++) {
-        for (int j = 0; j < t[0].size() && resp; j++) {
-            if(t[i][j] != tEvo[i][j]){
-                resp = false;
+int columnas(rectangulo t) {
+    int f = 0;
+    if (filas(t) > 0) {
+        f = t[0].size();
+    }
+    return f;
+}
+
+bool esRectangulo(rectangulo r){
+    bool iguales = true;
+    if(filas(r)>0 && columnas(r) > 0){
+        for(int i = 0; i<r.size(); i++){
+            if(r[i].size() != r[0].size()){
+                iguales=false;
             }
         }
     }
-    return resp;
+    return iguales;
 }
 
-toroide trasladoVertical(toroide t) {
-    toroide torTransladado;
-    for(int i = 1; i < t.size(); i++){
-        torTransladado.push_back(t[i]);
+int filaToroide(int f, toroide t){
+    return mod(f, filas(t));
+}
+
+int columnaToroide(int c, toroide t){
+    return mod(c, columnas(t));
+}
+
+bool estaEnRango(const toroide& t, int f, int c){
+    bool esta = false;
+    if((f < filas(t) && f >= 0) && (c < columnas(t) && c >= 0)){
+        esta = true;
     }
-    torTransladado.push_back(t[0]);
-    return torTransladado;
+    return esta;
 }
 
-toroide trasladoHorizontal(toroide t) {
-    toroide torTransladado;
+int vecinosVivos(const toroide& t, int f, int c){
+    int vivos = 0;
+    if(estaEnRango(t, f, c)){
+        for(int i = f-1; i<=f+1; i++){
+            for(int j = c-1; j<= c+1; j++){
+                if((i != f) || (j != c)){
+                    int x = filaToroide(i, t);
+                    int y = columnaToroide(j, t);
+                    if(t[x][y]){
+                        vivos++;
+                    }
+                }
+            }
+        }
+    }
+    return vivos;
+}
+
+toroide trasladarToroide(toroide t, int x, int y){
+    toroide tTraslado(t.size(), vector<bool>(t[0].size(), false));
     for(int i = 0; i < t.size(); i++){
-        vector<bool> fila;
-        fila.push_back(t[i][t.size() -1]);
-        for(int j = 0; j < t[0].size() - 1; j++){
-            fila.push_back(t[i][j]);
-        }
-        torTransladado.push_back(fila);
-        fila.clear();
-    }
-    return torTransladado;
-}
-
-int menorSuperficie(vector<posicion> p){
-    int largo = 0;
-    int alto = 0;
-    while (alto == 0){
-        int posMin = 0;
-        int posMax = 0;
-        for(int i = 0; i < p.size(); i++){
-            if(p[posMin].first > p[i].first){
-                posMin = i;
-            }if(p[posMax].first < p[i].first){
-                posMax = i;
+        for(int j = 0; j < t[i].size(); j++){
+            if(t[i][j]){
+                tTraslado[mod(i+x, t.size())][mod(j+y, t[i].size())] = t[i][j];
             }
         }
-        alto = p[posMax].first - p[posMin].first + 1;
     }
-    while (largo == 0){
-        int posMin2 = 0;
-        int posMax2 = 0;
-        for(int i = 0; i < p.size(); i++){
-            if(p[posMin2].second > p[i].second){
-                posMin2 = i;
-            }if(p[posMax2].second < p[i].second){
-                posMax2 = i;
-            }
-        }
-        largo = p[posMax2].second - p[posMin2].second + 1;
-    }
-    return largo * alto;
+    return tTraslado;
 }
 
-int menor (vector<int> superficies){
-    int supMenor = superficies[0];
-    for (int i = 1; i < superficies.size(); i++){
-        if(superficies[i] < supMenor){
-            supMenor = superficies[i];
+int superficieVivas(toroide t){
+    int lejosX = 0;
+    int lejosY = 0;
+    
+    int cercaX = t.size();
+    int cercaY = t[0].size();
+
+    for(int i = 0; i<t.size(); i++){
+        for(int j = 0; j<t[i].size(); j++){
+            if(t[i][j]){
+                if(cercaX > i){
+                    cercaX = i;
+                }
+                if(cercaY > j){
+                    cercaY = j;
+                }
+                if(i > lejosX){
+                    lejosX = i;
+                }
+                if(j > lejosY){
+                    lejosY = j;
+                }
+            }
         }
     }
-    return supMenor;
+    int superficieX = lejosX - cercaX + 1;
+    int superficieY = lejosY - cercaY + 1;
+    return (superficieX*superficieY);
 }
