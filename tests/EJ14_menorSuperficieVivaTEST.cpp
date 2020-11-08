@@ -1,5 +1,6 @@
 #include "../ejercicios.h"
 #include "gtest/gtest.h"
+#include "../toroidesparaTest.h"
 
 using namespace std;
 
@@ -14,16 +15,29 @@ TEST(menorSuperficieVivaTEST, enunciado){
     EXPECT_EQ(res, 6);
 }
 
-TEST(menorSuperficieVivaTEST, casoPrueba){
-    toroide t = {
-            {false, false, false, false, false, false, false, false},
-            {false, true, true, true, true, true, true, false},
-            {false, false, false, false, false, false, false, false},
-            {false, false, false, false, true, false, false, false},
-            {false, false, false, false, true, false, false, false},
-            {false, false, false, false, false, false, false, false},
-    };  // 4
+TEST(menorSuperficieVivaTEST, torMuerto){
+    toroide t = tMuerto;
+    int res = menorSuperficieViva(t);
+    EXPECT_EQ(res, 0);
+}
+
+TEST(menorSuperficieVivaTEST, torVivo){
+    toroide t = tVivo;
 
     int res = menorSuperficieViva(t);
-    EXPECT_EQ(res, 24);
+    EXPECT_EQ(res, 9);
+}
+
+TEST(menorSuperficieVivaTEST, toroidePeriodico){
+    toroide t = tPeriodico;
+
+    int res = menorSuperficieViva(t);
+    EXPECT_EQ(res, 3);
+}
+
+TEST(menorSuperficieVivaTEST, tetris){
+    toroide t = tetris;
+
+    int res = menorSuperficieViva(t);
+    EXPECT_EQ(res, 12);
 }

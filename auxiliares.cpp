@@ -6,13 +6,21 @@ using namespace std;
 pair<int,int> mp(int a, int b) {
     return make_pair(a, b);
 }
+//No pueden usar esta función para resolver el TPI.
+//Tampoco pueden usar iteradores, como usa esta función.
+vector<posicion> ordenar(vector<posicion> &v) {
+    sort(v.begin(), v.end());
+    return v;
+}
 
 int mod (int a, int b){
-    if(b < 0) //you can check for b == 0 separately and do what you want
-        return -mod(-a, -b);
-    int ret = a % b;
-    if(ret < 0)
-        ret+=b;
+    int ret = 0;
+    if(b > 0){
+        ret = a % b;
+        if(ret < 0)
+            ret+=b;
+
+    }
     return ret;
 }
 
@@ -72,31 +80,41 @@ int columnaToroide(int c, toroide t){
     return mod(c, columnas(t));
 }
 
+bool estaEnRango(const toroide& t, int f, int c){
+    bool esta = false;
+    if((f < filas(t) && f >= 0) && (c < columnas(t) && c >= 0)){
+        esta = true;
+    }
+    return esta;
+}
+
 int vecinosVivos(const toroide& t, int f, int c){
     int vivos = 0;
-
-    for(int i = f-1; i<=f+1; i++){
-        for(int j = c-1; j<= c+1; j++){
-            if((i != f) || (j != c)){
-                int x = filaToroide(i, t);
-                int y = columnaToroide(j, t);
-                if(t[x][y]){
-                    vivos++;
+    if(estaEnRango(t, f, c)){
+        for(int i = f-1; i<=f+1; i++){
+            for(int j = c-1; j<= c+1; j++){
+                if((i != f) || (j != c)){
+                    int x = filaToroide(i, t);
+                    int y = columnaToroide(j, t);
+                    if(t[x][y]){
+                        vivos++;
+                    }
                 }
             }
         }
     }
-
     return vivos;
 }
 
 bool debeVivir(toroide t, int x, int y){
     bool resp = false;
     int cantVivos = vecinosVivos(t, x, y);
-    if(t[x][y] && cantVivos >= 2 && cantVivos <= 3){
-        resp = true;
-    }else if(!t[x][y] && cantVivos == 3){
-        resp = true;
+    if(estaEnRango(t, x, y)){
+        if(t[x][y] && cantVivos >= 2 && cantVivos <= 3){
+            resp = true;
+        }else if(!t[x][y] && cantVivos == 3){
+            resp = true;
+        }
     }
     return resp;
 }
@@ -140,12 +158,4 @@ int superficieVivas(toroide t){
     int superficieX = lejosX - cercaX + 1;
     int superficieY = lejosY - cercaY + 1;
     return (superficieX*superficieY);
-
-}
-
-//No pueden usar esta función para resolver el TPI.
-//Tampoco pueden usar iteradores, como usa esta función.
-vector<posicion> ordenar(vector<posicion> &v) {
-    sort(v.begin(), v.end());
-    return v;
 }

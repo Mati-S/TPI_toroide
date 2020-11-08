@@ -1,0 +1,107 @@
+The system is: CYGWIN - 3.1.7(0.340/5/3) - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: --coverage
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.gcno"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/3.17.3/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++.exe 
+Build flags: --coverage
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.gcno"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/3.17.3/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_c9cac/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_c9cac.dir/build.make CMakeFiles/cmTC_c9cac.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c9cac.dir/testCCompiler.c.o
+/usr/bin/cc   --coverage    -o CMakeFiles/cmTC_c9cac.dir/testCCompiler.c.o   -c /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_c9cac.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_c9cac.dir/link.txt --verbose=1
+/usr/bin/cc --coverage   -Wl,--enable-auto-import  CMakeFiles/cmTC_c9cac.dir/testCCompiler.c.o  -o cmTC_c9cac.exe -Wl,--out-implib,libcmTC_c9cac.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_83ad7/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_83ad7.dir/build.make CMakeFiles/cmTC_83ad7.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_83ad7.dir/testCXXCompiler.cxx.o
+/usr/bin/c++.exe    --coverage    -o CMakeFiles/cmTC_83ad7.dir/testCXXCompiler.cxx.o -c /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_83ad7.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_83ad7.dir/link.txt --verbose=1
+/usr/bin/c++.exe --coverage   -Wl,--enable-auto-import  CMakeFiles/cmTC_83ad7.dir/testCXXCompiler.cxx.o  -o cmTC_83ad7.exe -Wl,--out-implib,libcmTC_83ad7.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_794fb/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_794fb.dir/build.make CMakeFiles/cmTC_794fb.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_794fb.dir/CheckIncludeFile.c.o
+/usr/bin/cc   --coverage    -o CMakeFiles/cmTC_794fb.dir/CheckIncludeFile.c.o   -c /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_794fb.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_794fb.dir/link.txt --verbose=1
+/usr/bin/cc --coverage   -Wl,--enable-auto-import  CMakeFiles/cmTC_794fb.dir/CheckIncludeFile.c.o  -o cmTC_794fb.exe -Wl,--out-implib,libcmTC_794fb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/Strawberry/c/bin/gmake.exe cmTC_e2d32/fast && C:/Strawberry/c/bin/gmake  -f CMakeFiles/cmTC_e2d32.dir/build.make CMakeFiles/cmTC_e2d32.dir/build
+gmake[1]: Entering directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e2d32.dir/src.c.o
+/usr/bin/cc   --coverage -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_e2d32.dir/src.c.o   -c /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e2d32.exe
+/cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_e2d32.dir/link.txt --verbose=1
+/usr/bin/cc --coverage -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-auto-import  CMakeFiles/cmTC_e2d32.dir/src.c.o  -o cmTC_e2d32.exe -Wl,--out-implib,libcmTC_e2d32.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+gmake[1]: Leaving directory 'C:/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

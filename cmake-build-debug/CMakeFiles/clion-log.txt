@@ -1,4 +1,4 @@
-C:\Users\vAsmad\AppData\Local\JetBrains\CLion2020.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion"
+C:\Users\vAsmad\AppData\Local\JetBrains\CLion2020.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide
 -- The C compiler identification is GNU 10.2.0
 -- The CXX compiler identification is GNU 10.2.0
 -- Check for working C compiler: /usr/bin/cc
@@ -29,4 +29,4 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- Found Threads: TRUE  
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/c/Users/vAsmad/CLionProjects/Algoritmos-y-Estructura-de-Datos-1/TPS/Trabajo Implementacion/cmake-build-debug
+-- Build files have been written to: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug

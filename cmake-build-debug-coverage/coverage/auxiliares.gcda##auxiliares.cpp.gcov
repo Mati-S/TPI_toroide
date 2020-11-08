@@ -1,0 +1,299 @@
+        -:    0:Source:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/auxiliares.cpp
+        -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/auxiliares.gcno
+        -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/auxiliares.gcda
+        -:    0:Runs:1
+        -:    1:#include "definiciones.h"
+        -:    2:#include "auxiliares.h"
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:// aqui se pueden ubicar todas las funciones auxiliares de soporte para la resolucion de los ejercicios
+    32752:    6:pair<int,int> mp(int a, int b) {
+    32752:    7:    return make_pair(a, b);
+    32752:    7-block  0
+        -:    8:}
+        -:    9://No pueden usar esta función para resolver el TPI.
+        -:   10://Tampoco pueden usar iteradores, como usa esta función.
+        8:   11:vector<posicion> ordenar(vector<posicion> &v) {
+        8:   12:    sort(v.begin(), v.end());
+        8:   12-block  0
+        8:   13:    return v;
+        -:   14:}
+        -:   15:
+   524630:   16:int mod (int a, int b){
+   524630:   17:    int ret = 0;
+   524630:   18:    if(b > 0){
+   524630:   18-block  0
+   524630:   19:        ret = a % b;
+   524630:   20:        if(ret < 0)
+   524630:   20-block  0
+    21414:   21:            ret+=b;
+    21414:   21-block  0
+        -:   22:
+        -:   23:    }
+   524630:   24:    return ret;
+   524630:   24-block  0
+        -:   25:}
+        -:   26:
+   654459:   27:int filas(const rectangulo& t){
+   654459:   28:    return t.size();
+   654459:   28-block  0
+        -:   29:}
+        -:   30:
+   327225:   31:int columnas(rectangulo t) {
+   327225:   32:    int f = 0;
+   327225:   33:    if (filas(t) > 0) {
+   327225:   33-block  0
+   327225:   34:        f = t[0].size();
+   327225:   34-block  0
+        -:   35:    }
+   327225:   36:    return f;
+   327225:   36-block  0
+        -:   37:}
+        -:   38:
+        4:   39:bool esRectangulo(rectangulo r){
+        4:   40:    bool iguales = true;
+       4*:   41:    if(filas(r)>0 && columnas(r) > 0){
+        4:   41-block  0
+        4:   41-block  1
+        4:   41-block  2
+        4:   41-block  3
+    %%%%%:   41-block  4
+        4:   41-block  5
+        4:   41-block  6
+        4:   41-block  7
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+       18:   42:        for(int i = 0; i<r.size(); i++){
+        4:   42-block  0
+       18:   42-block  1
+       14:   42-block  2
+       14:   43:            if(r[i].size() != r[0].size()){
+       14:   43-block  0
+        3:   44:                iguales=false;
+        3:   44-block  0
+        -:   45:            }
+        -:   46:        }
+        -:   47:    }
+        4:   48:    return iguales;
+        4:   48-block  0
+        4:   48-block  1
+        -:   49:}
+        -:   50:
+        9:   51:bool esToroide(const toroide& t){
+        9:   52:    bool resp = false;
+        9:   53:    if(filas(t) >= 3 && columnas(t) >= 3 && esRectangulo(t)){
+        9:   53-block  0
+        6:   53-block  1
+        6:   53-block  2
+        4:   53-block  3
+        4:   53-block  4
+        4:   53-block  5
+        2:   53-block  6
+        7:   53-block  7
+        9:   53-block  8
+        4:   53-block  9
+        9:   53-block 10
+        6:   53-block 11
+        9:   53-block 12
+    $$$$$:   53-block 13
+    $$$$$:   53-block 14
+    $$$$$:   53-block 15
+    $$$$$:   53-block 16
+    $$$$$:   53-block 17
+        2:   54:        resp = true;
+        2:   54-block  0
+        -:   55:    }
+        9:   56:    return resp;
+        9:   56-block  0
+        9:   56-block  1
+        -:   57:}
+        -:   58:
+        4:   59:float cantidadVivas(toroide t){
+        4:   60:    float vivas = 0 ;
+       18:   61:    for(int i = 0; i<t.size(); i++){
+        4:   61-block  0
+       18:   61-block  1
+       14:   61-block  2
+       61:   62:        for(int j = 0; j<t[0].size(); j++){
+       14:   62-block  0
+       61:   62-block  1
+       47:   62-block  2
+       47:   63:            if(t[i][j]){
+       47:   63-block  0
+       30:   64:                vivas++;
+       30:   64-block  0
+        -:   65:            }
+        -:   66:        }
+        -:   67:    }
+        4:   68:    return vivas;
+        4:   68-block  0
+        -:   69:}
+        -:   70:
+        4:   71:float superficieTotal(const toroide& t){
+        4:   72:    return (filas(t) * columnas(t));
+        4:   72-block  0
+        -:   73:}
+        -:   74:
+   261768:   75:int filaToroide(int f, toroide t){
+   261768:   76:    return mod(f, filas(t));
+   261768:   76-block  0
+        -:   77:}
+        -:   78:
+   261768:   79:int columnaToroide(int c, toroide t){
+   261768:   80:    return mod(c, columnas(t));
+   261768:   80-block  0
+        -:   81:}
+        -:   82:
+    65445:   83:bool estaEnRango(const toroide& t, int f, int c){
+    65445:   84:    bool esta = false;
+    65445:   85:    if((f < filas(t) && f >= 0) && (c < columnas(t) && c >= 0)){
+    65445:   85-block  0
+    65441:   85-block  1
+    65439:   85-block  2
+    65439:   85-block  3
+    65439:   85-block  4
+    65439:   85-block  5
+        6:   85-block  6
+    65445:   85-block  7
+    65439:   85-block  8
+    65445:   85-block  9
+    $$$$$:   85-block 10
+    $$$$$:   85-block 11
+    65439:   86:        esta = true;
+    65439:   86-block  0
+        -:   87:    }
+    65445:   88:    return esta;
+    65445:   88-block  0
+    65445:   88-block  1
+        -:   89:}
+        -:   90:
+    32725:   91:int vecinosVivos(const toroide& t, int f, int c){
+    32725:   92:    int vivos = 0;
+    32725:   93:    if(estaEnRango(t, f, c)){
+    32725:   93-block  0
+   130884:   94:        for(int i = f-1; i<=f+1; i++){
+    32721:   94-block  0
+   130884:   94-block  1
+    98163:   94-block  2
+   392652:   95:            for(int j = c-1; j<= c+1; j++){
+    98163:   95-block  0
+   392652:   95-block  1
+   294489:   95-block  2
+   294489:   96:                if((i != f) || (j != c)){
+   294489:   96-block  0
+    98163:   96-block  1
+   261768:   97:                    int x = filaToroide(i, t);
+   261768:   97-block  0
+   261768:   98:                    int y = columnaToroide(j, t);
+   261768:   98-block  0
+    $$$$$:   98-block  1
+   261768:   99:                    if(t[x][y]){
+    52853:  100:                        vivos++;
+    52853:  100-block  0
+        -:  101:                    }
+        -:  102:                }
+        -:  103:            }
+        -:  104:        }
+        -:  105:    }
+    32725:  106:    return vivos;
+    32725:  106-block  0
+    32725:  106-block  1
+        -:  107:}
+        -:  108:
+    32720:  109:bool debeVivir(toroide t, int x, int y){
+    32720:  110:    bool resp = false;
+    32720:  111:    int cantVivos = vecinosVivos(t, x, y);
+    32720:  111-block  0
+    32720:  112:    if(estaEnRango(t, x, y)){
+    32718:  113:        if(t[x][y] && cantVivos >= 2 && cantVivos <= 3){
+    32718:  113-block  0
+     6605:  113-block  1
+     5804:  113-block  2
+     3320:  113-block  3
+    29398:  113-block  4
+    32718:  113-block  5
+     3320:  114:            resp = true;
+     3320:  114-block  0
+    29398:  115:        }else if(!t[x][y] && cantVivos == 3){
+    29398:  115-block  0
+    26113:  115-block  1
+     2728:  115-block  2
+    26670:  115-block  3
+    29398:  115-block  4
+     2728:  116:            resp = true;
+     2728:  116-block  0
+        -:  117:        }
+        -:  118:    }
+    32720:  119:    return resp;
+    32720:  119-block  0
+        -:  120:}
+        -:  121:
+      123:  122:toroide trasladarToroide(toroide t, int x, int y){
+      246:  123:    toroide tTraslado(t.size(), vector<bool>(t[0].size(), false));
+      123:  123-block  0
+      123:  123-block  1
+    $$$$$:  123-block  2
+    $$$$$:  123-block  3
+      610:  124:    for(int i = 0; i < t.size(); i++){
+      610:  124-block  0
+      487:  124-block  1
+     2840:  125:        for(int j = 0; j < t[i].size(); j++){
+      487:  125-block  0
+     2840:  125-block  1
+     2353:  125-block  2
+     2353:  126:            if(t[i][j]){
+     2353:  126-block  0
+      547:  127:                tTraslado[mod(i+x, t.size())][mod(j+y, t[i].size())] = t[i][j];
+      547:  127-block  0
+        -:  128:            }
+        -:  129:        }
+        -:  130:    }
+      123:  131:    return tTraslado;
+      123:  131-block  0
+      123:  131-block  1
+        -:  132:}
+        -:  133:
+       76:  134:int superficieVivas(toroide t){
+       76:  135:    int lejosX = 0;
+       76:  136:    int lejosY = 0;
+       76:  137:    int cercaX = t.size();
+       76:  137-block  0
+       76:  138:    int cercaY = t[0].size();
+        -:  139:
+      406:  140:    for(int i = 0; i<t.size(); i++){
+      406:  140-block  0
+      330:  140-block  1
+     2148:  141:        for(int j = 0; j<t[i].size(); j++){
+      330:  141-block  0
+     2148:  141-block  1
+     1818:  141-block  2
+     1818:  142:            if(t[i][j]){
+     1818:  142-block  0
+      362:  143:                if(cercaX > i){
+      362:  143-block  0
+       76:  144:                    cercaX = i;
+       76:  144-block  0
+        -:  145:                }
+      362:  146:                if(cercaY > j){
+      362:  146-block  0
+       90:  147:                    cercaY = j;
+       90:  147-block  0
+        -:  148:                }
+      362:  149:                if(i > lejosX){
+      362:  149-block  0
+      106:  150:                    lejosX = i;
+      106:  150-block  0
+        -:  151:                }
+      362:  152:                if(j > lejosY){
+      362:  152-block  0
+      173:  153:                    lejosY = j;
+      173:  153-block  0
+        -:  154:                }
+        -:  155:            }
+        -:  156:        }
+        -:  157:    }
+       76:  158:    int superficieX = lejosX - cercaX + 1;
+       76:  159:    int superficieY = lejosY - cercaY + 1;
+       76:  160:    return (superficieX*superficieY);
+       76:  160-block  0
+        -:  161:}

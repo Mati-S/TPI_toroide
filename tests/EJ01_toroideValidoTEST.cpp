@@ -1,5 +1,6 @@
 #include "../ejercicios.h"
 #include "gtest/gtest.h"
+#include "../toroidesparaTest.h"
 
 using namespace std;
 
@@ -20,4 +21,35 @@ TEST(toroideValidoTEST, diagonalTresPorTres) {
                   {false, false, true}
     };
     EXPECT_TRUE(toroideValido(t));
+}
+
+TEST(toroideValidoTEST, toroide2Filas){
+    toroide t2 = tDosFilas;
+    EXPECT_FALSE(toroideValido(t2));
+}
+
+TEST(toroideValidoTEST, torVacio){
+    toroide t3 = {};
+    EXPECT_FALSE(toroideValido(t3));
+}
+
+TEST(toroideValidoTEST, toroideFilaIncompleta){
+    toroide t3 = tFilaMedia;
+    EXPECT_FALSE(toroideValido(t3));
+}
+
+
+TEST(toroideValidoTEST, toroide2Comlumnas){
+    toroide t4 = tDosColumnas;
+    EXPECT_FALSE(toroideValido(t4));
+}
+
+TEST(toroideValidoTEST, toroidePeriodico) {
+    toroide t5 = tPeriodico;
+    EXPECT_TRUE(toroideValido(t5));
+}
+
+TEST(toroideValidoTEST, toroideNoRectangular) {
+    toroide t = toroideNoRectangular;
+    EXPECT_FALSE(toroideValido(t));
 }

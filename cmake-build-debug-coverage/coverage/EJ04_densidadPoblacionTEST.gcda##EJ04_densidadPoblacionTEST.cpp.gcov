@@ -1,0 +1,152 @@
+        -:    0:Source:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/tests/EJ04_densidadPoblacionTEST.cpp
+        -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/tests/EJ04_densidadPoblacionTEST.gcno
+        -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/juegoDeLaVida.dir/tests/EJ04_densidadPoblacionTEST.gcda
+        -:    0:Runs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include "../toroidesparaTest.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        2:    7:TEST(densidadPoblacionTEST, toroideDiagonal){
+        2:    8:    vector<bool> a = { true, true, true, true };
+        8:    9:    toroide t = { a, a, a, a, a };
+       1*:   10:    EXPECT_NEAR(densidadPoblacion(t), 1.0, 0.01);
+        1:   11:}
+------------------
+_ZN42densidadPoblacionTEST_toroideDiagonal_Test8TestBodyEv:
+        1:    7:TEST(densidadPoblacionTEST, toroideDiagonal){
+        2:    8:    vector<bool> a = { true, true, true, true };
+        1:    8-block  0
+    $$$$$:    8-block  1
+    $$$$$:    8-block  2
+        8:    9:    toroide t = { a, a, a, a, a };
+        1:    9-block  0
+        1:    9-block  1
+        1:    9-block  2
+        1:    9-block  3
+        1:    9-block  4
+        5:    9-block  5
+    $$$$$:    9-block  6
+    $$$$$:    9-block  7
+    $$$$$:    9-block  8
+    $$$$$:    9-block  9
+       1*:   10:    EXPECT_NEAR(densidadPoblacion(t), 1.0, 0.01);
+        1:   10-block  0
+        1:   10-block  1
+        1:   10-block  2
+    %%%%%:   10-block  3
+    %%%%%:   10-block  4
+    %%%%%:   10-block  5
+    %%%%%:   10-block  6
+    %%%%%:   10-block  7
+        1:   10-block  8
+    $$$$$:   10-block  9
+    $$$$$:   10-block 10
+    $$$$$:   10-block 11
+    $$$$$:   10-block 12
+    $$$$$:   10-block 13
+        1:   11:}
+------------------
+_ZN42densidadPoblacionTEST_toroideDiagonal_TestC1Ev:
+        1:    7:TEST(densidadPoblacionTEST, toroideDiagonal){
+        1:    7-block  0
+------------------
+        -:   12:
+        2:   13:TEST(densidadPoblacionTEST, torVivo){
+        2:   14:    toroide t2 = tVivo;
+       1*:   15:    EXPECT_NEAR(densidadPoblacion(t2), 1.0, 0.01);
+        1:   16:}
+------------------
+_ZN34densidadPoblacionTEST_torVivo_Test8TestBodyEv:
+        1:   13:TEST(densidadPoblacionTEST, torVivo){
+        2:   14:    toroide t2 = tVivo;
+        1:   14-block  0
+    $$$$$:   14-block  1
+       1*:   15:    EXPECT_NEAR(densidadPoblacion(t2), 1.0, 0.01);
+        1:   15-block  0
+        1:   15-block  1
+        1:   15-block  2
+    %%%%%:   15-block  3
+    %%%%%:   15-block  4
+    %%%%%:   15-block  5
+    %%%%%:   15-block  6
+    %%%%%:   15-block  7
+        1:   15-block  8
+    $$$$$:   15-block  9
+    $$$$$:   15-block 10
+    $$$$$:   15-block 11
+    $$$$$:   15-block 12
+    $$$$$:   15-block 13
+        1:   16:}
+------------------
+_ZN34densidadPoblacionTEST_torVivo_TestC1Ev:
+        1:   13:TEST(densidadPoblacionTEST, torVivo){
+        1:   13-block  0
+------------------
+        -:   17:
+        -:   18:
+        2:   19:TEST(densidadPoblacionTEST, torMuerto){
+        2:   20:    toroide t3 = tMuerto;
+       1*:   21:    EXPECT_NEAR(densidadPoblacion(t3), 0.0, 0.01);
+        1:   22:}
+------------------
+_ZN36densidadPoblacionTEST_torMuerto_Test8TestBodyEv:
+        1:   19:TEST(densidadPoblacionTEST, torMuerto){
+        2:   20:    toroide t3 = tMuerto;
+        1:   20-block  0
+    $$$$$:   20-block  1
+       1*:   21:    EXPECT_NEAR(densidadPoblacion(t3), 0.0, 0.01);
+        1:   21-block  0
+        1:   21-block  1
+        1:   21-block  2
+    %%%%%:   21-block  3
+    %%%%%:   21-block  4
+    %%%%%:   21-block  5
+    %%%%%:   21-block  6
+    %%%%%:   21-block  7
+        1:   21-block  8
+    $$$$$:   21-block  9
+    $$$$$:   21-block 10
+    $$$$$:   21-block 11
+    $$$$$:   21-block 12
+    $$$$$:   21-block 13
+        1:   22:}
+------------------
+_ZN36densidadPoblacionTEST_torMuerto_TestC1Ev:
+        1:   19:TEST(densidadPoblacionTEST, torMuerto){
+        1:   19-block  0
+------------------
+        -:   23:
+        -:   24:
+        2:   25:TEST(densidadPoblacionTEST, toroideUltimoSuperviviente){
+        2:   26:    toroide t4 = tUnoVivo;
+       1*:   27:    EXPECT_NEAR(densidadPoblacion(t4), 0.1, 0.1);
+        1:   28:}
+------------------
+_ZN53densidadPoblacionTEST_toroideUltimoSuperviviente_Test8TestBodyEv:
+        1:   25:TEST(densidadPoblacionTEST, toroideUltimoSuperviviente){
+        2:   26:    toroide t4 = tUnoVivo;
+        1:   26-block  0
+    $$$$$:   26-block  1
+       1*:   27:    EXPECT_NEAR(densidadPoblacion(t4), 0.1, 0.1);
+        1:   27-block  0
+        1:   27-block  1
+        1:   27-block  2
+    %%%%%:   27-block  3
+    %%%%%:   27-block  4
+    %%%%%:   27-block  5
+    %%%%%:   27-block  6
+    %%%%%:   27-block  7
+        1:   27-block  8
+    $$$$$:   27-block  9
+    $$$$$:   27-block 10
+    $$$$$:   27-block 11
+    $$$$$:   27-block 12
+    $$$$$:   27-block 13
+        1:   28:}
+------------------
+_ZN53densidadPoblacionTEST_toroideUltimoSuperviviente_TestC1Ev:
+        1:   25:TEST(densidadPoblacionTEST, toroideUltimoSuperviviente){
+        1:   25-block  0
+------------------
