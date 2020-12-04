@@ -69,7 +69,7 @@ TEST(esPeriodicoTEST, elKDeEspadas){
     EXPECT_FALSE(res);
 }
 
-TEST(esPeriodicoTEST, prueba){
+TEST(esPeriodicoTEST, casoExtra){
     toroide t = {{false,false,false,true,true,false},{true,true,false,false,false,true},{true,true,false,true,true,false},{true,false,true,true,true,false},{true,true,true,true,true,true},{true,false,false,false,true,false}};
     int p;
     bool res = esPeriodico(t, p);

@@ -68,10 +68,10 @@ RM = /cygdrive/c/Users/vAsmad/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/b
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage
+CMAKE_BINARY_DIR = /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug-coverage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -146,9 +146,9 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug-coverage/CMakeFiles /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug-coverage/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug-coverage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

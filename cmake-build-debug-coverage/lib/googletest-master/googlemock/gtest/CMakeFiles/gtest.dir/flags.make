@@ -6,5 +6,5 @@ CXX_FLAGS = --coverage -g   --coverage -Wall -Wshadow -Werror -Wno-error=danglin
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/lib/googletest-master/googletest/include -I/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/lib/googletest-master/googletest 
+CXX_INCLUDES = -I/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/lib/googletest-master/googletest/include -I/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/lib/googletest-master/googletest 
 

@@ -1,0 +1,318 @@
+        -:    0:Source:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/tests/EJ13_vistaTrasladadaTEST.cpp
+        -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug/CMakeFiles/juegoDeLaVida.dir/tests/EJ13_vistaTrasladadaTEST.gcno
+        -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug/CMakeFiles/juegoDeLaVida.dir/tests/EJ13_vistaTrasladadaTEST.gcda
+        -:    0:Runs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include <algorithm>
+        -:    4:#include "../toroidesparaTest.h"
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        2:    8:TEST(vistaTrasladadaTEST, muevoTerceraFilaParaArriba){
+        -:    9:    toroide t1 = { 
+        -:   10:                  {true, false, false}, // 1
+        -:   11:                  {false, true, false}, // 2
+        7:   12:                  {false, false, true}};// 3
+        -:   13:    toroide t2 = { 
+        -:   14:                  {false, false, true}, // 3
+        -:   15:                  {true, false, false}, // 1
+        7:   16:                  {false, true, false}};// 2
+        -:   17:
+        1:   18:    bool res = vistaTrasladada(t1, t2);
+       1*:   19:    EXPECT_TRUE(res);
+        1:   20:}
+------------------
+_ZN51vistaTrasladadaTEST_muevoTerceraFilaParaArriba_Test8TestBodyEv:
+        1:    8:TEST(vistaTrasladadaTEST, muevoTerceraFilaParaArriba){
+        -:    9:    toroide t1 = { 
+        -:   10:                  {true, false, false}, // 1
+        -:   11:                  {false, true, false}, // 2
+        7:   12:                  {false, false, true}};// 3
+        1:   12-block  0
+        1:   12-block  1
+        1:   12-block  2
+        1:   12-block  3
+        3:   12-block  4
+        1:   12-block  5
+    $$$$$:   12-block  6
+    $$$$$:   12-block  7
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+    $$$$$:   12-block 10
+    $$$$$:   12-block 11
+    $$$$$:   12-block 12
+        -:   13:    toroide t2 = { 
+        -:   14:                  {false, false, true}, // 3
+        -:   15:                  {true, false, false}, // 1
+        7:   16:                  {false, true, false}};// 2
+        1:   16-block  0
+        1:   16-block  1
+        1:   16-block  2
+        3:   16-block  3
+        1:   16-block  4
+    $$$$$:   16-block  5
+    $$$$$:   16-block  6
+    $$$$$:   16-block  7
+    $$$$$:   16-block  8
+    $$$$$:   16-block  9
+    $$$$$:   16-block 10
+    $$$$$:   16-block 11
+        -:   17:
+        1:   18:    bool res = vistaTrasladada(t1, t2);
+       1*:   19:    EXPECT_TRUE(res);
+        1:   19-block  0
+        1:   19-block  1
+    %%%%%:   19-block  2
+    %%%%%:   19-block  3
+    %%%%%:   19-block  4
+    %%%%%:   19-block  5
+    %%%%%:   19-block  6
+        1:   19-block  7
+    $$$$$:   19-block  8
+    $$$$$:   19-block  9
+    $$$$$:   19-block 10
+    $$$$$:   19-block 11
+    $$$$$:   19-block 12
+    $$$$$:   19-block 13
+    $$$$$:   19-block 14
+        1:   20:}
+------------------
+_ZN51vistaTrasladadaTEST_muevoTerceraFilaParaArriba_TestC1Ev:
+        1:    8:TEST(vistaTrasladadaTEST, muevoTerceraFilaParaArriba){
+        1:    8-block  0
+------------------
+        -:   21:
+        2:   22:TEST(vistaTrasladadaTEST, DiagonalVsTodoTrue){
+        -:   23:    toroide t1 = { 
+        -:   24:                  {true, false, false},
+        -:   25:                  {false, true, false},
+        7:   26:                  {false, false, true}}; 
+        -:   27:    toroide t2 = { 
+        -:   28:                  {true, true, true},
+        -:   29:                  {true, true, true},
+        7:   30:                  {true, true, true}}; 
+        1:   31:    bool res = vistaTrasladada(t1, t2);
+       1*:   32:    EXPECT_FALSE(res);
+        1:   33:}
+------------------
+_ZN43vistaTrasladadaTEST_DiagonalVsTodoTrue_Test8TestBodyEv:
+        1:   22:TEST(vistaTrasladadaTEST, DiagonalVsTodoTrue){
+        -:   23:    toroide t1 = { 
+        -:   24:                  {true, false, false},
+        -:   25:                  {false, true, false},
+        7:   26:                  {false, false, true}}; 
+        1:   26-block  0
+        1:   26-block  1
+        1:   26-block  2
+        1:   26-block  3
+        3:   26-block  4
+        1:   26-block  5
+    $$$$$:   26-block  6
+    $$$$$:   26-block  7
+    $$$$$:   26-block  8
+    $$$$$:   26-block  9
+    $$$$$:   26-block 10
+    $$$$$:   26-block 11
+    $$$$$:   26-block 12
+        -:   27:    toroide t2 = { 
+        -:   28:                  {true, true, true},
+        -:   29:                  {true, true, true},
+        7:   30:                  {true, true, true}}; 
+        1:   30-block  0
+        1:   30-block  1
+        1:   30-block  2
+        3:   30-block  3
+        1:   30-block  4
+    $$$$$:   30-block  5
+    $$$$$:   30-block  6
+    $$$$$:   30-block  7
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+    $$$$$:   30-block 10
+    $$$$$:   30-block 11
+        1:   31:    bool res = vistaTrasladada(t1, t2);
+       1*:   32:    EXPECT_FALSE(res);
+        1:   32-block  0
+        1:   32-block  1
+    %%%%%:   32-block  2
+    %%%%%:   32-block  3
+    %%%%%:   32-block  4
+    %%%%%:   32-block  5
+    %%%%%:   32-block  6
+        1:   32-block  7
+    $$$$$:   32-block  8
+    $$$$$:   32-block  9
+    $$$$$:   32-block 10
+    $$$$$:   32-block 11
+    $$$$$:   32-block 12
+    $$$$$:   32-block 13
+    $$$$$:   32-block 14
+    $$$$$:   32-block 15
+        1:   33:}
+------------------
+_ZN43vistaTrasladadaTEST_DiagonalVsTodoTrue_TestC1Ev:
+        1:   22:TEST(vistaTrasladadaTEST, DiagonalVsTodoTrue){
+        1:   22-block  0
+------------------
+        -:   34:
+        2:   35:TEST(vistaTrasladadaTEST, tetris){
+        2:   36:    toroide t1 = tetris;
+        2:   37:    toroide t2 = tetrisTraslado;
+        1:   38:    bool res = vistaTrasladada(t1, t2);
+       1*:   39:    EXPECT_TRUE(res);
+        1:   40:}
+------------------
+_ZN31vistaTrasladadaTEST_tetris_Test8TestBodyEv:
+        1:   35:TEST(vistaTrasladadaTEST, tetris){
+        2:   36:    toroide t1 = tetris;
+        1:   36-block  0
+    $$$$$:   36-block  1
+        2:   37:    toroide t2 = tetrisTraslado;
+        1:   37-block  0
+    $$$$$:   37-block  1
+        1:   38:    bool res = vistaTrasladada(t1, t2);
+        1:   38-block  0
+       1*:   39:    EXPECT_TRUE(res);
+        1:   39-block  0
+        1:   39-block  1
+    %%%%%:   39-block  2
+    %%%%%:   39-block  3
+    %%%%%:   39-block  4
+    %%%%%:   39-block  5
+    %%%%%:   39-block  6
+        1:   39-block  7
+    $$$$$:   39-block  8
+    $$$$$:   39-block  9
+    $$$$$:   39-block 10
+    $$$$$:   39-block 11
+    $$$$$:   39-block 12
+    $$$$$:   39-block 13
+    $$$$$:   39-block 14
+        1:   40:}
+------------------
+_ZN31vistaTrasladadaTEST_tetris_TestC1Ev:
+        1:   35:TEST(vistaTrasladadaTEST, tetris){
+        1:   35-block  0
+------------------
+        -:   41:
+        2:   42:TEST(vistaTrasladadaTEST, unPunto){
+        2:   43:    toroide t1 = tTransladarUltimo1;
+        2:   44:    toroide t2 = tTransladarUltimo2;
+        1:   45:    bool res = vistaTrasladada(t1, t2);
+       1*:   46:    EXPECT_TRUE(res);
+        1:   47:}
+------------------
+_ZN32vistaTrasladadaTEST_unPunto_Test8TestBodyEv:
+        1:   42:TEST(vistaTrasladadaTEST, unPunto){
+        2:   43:    toroide t1 = tTransladarUltimo1;
+        1:   43-block  0
+    $$$$$:   43-block  1
+        2:   44:    toroide t2 = tTransladarUltimo2;
+        1:   44-block  0
+    $$$$$:   44-block  1
+        1:   45:    bool res = vistaTrasladada(t1, t2);
+        1:   45-block  0
+       1*:   46:    EXPECT_TRUE(res);
+        1:   46-block  0
+        1:   46-block  1
+    %%%%%:   46-block  2
+    %%%%%:   46-block  3
+    %%%%%:   46-block  4
+    %%%%%:   46-block  5
+    %%%%%:   46-block  6
+        1:   46-block  7
+    $$$$$:   46-block  8
+    $$$$$:   46-block  9
+    $$$$$:   46-block 10
+    $$$$$:   46-block 11
+    $$$$$:   46-block 12
+    $$$$$:   46-block 13
+    $$$$$:   46-block 14
+        1:   47:}
+------------------
+_ZN32vistaTrasladadaTEST_unPunto_TestC1Ev:
+        1:   42:TEST(vistaTrasladadaTEST, unPunto){
+        1:   42-block  0
+------------------
+        -:   48:
+        2:   49:TEST(vistaTrasladadaTEST, noCoinciden){
+        2:   50:    toroide t1 = tTransladarNoCoinciden1;
+        2:   51:    toroide t2 = tTransladarNoCoinciden2;
+        1:   52:    bool res = vistaTrasladada(t1, t2);
+       1*:   53:    EXPECT_FALSE(res);
+        1:   54:}
+------------------
+_ZN36vistaTrasladadaTEST_noCoinciden_Test8TestBodyEv:
+        1:   49:TEST(vistaTrasladadaTEST, noCoinciden){
+        2:   50:    toroide t1 = tTransladarNoCoinciden1;
+        1:   50-block  0
+    $$$$$:   50-block  1
+        2:   51:    toroide t2 = tTransladarNoCoinciden2;
+        1:   51-block  0
+    $$$$$:   51-block  1
+        1:   52:    bool res = vistaTrasladada(t1, t2);
+        1:   52-block  0
+       1*:   53:    EXPECT_FALSE(res);
+        1:   53-block  0
+        1:   53-block  1
+    %%%%%:   53-block  2
+    %%%%%:   53-block  3
+    %%%%%:   53-block  4
+    %%%%%:   53-block  5
+    %%%%%:   53-block  6
+        1:   53-block  7
+    $$$$$:   53-block  8
+    $$$$$:   53-block  9
+    $$$$$:   53-block 10
+    $$$$$:   53-block 11
+    $$$$$:   53-block 12
+    $$$$$:   53-block 13
+    $$$$$:   53-block 14
+    $$$$$:   53-block 15
+        1:   54:}
+------------------
+_ZN36vistaTrasladadaTEST_noCoinciden_TestC1Ev:
+        1:   49:TEST(vistaTrasladadaTEST, noCoinciden){
+        1:   49-block  0
+------------------
+        -:   55:
+        2:   56:TEST(vistaTrasladadaTEST, transladarDos){
+        2:   57:    toroide t1 = tTransladarDos1; 
+        2:   58:    toroide t2 = tTransladarDos2; 
+        1:   59:    bool res = vistaTrasladada(t1, t2);
+       1*:   60:    EXPECT_TRUE(res);
+        1:   61:}
+------------------
+_ZN38vistaTrasladadaTEST_transladarDos_Test8TestBodyEv:
+        1:   56:TEST(vistaTrasladadaTEST, transladarDos){
+        2:   57:    toroide t1 = tTransladarDos1; 
+        1:   57-block  0
+    $$$$$:   57-block  1
+        2:   58:    toroide t2 = tTransladarDos2; 
+        1:   58-block  0
+    $$$$$:   58-block  1
+        1:   59:    bool res = vistaTrasladada(t1, t2);
+        1:   59-block  0
+       1*:   60:    EXPECT_TRUE(res);
+        1:   60-block  0
+        1:   60-block  1
+    %%%%%:   60-block  2
+    %%%%%:   60-block  3
+    %%%%%:   60-block  4
+    %%%%%:   60-block  5
+    %%%%%:   60-block  6
+        1:   60-block  7
+    $$$$$:   60-block  8
+    $$$$$:   60-block  9
+    $$$$$:   60-block 10
+    $$$$$:   60-block 11
+    $$$$$:   60-block 12
+    $$$$$:   60-block 13
+    $$$$$:   60-block 14
+        1:   61:}
+------------------
+_ZN38vistaTrasladadaTEST_transladarDos_TestC1Ev:
+        1:   56:TEST(vistaTrasladadaTEST, transladarDos){
+        1:   56-block  0
+------------------

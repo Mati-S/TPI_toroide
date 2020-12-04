@@ -1,0 +1,251 @@
+        -:    0:Source:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/tests/EJ08_evolucionMultipleTEST.cpp
+        -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug/CMakeFiles/juegoDeLaVida.dir/tests/EJ08_evolucionMultipleTEST.gcno
+        -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug/CMakeFiles/juegoDeLaVida.dir/tests/EJ08_evolucionMultipleTEST.gcda
+        -:    0:Runs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include <algorithm>
+        -:    4:#include "../toroidesparaTest.h"
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        2:    8:TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresUnPaso){
+        7:    9:    toroide t = { {true, false, false}, {false, true, false}, {false, false, true} };
+        -:   10:    //1*0 0 1*0
+        -:   11:    //0 1 0 0 1
+        -:   12:    //0 0 1 0 0
+        -:   13:    //1 0 0 1 0
+        -:   14:    //0*1 0 0*1
+        7:   15:    toroide evo_t = { {true, true, true}, {true, true, true}, {true, true, true} };
+        -:   16:    //  1 1 1
+        -:   17:    //  1 1 1
+        -:   18:    //  1 1 1
+        2:   19:    toroide res = evolucionMultiple(t, 1);
+       1*:   20:    EXPECT_EQ(res, evo_t);
+        1:   21:}
+------------------
+_ZN59evolucionMultipleTEST_toroideDiagonalTresPorTresUnPaso_Test8TestBodyEv:
+        1:    8:TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresUnPaso){
+        7:    9:    toroide t = { {true, false, false}, {false, true, false}, {false, false, true} };
+        1:    9-block  0
+        1:    9-block  1
+        1:    9-block  2
+        1:    9-block  3
+        3:    9-block  4
+        1:    9-block  5
+    $$$$$:    9-block  6
+    $$$$$:    9-block  7
+    $$$$$:    9-block  8
+    $$$$$:    9-block  9
+    $$$$$:    9-block 10
+    $$$$$:    9-block 11
+    $$$$$:    9-block 12
+        -:   10:    //1*0 0 1*0
+        -:   11:    //0 1 0 0 1
+        -:   12:    //0 0 1 0 0
+        -:   13:    //1 0 0 1 0
+        -:   14:    //0*1 0 0*1
+        7:   15:    toroide evo_t = { {true, true, true}, {true, true, true}, {true, true, true} };
+        1:   15-block  0
+        1:   15-block  1
+        1:   15-block  2
+        3:   15-block  3
+        1:   15-block  4
+    $$$$$:   15-block  5
+    $$$$$:   15-block  6
+    $$$$$:   15-block  7
+    $$$$$:   15-block  8
+    $$$$$:   15-block  9
+    $$$$$:   15-block 10
+    $$$$$:   15-block 11
+        -:   16:    //  1 1 1
+        -:   17:    //  1 1 1
+        -:   18:    //  1 1 1
+        2:   19:    toroide res = evolucionMultiple(t, 1);
+    $$$$$:   19-block  0
+       1*:   20:    EXPECT_EQ(res, evo_t);
+        1:   20-block  0
+        1:   20-block  1
+    %%%%%:   20-block  2
+    %%%%%:   20-block  3
+    %%%%%:   20-block  4
+    %%%%%:   20-block  5
+    %%%%%:   20-block  6
+        1:   20-block  7
+    $$$$$:   20-block  8
+    $$$$$:   20-block  9
+    $$$$$:   20-block 10
+    $$$$$:   20-block 11
+    $$$$$:   20-block 12
+        1:   21:}
+------------------
+_ZN59evolucionMultipleTEST_toroideDiagonalTresPorTresUnPaso_TestC1Ev:
+        1:    8:TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresUnPaso){
+        1:    8-block  0
+------------------
+        -:   22:
+        2:   23:TEST(evolucionMultipleTEST, toroideMuereEnKMenos1){
+        2:   24:    toroide t2 = tMuereEnKMenos1;
+        -:   25:
+        2:   26:    toroide evo_t2 = tMuertoK;
+        -:   27:
+        2:   28:    toroide res = evolucionMultiple(t2, 22);
+       1*:   29:    EXPECT_EQ(res, evo_t2);
+        1:   30:}
+------------------
+_ZN48evolucionMultipleTEST_toroideMuereEnKMenos1_Test8TestBodyEv:
+        1:   23:TEST(evolucionMultipleTEST, toroideMuereEnKMenos1){
+        2:   24:    toroide t2 = tMuereEnKMenos1;
+        1:   24-block  0
+    $$$$$:   24-block  1
+        -:   25:
+        2:   26:    toroide evo_t2 = tMuertoK;
+        1:   26-block  0
+    $$$$$:   26-block  1
+        -:   27:
+        2:   28:    toroide res = evolucionMultiple(t2, 22);
+        1:   28-block  0
+    $$$$$:   28-block  1
+       1*:   29:    EXPECT_EQ(res, evo_t2);
+        1:   29-block  0
+        1:   29-block  1
+    %%%%%:   29-block  2
+    %%%%%:   29-block  3
+    %%%%%:   29-block  4
+    %%%%%:   29-block  5
+    %%%%%:   29-block  6
+        1:   29-block  7
+    $$$$$:   29-block  8
+    $$$$$:   29-block  9
+    $$$$$:   29-block 10
+    $$$$$:   29-block 11
+    $$$$$:   29-block 12
+        1:   30:}
+------------------
+_ZN48evolucionMultipleTEST_toroideMuereEnKMenos1_TestC1Ev:
+        1:   23:TEST(evolucionMultipleTEST, toroideMuereEnKMenos1){
+        1:   23-block  0
+------------------
+        -:   31:
+        2:   32:TEST(evolucionMultipleTEST, toroidePeriodico){
+        2:   33:    toroide t3 = tPeriodico;
+        -:   34:
+        2:   35:    toroide res = evolucionMultiple(t3, 2);
+       1*:   36:    EXPECT_EQ(res, t3);
+        1:   37:}
+------------------
+_ZN43evolucionMultipleTEST_toroidePeriodico_Test8TestBodyEv:
+        1:   32:TEST(evolucionMultipleTEST, toroidePeriodico){
+        2:   33:    toroide t3 = tPeriodico;
+        1:   33-block  0
+    $$$$$:   33-block  1
+        -:   34:
+        2:   35:    toroide res = evolucionMultiple(t3, 2);
+        1:   35-block  0
+    $$$$$:   35-block  1
+       1*:   36:    EXPECT_EQ(res, t3);
+        1:   36-block  0
+        1:   36-block  1
+    %%%%%:   36-block  2
+    %%%%%:   36-block  3
+    %%%%%:   36-block  4
+    %%%%%:   36-block  5
+    %%%%%:   36-block  6
+        1:   36-block  7
+    $$$$$:   36-block  8
+    $$$$$:   36-block  9
+    $$$$$:   36-block 10
+    $$$$$:   36-block 11
+    $$$$$:   36-block 12
+        1:   37:}
+------------------
+_ZN43evolucionMultipleTEST_toroidePeriodico_TestC1Ev:
+        1:   32:TEST(evolucionMultipleTEST, toroidePeriodico){
+        1:   32-block  0
+------------------
+        -:   38:
+        2:   39:TEST(evolucionMultipleTEST, unToroideGrande){
+        2:   40:    toroide t = jorgitoTriple;
+        -:   41:
+        2:   42:    toroide evo_t = jorgitoTripleEvolucionado;
+        -:   43:
+        2:   44:    toroide res = evolucionMultiple(t, 20);
+       1*:   45:    EXPECT_EQ(res, evo_t);
+        1:   46:}
+------------------
+_ZN42evolucionMultipleTEST_unToroideGrande_Test8TestBodyEv:
+        1:   39:TEST(evolucionMultipleTEST, unToroideGrande){
+        2:   40:    toroide t = jorgitoTriple;
+        1:   40-block  0
+    $$$$$:   40-block  1
+        -:   41:
+        2:   42:    toroide evo_t = jorgitoTripleEvolucionado;
+        1:   42-block  0
+    $$$$$:   42-block  1
+        -:   43:
+        2:   44:    toroide res = evolucionMultiple(t, 20);
+        1:   44-block  0
+    $$$$$:   44-block  1
+       1*:   45:    EXPECT_EQ(res, evo_t);
+        1:   45-block  0
+        1:   45-block  1
+    %%%%%:   45-block  2
+    %%%%%:   45-block  3
+    %%%%%:   45-block  4
+    %%%%%:   45-block  5
+    %%%%%:   45-block  6
+        1:   45-block  7
+    $$$$$:   45-block  8
+    $$$$$:   45-block  9
+    $$$$$:   45-block 10
+    $$$$$:   45-block 11
+    $$$$$:   45-block 12
+        1:   46:}
+------------------
+_ZN42evolucionMultipleTEST_unToroideGrande_TestC1Ev:
+        1:   39:TEST(evolucionMultipleTEST, unToroideGrande){
+        1:   39-block  0
+------------------
+        -:   47:
+        2:   48:TEST(evolucionMultipleTEST, toroideEspada){
+        2:   49:    toroide t = unaEspada;
+        -:   50:
+        2:   51:    toroide evo_t = unaEspadaEvolucionado;
+        -:   52:
+        2:   53:    toroide res = evolucionMultiple(t, 3);
+       1*:   54:    EXPECT_EQ(res, evo_t);
+        1:   55:}
+------------------
+_ZN40evolucionMultipleTEST_toroideEspada_Test8TestBodyEv:
+        1:   48:TEST(evolucionMultipleTEST, toroideEspada){
+        2:   49:    toroide t = unaEspada;
+        1:   49-block  0
+    $$$$$:   49-block  1
+        -:   50:
+        2:   51:    toroide evo_t = unaEspadaEvolucionado;
+        1:   51-block  0
+    $$$$$:   51-block  1
+        -:   52:
+        2:   53:    toroide res = evolucionMultiple(t, 3);
+        1:   53-block  0
+    $$$$$:   53-block  1
+       1*:   54:    EXPECT_EQ(res, evo_t);
+        1:   54-block  0
+        1:   54-block  1
+    %%%%%:   54-block  2
+    %%%%%:   54-block  3
+    %%%%%:   54-block  4
+    %%%%%:   54-block  5
+    %%%%%:   54-block  6
+        1:   54-block  7
+    $$$$$:   54-block  8
+    $$$$$:   54-block  9
+    $$$$$:   54-block 10
+    $$$$$:   54-block 11
+    $$$$$:   54-block 12
+        1:   55:}
+------------------
+_ZN40evolucionMultipleTEST_toroideEspada_TestC1Ev:
+        1:   48:TEST(evolucionMultipleTEST, toroideEspada){
+        1:   48-block  0
+------------------

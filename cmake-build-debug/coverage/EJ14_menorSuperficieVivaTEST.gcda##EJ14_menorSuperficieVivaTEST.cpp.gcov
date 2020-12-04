@@ -1,0 +1,211 @@
+        -:    0:Source:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/tests/EJ14_menorSuperficieVivaTEST.cpp
+        -:    0:Graph:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug/CMakeFiles/juegoDeLaVida.dir/tests/EJ14_menorSuperficieVivaTEST.gcno
+        -:    0:Data:/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug/CMakeFiles/juegoDeLaVida.dir/tests/EJ14_menorSuperficieVivaTEST.gcda
+        -:    0:Runs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include "../toroidesparaTest.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        2:    7:TEST(menorSuperficieVivaTEST, enunciado){
+        -:    8:    toroide t = {
+        -:    9:            {true, false, false, true},   // 1
+        -:   10:            {false, false, false, false}, // 2
+        -:   11:            {false, false, false, false}, // 3
+        8:   12:            {true, true, false, false}};  // 4
+        -:   13:
+        1:   14:    int res = menorSuperficieViva(t);
+       1*:   15:    EXPECT_EQ(res, 6);
+        1:   16:}
+------------------
+_ZN38menorSuperficieVivaTEST_enunciado_Test8TestBodyEv:
+        1:    7:TEST(menorSuperficieVivaTEST, enunciado){
+        -:    8:    toroide t = {
+        -:    9:            {true, false, false, true},   // 1
+        -:   10:            {false, false, false, false}, // 2
+        -:   11:            {false, false, false, false}, // 3
+        8:   12:            {true, true, false, false}};  // 4
+        1:   12-block  0
+        1:   12-block  1
+        1:   12-block  2
+        1:   12-block  3
+        1:   12-block  4
+        4:   12-block  5
+        1:   12-block  6
+    $$$$$:   12-block  7
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+    $$$$$:   12-block 10
+    $$$$$:   12-block 11
+    $$$$$:   12-block 12
+    $$$$$:   12-block 13
+    $$$$$:   12-block 14
+        -:   13:
+        1:   14:    int res = menorSuperficieViva(t);
+       1*:   15:    EXPECT_EQ(res, 6);
+        1:   15-block  0
+        1:   15-block  1
+    %%%%%:   15-block  2
+    %%%%%:   15-block  3
+    %%%%%:   15-block  4
+    %%%%%:   15-block  5
+    %%%%%:   15-block  6
+        1:   15-block  7
+    $$$$$:   15-block  8
+    $$$$$:   15-block  9
+    $$$$$:   15-block 10
+    $$$$$:   15-block 11
+    $$$$$:   15-block 12
+    $$$$$:   15-block 13
+        1:   16:}
+------------------
+_ZN38menorSuperficieVivaTEST_enunciado_TestC1Ev:
+        1:    7:TEST(menorSuperficieVivaTEST, enunciado){
+        1:    7-block  0
+------------------
+        -:   17:
+        2:   18:TEST(menorSuperficieVivaTEST, torMuerto){
+        2:   19:    toroide t = tMuerto;
+        1:   20:    int res = menorSuperficieViva(t);
+       1*:   21:    EXPECT_EQ(res, 0);
+        1:   22:}
+------------------
+_ZN38menorSuperficieVivaTEST_torMuerto_Test8TestBodyEv:
+        1:   18:TEST(menorSuperficieVivaTEST, torMuerto){
+        2:   19:    toroide t = tMuerto;
+        1:   19-block  0
+    $$$$$:   19-block  1
+        1:   20:    int res = menorSuperficieViva(t);
+        1:   20-block  0
+       1*:   21:    EXPECT_EQ(res, 0);
+        1:   21-block  0
+        1:   21-block  1
+    %%%%%:   21-block  2
+    %%%%%:   21-block  3
+    %%%%%:   21-block  4
+    %%%%%:   21-block  5
+    %%%%%:   21-block  6
+        1:   21-block  7
+    $$$$$:   21-block  8
+    $$$$$:   21-block  9
+    $$$$$:   21-block 10
+    $$$$$:   21-block 11
+    $$$$$:   21-block 12
+    $$$$$:   21-block 13
+        1:   22:}
+------------------
+_ZN38menorSuperficieVivaTEST_torMuerto_TestC1Ev:
+        1:   18:TEST(menorSuperficieVivaTEST, torMuerto){
+        1:   18-block  0
+------------------
+        -:   23:
+        2:   24:TEST(menorSuperficieVivaTEST, torVivo){
+        2:   25:    toroide t = tVivo;
+        -:   26:
+        1:   27:    int res = menorSuperficieViva(t);
+       1*:   28:    EXPECT_EQ(res, 9);
+        1:   29:}
+------------------
+_ZN36menorSuperficieVivaTEST_torVivo_Test8TestBodyEv:
+        1:   24:TEST(menorSuperficieVivaTEST, torVivo){
+        2:   25:    toroide t = tVivo;
+        1:   25-block  0
+    $$$$$:   25-block  1
+        -:   26:
+        1:   27:    int res = menorSuperficieViva(t);
+        1:   27-block  0
+       1*:   28:    EXPECT_EQ(res, 9);
+        1:   28-block  0
+        1:   28-block  1
+    %%%%%:   28-block  2
+    %%%%%:   28-block  3
+    %%%%%:   28-block  4
+    %%%%%:   28-block  5
+    %%%%%:   28-block  6
+        1:   28-block  7
+    $$$$$:   28-block  8
+    $$$$$:   28-block  9
+    $$$$$:   28-block 10
+    $$$$$:   28-block 11
+    $$$$$:   28-block 12
+    $$$$$:   28-block 13
+        1:   29:}
+------------------
+_ZN36menorSuperficieVivaTEST_torVivo_TestC1Ev:
+        1:   24:TEST(menorSuperficieVivaTEST, torVivo){
+        1:   24-block  0
+------------------
+        -:   30:
+        2:   31:TEST(menorSuperficieVivaTEST, toroidePeriodico){
+        2:   32:    toroide t = tPeriodico;
+        -:   33:
+        1:   34:    int res = menorSuperficieViva(t);
+       1*:   35:    EXPECT_EQ(res, 3);
+        1:   36:}
+------------------
+_ZN45menorSuperficieVivaTEST_toroidePeriodico_Test8TestBodyEv:
+        1:   31:TEST(menorSuperficieVivaTEST, toroidePeriodico){
+        2:   32:    toroide t = tPeriodico;
+        1:   32-block  0
+    $$$$$:   32-block  1
+        -:   33:
+        1:   34:    int res = menorSuperficieViva(t);
+        1:   34-block  0
+       1*:   35:    EXPECT_EQ(res, 3);
+        1:   35-block  0
+        1:   35-block  1
+    %%%%%:   35-block  2
+    %%%%%:   35-block  3
+    %%%%%:   35-block  4
+    %%%%%:   35-block  5
+    %%%%%:   35-block  6
+        1:   35-block  7
+    $$$$$:   35-block  8
+    $$$$$:   35-block  9
+    $$$$$:   35-block 10
+    $$$$$:   35-block 11
+    $$$$$:   35-block 12
+    $$$$$:   35-block 13
+        1:   36:}
+------------------
+_ZN45menorSuperficieVivaTEST_toroidePeriodico_TestC1Ev:
+        1:   31:TEST(menorSuperficieVivaTEST, toroidePeriodico){
+        1:   31-block  0
+------------------
+        2:   37:TEST(menorSuperficieVivaTEST, tetris){
+        2:   38:    toroide t = tetris;
+        -:   39:
+        1:   40:    int res = menorSuperficieViva(t);
+       1*:   41:    EXPECT_EQ(res, 12);
+        1:   42:}
+------------------
+_ZN35menorSuperficieVivaTEST_tetris_Test8TestBodyEv:
+        1:   37:TEST(menorSuperficieVivaTEST, tetris){
+        2:   38:    toroide t = tetris;
+        1:   38-block  0
+    $$$$$:   38-block  1
+        -:   39:
+        1:   40:    int res = menorSuperficieViva(t);
+        1:   40-block  0
+       1*:   41:    EXPECT_EQ(res, 12);
+        1:   41-block  0
+        1:   41-block  1
+    %%%%%:   41-block  2
+    %%%%%:   41-block  3
+    %%%%%:   41-block  4
+    %%%%%:   41-block  5
+    %%%%%:   41-block  6
+        1:   41-block  7
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+    $$$$$:   41-block 11
+    $$$$$:   41-block 12
+    $$$$$:   41-block 13
+        1:   42:}
+------------------
+_ZN35menorSuperficieVivaTEST_tetris_TestC1Ev:
+        1:   37:TEST(menorSuperficieVivaTEST, tetris){
+        1:   37-block  0
+------------------

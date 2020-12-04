@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/lib/googletest-master
+# Install script for directory: /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/lib/googletest-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/cmake-build-debug-coverage/lib/googletest-master/googlemock/cmake_install.cmake")
+  include("/cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/cmake-build-debug-coverage/lib/googletest-master/googlemock/cmake_install.cmake")
 
 endif()
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -g --coverage -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /cygdrive/c/Users/vAsmad/CLionProjects/TPS/TPI_toroide/lib/googletest-master/googletest/include 
+CXX_INCLUDES = -isystem /cygdrive/c/Users/vAsmad/CLionProjects/TPI_toroide/lib/googletest-master/googletest/include 
 
